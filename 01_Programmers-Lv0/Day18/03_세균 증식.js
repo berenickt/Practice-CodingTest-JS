@@ -5,9 +5,9 @@
  * @returns t시간 후 세균의 수
  */
 function solution(n, t) {
-  return n * 2 ** t;
+  return n * 2 ** t
 }
 
 // 처음엔 2마리, 1시간 후엔 4마리, 2시간 후엔 8마리, ..., 10시간 후엔 2048마리가 됩니다
-console.log(solution(2, 10)); // 2048
-console.log(solution(7, 15)); // 229,376
+console.log(solution(2, 10)) // 2048
+console.log(solution(7, 15)) // 229,376

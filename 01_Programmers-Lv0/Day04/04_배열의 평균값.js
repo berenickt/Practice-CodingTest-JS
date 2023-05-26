@@ -3,5 +3,5 @@
  * @returns numbers의 원소의 평균값
  */
 function solution(numbers) {
-  return numbers.reduce((acc, cur) => acc + cur) / numbers.length;
+  return numbers.reduce((acc, cur) => acc + cur) / numbers.length
 }

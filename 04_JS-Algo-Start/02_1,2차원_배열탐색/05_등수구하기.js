@@ -13,16 +13,16 @@
  * 2-1. i 요소보다 큰 점수를 발견하면, 해당 i 인덱스의 등수를 ++
  */
 function solution(arr) {
-  let n = arr.length;
-  let answer = Array.from({ length: n }, () => 1); // 모든 요소가 1로 초기화된 배열 생성
+  let n = arr.length
+  let answer = Array.from({ length: n }, () => 1) // 모든 요소가 1로 초기화된 배열 생성
 
   for (let i = 0; i < n; i++) {
     for (let j = 0; j < n; j++) {
-      if (arr[j] > arr[i]) answer[i]++;
+      if (arr[j] > arr[i]) answer[i]++
     }
   }
-  return answer;
+  return answer
 }
 
-let arr = [87, 89, 92, 100, 76];
-console.log(solution(arr));
+let arr = [87, 89, 92, 100, 76]
+console.log(solution(arr))

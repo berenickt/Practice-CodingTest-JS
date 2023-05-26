@@ -4,6 +4,6 @@
  * @returns my_string에 들어있는 각 문자를 `n`만큼 반복한 문자열
  */
 function solution(my_string, n) {
-  return [...my_string].map((char) => char.repeat(n)).join('');
+  return [...my_string].map(char => char.repeat(n)).join('')
 }
-console.log(solution('hello', 3)); // hhheeellllllooo
+console.log(solution('hello', 3)) // hhheeellllllooo

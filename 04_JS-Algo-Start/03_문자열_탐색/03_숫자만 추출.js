@@ -9,13 +9,13 @@
  * @returns
  */
 function solution(str) {
-  let answer = '';
+  let answer = ''
 
   for (let x of str) {
-    if (!isNaN(x)) answer += x; // 숫자만 뽑기
+    if (!isNaN(x)) answer += x // 숫자만 뽑기
   }
 
-  return parseInt(answer); // 앞의 0은 날리고 숫자로 변환
+  return parseInt(answer) // 앞의 0은 날리고 숫자로 변환
 }
 
-console.log(solution('g0en2T0s8eSoft')); // 208
+console.log(solution('g0en2T0s8eSoft')) // 208

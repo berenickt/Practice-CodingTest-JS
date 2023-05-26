@@ -5,25 +5,25 @@
  * - 문자열도 배열입니다.
  */
 function countLetter(str) {
-  let count = 0;
+  let count = 0
 
   for (let i = 0; i < str.length; i++) {
     if (str[i] === 'a' || str[i] === 'A') {
-      count = count + 1;
+      count = count + 1
     }
   }
 }
 
 function countLetter2(str) {
-  let count = 0;
+  let count = 0
 
-  str = str.toLowerCase();
+  str = str.toLowerCase()
   for (let i = 0; i < str.length; i++) {
     if (str[i] === 'a') {
-      count++;
+      count++
     }
   }
 }
 
-countLetter('I am from Korea'); // 2
-countLetter('A day without laughter is a day wasted.'); // 6
+countLetter('I am from Korea') // 2
+countLetter('A day without laughter is a day wasted.') // 6

@@ -10,33 +10,33 @@
  * 2. 양수를 배열에 다 넣기
  */
 function solution(array) {
-  let answer = array;
+  let answer = array
 
   for (let i = 0; i < array.length - 1; i++) {
     for (let j = 0; j < array.length - i - 1; j++) {
       if (array[j] > 0 && array[j + 1] < 0) {
-        [array[j], array[j + 1]] = [array[j + 1], array[j]];
+        ;[array[j], array[j + 1]] = [array[j + 1], array[j]]
       }
     }
   }
-  return answer;
+  return answer
 }
 
 // --------------------------------------------------------
 // 음수를 먼저 다 넣은 뒤에 양수를 넣기
 function solution2(array) {
-  let answer = [];
+  let answer = []
 
   // 1. 음수면, answer에 다 넣기
   for (let element of array) {
-    if (element < 0) answer.push(element);
+    if (element < 0) answer.push(element)
   }
 
   // 2. 양수면, answer에 다 넣기
   for (let element of array) {
-    if (element > 0) answer.push(element);
+    if (element > 0) answer.push(element)
   }
-  return answer;
+  return answer
 }
 
-console.log(solution([1, 2, 3, -3, -2, 5, 6, -6])); // [-3, -2, -6, 1, 2, 3, 5, 6]
+console.log(solution([1, 2, 3, -3, -2, 5, 6, -6])) // [-3, -2, -6, 1, 2, 3, 5, 6]

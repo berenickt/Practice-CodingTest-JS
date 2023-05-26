@@ -16,22 +16,22 @@
  * @returns // 봉우리 갯수
  */
 function solution(arr) {
-  let answer = 0; // 봉우리 갯수
-  let n = arr.length;
+  let answer = 0 // 봉우리 갯수
+  let n = arr.length
 
   // x, y 좌표를 기준으로 이동할 행, 열의 움직임(상, 우, 하, 좌)
-  let dx = [-1, 0, 1, 0];
-  let dy = [0, 1, 0, -1];
+  let dx = [-1, 0, 1, 0]
+  let dy = [0, 1, 0, -1]
 
   // 2차원 배열을 순회
   for (let i = 0; i < n; i++) {
     for (let j = 0; j < n; j++) {
-      let flag = 1; // 봉우리인지 체크(1은 true)
+      let flag = 1 // 봉우리인지 체크(1은 true)
 
       // 각각의 행열 기준으로 상, 우, 하, 좌를 순회
       for (let k = 0; k < 4; k++) {
-        let nx = i + dx[k];
-        let ny = j + dy[k];
+        let nx = i + dx[k]
+        let ny = j + dy[k]
 
         // **** 봉우리가 아닌 경우
         // 상, 우, 하, 좌로 이동한 방향(arr[nx][ny])이
@@ -44,16 +44,16 @@ function solution(arr) {
           ny < n &&
           arr[nx][ny] >= arr[i][j]
         ) {
-          flag = 0;
-          break;
+          flag = 0
+          break
         }
       }
       // flag(봉우리)가 true면
-      if (flag) answer++;
+      if (flag) answer++
     }
   }
 
-  return answer;
+  return answer
 }
 
 let arr = [
@@ -62,5 +62,5 @@ let arr = [
   [7, 2, 5, 3, 4],
   [4, 3, 6, 4, 1],
   [8, 7, 3, 5, 2],
-];
-console.log(solution(arr));
+]
+console.log(solution(arr))

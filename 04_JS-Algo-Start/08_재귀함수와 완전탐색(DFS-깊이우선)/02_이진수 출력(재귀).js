@@ -5,18 +5,18 @@
  * @returns
  */
 function solution(num) {
-  let answer = '';
+  let answer = ''
 
   function DFS(num) {
-    if (num === 0) return;
+    if (num === 0) return
     else {
-      DFS(parseInt(num / 2)); // 몫
-      answer += String(num % 2); // 나머지
+      DFS(parseInt(num / 2)) // 몫
+      answer += String(num % 2) // 나머지
     }
   }
 
-  DFS(num);
-  return answer;
+  DFS(num)
+  return answer
 }
 
-console.log(solution(11)); // 1011
+console.log(solution(11)) // 1011

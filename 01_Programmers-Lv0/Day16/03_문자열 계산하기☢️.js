@@ -7,7 +7,7 @@
  * eval : 문자로 표현된 JavaScript 코드를 실행하는 함수
  */
 function solution(my_string) {
-  return eval(my_string);
+  return eval(my_string)
 }
 
-console.log(solution('3 + 4')); // 7
+console.log(solution('3 + 4')) // 7

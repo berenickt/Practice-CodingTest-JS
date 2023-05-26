@@ -7,18 +7,18 @@
  */
 function solution(numlist, n) {
   return numlist.sort((a, b) => {
-    const [aDiff, bDiff] = [Math.abs(a - n), Math.abs(b - n)];
-    if (aDiff === bDiff) return b - a;
-    return aDiff - bDiff;
-  });
+    const [aDiff, bDiff] = [Math.abs(a - n), Math.abs(b - n)]
+    if (aDiff === bDiff) return b - a
+    return aDiff - bDiff
+  })
 }
 
 function solution2(numlist, n) {
-  return numlist.sort((a, b) => Math.abs(a - n) - Math.abs(b - n) || b - a);
+  return numlist.sort((a, b) => Math.abs(a - n) - Math.abs(b - n) || b - a)
 }
 
 // 4에서 가까운 순으로 [4, 5, 3, 6, 2, 1]을 return합니다.
 // 3과 5는 거리가 같으므로 더 큰 5가 앞에 와야 합니다.
 // 2와 6은 거리가 같으므로 더 큰 6이 앞에 와야 합니다.
-console.log(solution([1, 2, 3, 4, 5, 6], 4)); // [4, 5, 3, 6, 2, 1]
-console.log(solution([10000, 20, 36, 47, 40, 6, 10, 7000], 30)); // [36, 40, 20, 47, 10, 6, 7000, 10000]
+console.log(solution([1, 2, 3, 4, 5, 6], 4)) // [4, 5, 3, 6, 2, 1]
+console.log(solution([10000, 20, 36, 47, 40, 6, 10, 7000], 30)) // [36, 40, 20, 47, 10, 6, 7000, 10000]

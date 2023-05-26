@@ -10,21 +10,21 @@
  * @returns 최대 몇 개의 부서에 물품을 지원할 수 있는지
  */
 function solution(d, budget) {
-  const answer = [];
+  const answer = []
 
   // 모든 부서가 신청한 지원금에 따라 오름차순
-  d.sort((a, b) => a - b);
+  d.sort((a, b) => a - b)
 
   // 부서들이 신청한 금액의 총 합
-  let sum = 0;
+  let sum = 0
   for (let i = 0; i < d.length; i++) {
-    sum += d[i];
+    sum += d[i]
 
     if (sum <= budget) {
-      answer.push(d[i]);
+      answer.push(d[i])
     }
   }
-  return answer.length;
+  return answer.length
 }
 
 /**
@@ -32,14 +32,14 @@ function solution(d, budget) {
  */
 function solution2(d, budget) {
   // 모든 부서가 신청한 지원금에 따라 오름차순
-  d.sort((a, b) => a - b);
+  d.sort((a, b) => a - b)
 
-  let answer = 0;
+  let answer = 0
   while (budget - d[answer] >= 0) {
-    budget -= d[answer];
-    answer++;
+    budget -= d[answer]
+    answer++
   }
-  return answer;
+  return answer
 }
 
 /**
@@ -50,12 +50,12 @@ function solution3(d, budget) {
     .sort((a, b) => a - b)
     .filter(money => {
       // 총 예산에서 지원금 차감
-      budget -= money;
+      budget -= money
 
-      return budget >= 0;
-    });
-  return answer.length;
+      return budget >= 0
+    })
+  return answer.length
 }
 
-console.log(solution([1, 3, 2, 5, 4], 9)); // 3
-console.log(solution([2, 2, 3, 3], 10)); // 4
+console.log(solution([1, 3, 2, 5, 4], 9)) // 3
+console.log(solution([2, 2, 3, 3], 10)) // 4

@@ -3,6 +3,6 @@
  * @returns 각 원소에 두배한 원소를 가진 배열
  */
 function solution(numbers) {
-  return numbers.map((number) => number * 2);
+  return numbers.map(number => number * 2)
 }
-console.log(solution([1, 2, 3, 4, 5]));
+console.log(solution([1, 2, 3, 4, 5]))

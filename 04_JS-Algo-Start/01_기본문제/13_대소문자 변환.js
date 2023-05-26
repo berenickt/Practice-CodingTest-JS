@@ -6,13 +6,13 @@
  * @returns 대문자는 소문자로, 소문자는 대문자로 변환
  */
 function solution(s) {
-  let answer = "";
+  let answer = ''
 
   for (let x of s) {
-    if (x === x.toUpperCase()) answer += x.toLowerCase(); // 대문자라면, 소문자로
-    else answer += x.toUpperCase(); // 소문자라면, 대문자로
+    if (x === x.toUpperCase()) answer += x.toLowerCase() // 대문자라면, 소문자로
+    else answer += x.toUpperCase() // 소문자라면, 대문자로
   }
-  return answer;
+  return answer
 }
 
-console.log(solution("StuDY")); // sTUdy
+console.log(solution('StuDY')) // sTUdy

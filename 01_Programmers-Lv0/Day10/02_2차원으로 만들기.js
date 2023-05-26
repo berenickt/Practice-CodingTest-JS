@@ -4,14 +4,14 @@
  * @returns
  */
 function solution(num_list, n) {
-  let answer = [];
+  let answer = []
 
   // 길이만큼 반복
   while (num_list.length) {
     // (새 배열에 넣기).(0번 인덱스에 n개 요소 대체)
-    answer.push(num_list.splice(0, n));
+    answer.push(num_list.splice(0, n))
   }
-  return answer;
+  return answer
 }
 
-console.log(solution([1, 2, 3, 4, 5, 6, 7, 8], 2));
+console.log(solution([1, 2, 3, 4, 5, 6, 7, 8], 2))

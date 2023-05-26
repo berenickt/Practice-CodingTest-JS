@@ -22,39 +22,39 @@
  * for문
  */
 function solution(board, moves) {
-  let answer = 0;
-  const bucket = [];
+  let answer = 0
+  const bucket = []
 
   // 크레인이 이동하는 위치값을 순회
   for (let i = 0; i < moves.length; i++) {
     // 크레인이 이동해서 뽑아올 수 있는 인형의 위치값을 순회, 0~4까지 행 순회
     for (let position = 0; position < board.length; position++) {
-      const doll = board[position][moves[i] - 1];
+      const doll = board[position][moves[i] - 1]
 
       // 인형이 있는 칸이 빈칸이 아니라면
       if (doll !== 0) {
         // 방금 뽑은 인형의 위치를 빈칸으로 만들어준다.
-        board[position][moves[i] - 1] = 0;
+        board[position][moves[i] - 1] = 0
 
         // 바구니에 넣으려고 하는 인형과 버켓의 마지막(맨 위에 있는) 인형이 동일하면,
         if (bucket[bucket.length - 1] === doll) {
           // 사라진 인형 개수 += 2
-          answer += 2;
+          answer += 2
 
           // **** 실제 바구니에는 넣지 않는다.
           // splice(시작인덱스, 제거할 요소의 수, 배열에 추가할 요소)
           // 뒤에 배열 요소 1개 제거 후 새 배열 반환
           // console.log(bucket.length); // 3, 2
-          bucket.splice(bucket.length - 1, 1);
+          bucket.splice(bucket.length - 1, 1)
           // bucket.pop();
-          break;
+          break
         }
-        bucket.push(doll);
-        break;
+        bucket.push(doll)
+        break
       }
     }
   }
-  return answer;
+  return answer
 }
 
 const board = [
@@ -63,43 +63,43 @@ const board = [
   [0, 2, 5, 0, 1],
   [4, 2, 4, 4, 2],
   [3, 5, 1, 3, 1],
-];
-console.log(solution(board, [1, 5, 3, 5, 1, 2, 1, 4])); // 사라진 인형 개수 === 4개
+]
+console.log(solution(board, [1, 5, 3, 5, 1, 2, 1, 4])) // 사라진 인형 개수 === 4개
 
 /**
  * forEach
  */
 function solution2(board, moves) {
-  let answer = 0;
-  const bucket = [];
+  let answer = 0
+  const bucket = []
 
   // 크레인이 이동하는 위치값을 순회
   moves.forEach(move => {
-    let check = false; // 반복문을 실행하지 않게 하는 변수
+    let check = false // 반복문을 실행하지 않게 하는 변수
 
     // 크레인이 이동해서 뽑아올 수 있는 인형의 위치값을 순회, 0~4까지 행 순회
     board.forEach(location => {
-      const doll = location[move - 1];
+      const doll = location[move - 1]
 
       if (check === false) {
         // 인형이 있는 칸이 빈칸이 아니라면
         if (doll !== 0) {
           // 방금 뽑은 인형의 위치를 빈칸으로 만들어준다.
-          location[move - 1] = 0;
+          location[move - 1] = 0
 
           // 바구니에 넣으려고 하는 인형과 버켓의 마지막(맨 위에 있는) 인형이 동일하면,
           if (bucket[bucket.length - 1] === doll) {
-            answer += 2;
+            answer += 2
 
             // 뒤에 배열 요소 1개 제거 후 새 배열 반환
-            bucket.splice(bucket.length - 1, 1);
+            bucket.splice(bucket.length - 1, 1)
           } else {
-            bucket.push(doll);
+            bucket.push(doll)
           }
-          check = true;
+          check = true
         }
       }
-    });
-  });
-  return answer;
+    })
+  })
+  return answer
 }

@@ -15,41 +15,41 @@
  * 3. 노래를 장르별로 2개씩 자르기
  */
 function solution(genres, plays) {
-  let answer = [];
-  let hash = new Map();
+  let answer = []
+  let hash = new Map()
   // solution(['classic', 'pop', 'classic', 'classic', 'pop'], [500, 600, 150, 800, 2500]);
 
   // **** 각 장르별로 노래 정보 [인덱스, 재생 횟수] 목록과 총 재생횟수 정보를 모으기
   for (let i = 0; i < genres.length; i++) {
-    let obj = hash.get(genres[i]) || { musics: [], sum: 0 };
+    let obj = hash.get(genres[i]) || { musics: [], sum: 0 }
 
-    obj.musics.push([i, plays[i]]);
-    obj.sum += plays[i];
-    hash.set(genres[i], obj);
+    obj.musics.push([i, plays[i]])
+    obj.sum += plays[i]
+    hash.set(genres[i], obj)
   }
 
   // **** 각 장르별로 재생 횟수를 sort
-  let chart = [];
+  let chart = []
   for (let [genre, info] of hash) {
-    chart.push([genre, info.musics, info.sum]);
+    chart.push([genre, info.musics, info.sum])
   }
-  chart.sort((a, b) => b[2] - a[2]);
+  chart.sort((a, b) => b[2] - a[2])
 
   // **** 각 장르 내에서 노래들을 순서대로 sort
   for (let genre of chart) {
     genre[1].sort((a, b) => {
-      if (a[1] === b[1]) return a[0] - b[0];
-      else return b[1] - a[1];
-    });
+      if (a[1] === b[1]) return a[0] - b[0]
+      else return b[1] - a[1]
+    })
     // sort한 노래를 각 두 개씩 answer에 모으자!
-    let idx = 0;
+    let idx = 0
     while (genre[1].length > idx && idx < 2) {
-      answer.push(genre[1][idx][0]);
-      idx++;
+      answer.push(genre[1][idx][0])
+      idx++
     }
   }
 
-  return answer;
+  return answer
 }
 
-console.log(solution(['classic', 'pop', 'classic', 'classic', 'pop'], [500, 600, 150, 800, 2500])); // [ 4, 1, 3, 0 ]
+console.log(solution(['classic', 'pop', 'classic', 'classic', 'pop'], [500, 600, 150, 800, 2500])) // [ 4, 1, 3, 0 ]

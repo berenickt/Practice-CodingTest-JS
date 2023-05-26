@@ -7,38 +7,38 @@
  * @returns a와 b의 내적
  */
 function solution(a, b) {
-  let answer = 0;
+  let answer = 0
 
   for (let i = 0; i < a.length; i++) {
-    answer += a[i] * b[i];
+    answer += a[i] * b[i]
   }
-  return answer;
+  return answer
 }
 
 // **** map + reduce
 function solution2(a, b) {
   const answer = a
     .map((num, i) => {
-      return num * b[i];
+      return num * b[i]
     })
     .reduce((el, cu) => {
-      return el + cu;
-    }, 0);
+      return el + cu
+    }, 0)
 
-  return answer;
+  return answer
 }
 
 // **** reduce
 function solution3(a, b) {
   const answer = a.reduce((acc, cur, idx) => {
-    return acc + cur * b[idx];
-  }, 0);
-  return answer;
+    return acc + cur * b[idx]
+  }, 0)
+  return answer
 }
 
 function solution4(a, b) {
-  return a.reduce((acc, cur, idx) => acc + cur * b[idx], 0);
+  return a.reduce((acc, cur, idx) => acc + cur * b[idx], 0)
 }
 
-console.log(solution([1, 2, 3, 4], [-3, -1, 0, 2])); // a와 b의 내적은 1*(-3) + 2*(-1) + 3*0 + 4*2 = 3
-console.log(solution([-1, 0, 1], [1, 0, -1])); // a와 b의 내적은 (-1)*1 + 0*0 + 1*(-1) = -2
+console.log(solution([1, 2, 3, 4], [-3, -1, 0, 2])) // a와 b의 내적은 1*(-3) + 2*(-1) + 3*0 + 4*2 = 3
+console.log(solution([-1, 0, 1], [1, 0, -1])) // a와 b의 내적은 (-1)*1 + 0*0 + 1*(-1) = -2

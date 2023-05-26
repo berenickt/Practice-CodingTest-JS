@@ -13,20 +13,20 @@
  * @returns
  */
 function solution(arr) {
-  let answer = arr;
-  let sum = answer.reduce((acc, cur) => acc + cur, 0);
+  let answer = arr
+  let sum = answer.reduce((acc, cur) => acc + cur, 0)
 
   for (let i = 0; i < 8; i++) {
     for (let j = i + 1; j < 9; j++) {
       // console.log(arr[i], arr[j]); // 2개씩 뽑아서 나올 수 있는 경우의 수
       if (sum - (answer[i] + answer[j]) === 100) {
-        answer.splice(j, 1);
-        answer.splice(i, 1);
+        answer.splice(j, 1)
+        answer.splice(i, 1)
       }
     }
   }
-  return answer;
+  return answer
 }
 
-let arr = [20, 7, 23, 19, 10, 15, 25, 8, 13];
-console.log(solution(arr));
+let arr = [20, 7, 23, 19, 10, 15, 25, 8, 13]
+console.log(solution(arr))

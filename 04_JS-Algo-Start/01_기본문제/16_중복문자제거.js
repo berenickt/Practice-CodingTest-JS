@@ -6,7 +6,7 @@
  * @returns
  */
 function solution(s) {
-  let answer = '';
+  let answer = ''
   // ** indexOf : 배열에서 지정된 요소를 찾을 수 있는 첫 번째 인덱스를 반환, 존재하지 않으면 -1
   // console.log(s.indexOf("k"));
   // console.log(s.indexOf("Z"));
@@ -14,24 +14,24 @@ function solution(s) {
   for (let i = 0; i < s.length; i++) {
     // console.log(s[i], i, s.indexOf(s[i])); // 문자한개, 인덱스, 인덱스의 위치
     // 중복된 문자가 있으면 s.indexOf(s[i]는 0이 됨
-    if (s.indexOf(s[i]) === i) answer += s[i];
+    if (s.indexOf(s[i]) === i) answer += s[i]
   }
-  return answer;
+  return answer
 }
 
-console.log(solution('ksekkset')); // kset
+console.log(solution('ksekkset')) // kset
 
 // 숫자로 중복 숫자의 개수 찾기 -------------------------------------------------------
 function solution2(s) {
-  let answer = 0;
-  let position = s.indexOf('k');
+  let answer = 0
+  let position = s.indexOf('k')
 
   while (position !== -1) {
-    answer++;
-    position = s.indexOf('k', position + 1);
+    answer++
+    position = s.indexOf('k', position + 1)
   }
 
-  return answer;
+  return answer
 }
 
-console.log(solution2('ksekkset')); // 3
+console.log(solution2('ksekkset')) // 3

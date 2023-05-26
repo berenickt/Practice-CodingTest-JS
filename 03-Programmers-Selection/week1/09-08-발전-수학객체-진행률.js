@@ -13,14 +13,14 @@ const TodoList = [
   { work: '알고리즘 풀기', finish: false },
   { work: '미니홈피 제작', finish: false },
   { work: 'Blog 글 쓰기', finish: true },
-];
+]
 
-let count = 0;
+let count = 0
 for (let i = 0; i < TodoList.length; i++) {
   if (TodoList[i].finish === true) {
-    count++;
+    count++
   }
 }
-let per = Math.floor(TodoList.length / count) * 10 + '%';
+let per = Math.floor(TodoList.length / count) * 10 + '%'
 
-console.log('총 ' + per + ' 진행하셨습니다.'); // 총 30% 진행하셨습니다.
+console.log('총 ' + per + ' 진행하셨습니다.') // 총 30% 진행하셨습니다.

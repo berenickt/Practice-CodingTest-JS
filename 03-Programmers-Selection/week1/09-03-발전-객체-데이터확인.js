@@ -6,11 +6,11 @@
  * - 배열의 기능을 함께 활용해 보세요.
  */
 
-let numberData = [1, '가나', true, 126, 'false', 100];
+let numberData = [1, '가나', true, 126, 'false', 100]
 
-let newData = [];
+let newData = []
 for (let i = 0; i < numberData.length; i++) {
   if (typeof numberData[i] === 'number') {
-    newData.push(numberData[i]);
+    newData.push(numberData[i])
   }
 }

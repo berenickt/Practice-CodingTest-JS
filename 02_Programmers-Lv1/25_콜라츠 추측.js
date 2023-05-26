@@ -17,15 +17,15 @@
  * @returns
  */
 function solution(num) {
-  let count = 0;
+  let count = 0
   // num이 1이 아니고, count가 500이 아니면 진행
   while (num != 1 && count != 500) {
     num % 2 == 0
       ? (num = num / 2) // 짝수이면, 2로 나눠줌
-      : (num = num * 3 + 1); // 홀수이면, 3을 곱하고 1을 더함
-    count++;
+      : (num = num * 3 + 1) // 홀수이면, 3을 곱하고 1을 더함
+    count++
   }
-  return num === 1 ? count : -1;
+  return num === 1 ? count : -1
 }
 
-console.log(solution(6));
+console.log(solution(6))

@@ -19,17 +19,17 @@
  */
 function validation(email, password, passwordCheck) {
   if (email.includes('@') === false) {
-    console.log('이메일 주소를 다시 확인해주세요.');
+    console.log('이메일 주소를 다시 확인해주세요.')
   } else if (password.length < 8 || password.length > 16) {
-    console.log('비밀번호는 8~16자리여야 합니다.');
+    console.log('비밀번호는 8~16자리여야 합니다.')
   } else if (password !== passwordCheck) {
-    console.log('비밀번호를 다시 확인해주세요.');
+    console.log('비밀번호를 다시 확인해주세요.')
   } else {
-    console.log('회원가입을 축하합니다.');
+    console.log('회원가입을 축하합니다.')
   }
 }
 
-validation('code@naver.com', '12345678', '12345678'); // 회원가입을 축하합니다.
-validation('codenaver.com', '12345678', '12345678'); // 이메일 주소를 다시 확인해주세요.
-validation('code@naver.com', '1234', '1234'); // 비밀번호는 8~16자리여야 합니다.
-validation('code@naver.com', '12345678', '12345679'); // 비밀번호를 다시 확인해주세요.
+validation('code@naver.com', '12345678', '12345678') // 회원가입을 축하합니다.
+validation('codenaver.com', '12345678', '12345678') // 이메일 주소를 다시 확인해주세요.
+validation('code@naver.com', '1234', '1234') // 비밀번호는 8~16자리여야 합니다.
+validation('code@naver.com', '12345678', '12345679') // 비밀번호를 다시 확인해주세요.

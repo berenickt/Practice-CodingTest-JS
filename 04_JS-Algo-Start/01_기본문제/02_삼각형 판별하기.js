@@ -11,19 +11,19 @@
  * 2. 최대값(가장 긴 선)이 나머지 2개 길이보다 작으면 NO
  */
 function solution(a, b, c) {
-  let answer = 'YES';
-  let max = 0;
-  let sum = a + b + c;
+  let answer = 'YES'
+  let max = 0
+  let sum = a + b + c
 
   // 1. 주어진 3개의 수 중 최대값 찾기
-  if (a > b) max = a;
-  else max = b;
-  if (c > max) max = c;
+  if (a > b) max = a
+  else max = b
+  if (c > max) max = c
 
   // 2. 최대값(가장 긴 선)이 나머지 2개 길이보다 작으면 NO
-  if (sum - max <= max) answer = 'NO';
-  return answer;
+  if (sum - max <= max) answer = 'NO'
+  return answer
 }
 
-console.log(solution(6, 7, 11)); // 6 + 7 > 11이니 YES
-console.log(solution(13, 33, 17)); // 13 + 17 < 33이니 NO
+console.log(solution(6, 7, 11)) // 6 + 7 > 11이니 YES
+console.log(solution(13, 33, 17)) // 13 + 17 < 33이니 NO

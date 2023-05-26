@@ -10,29 +10,29 @@
  * @returns 부분증가수열의 최대 길이
  */
 function solution(arr) {
-  let answer = 0;
-  let dy = Array.from({ length: arr.length }, () => 0);
-  dy[0] = 1; // 가장 처음 있는 값은 자기자신의 길이만 가짐
+  let answer = 0
+  let dy = Array.from({ length: arr.length }, () => 0)
+  dy[0] = 1 // 가장 처음 있는 값은 자기자신의 길이만 가짐
 
   // arr 순회
   for (let i = 1; i < arr.length; i++) {
-    let max = 0;
+    let max = 0
 
     // 뒤에서부터 앞으로 순회
     for (let j = i - 1; j >= 0; j--) {
       // 뒤에 항이 앞에 항보다 작거나, 뒤에 항이 최대값보다 크면
       if (arr[j] < arr[i] && dy[j] > max) {
         // 그 뒤에 항을 최대값으로
-        max = dy[j];
+        max = dy[j]
       }
     }
 
     // if문 만족하는게 하나도 없다면, 자기자신만 더하기
     // 최대값이 있으면, 만족한 값의 경우에다, 자기자신 더하기
-    dy[i] = max + 1;
-    answer = Math.max(answer, dy[i]);
+    dy[i] = max + 1
+    answer = Math.max(answer, dy[i])
   }
-  return answer;
+  return answer
 }
 
-console.log(solution([5, 3, 7, 8, 6, 2, 9, 4])); // 4
+console.log(solution([5, 3, 7, 8, 6, 2, 9, 4])) // 4

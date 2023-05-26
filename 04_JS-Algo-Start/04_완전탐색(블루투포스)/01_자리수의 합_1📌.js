@@ -19,27 +19,27 @@
  * cf. temp, tmp = temporary(일시적인)
  */
 function solution(n, arr) {
-  let answer = Number.MIN_SAFE_INTEGER;
-  let max = Number.MIN_SAFE_INTEGER; // 가장 작은 수로 초기화
+  let answer = Number.MIN_SAFE_INTEGER
+  let max = Number.MIN_SAFE_INTEGER // 가장 작은 수로 초기화
 
   for (let x of arr) {
-    let sum = 0;
-    let tmp = x;
+    let sum = 0
+    let tmp = x
 
     while (tmp) {
-      sum += tmp % 10; // 나머지 구하기
-      tmp = Math.floor(tmp / 10); // 몫 구하기
+      sum += tmp % 10 // 나머지 구하기
+      tmp = Math.floor(tmp / 10) // 몫 구하기
     }
     // console.log(sum); // 11 10 9 4 8 11 6
 
     if (sum > max) {
-      max = sum;
-      answer = x;
+      max = sum
+      answer = x
     } else if (sum === max) {
-      if (x > answer) answer = x;
+      if (x > answer) answer = x
     }
   }
-  return answer;
+  return answer
 }
 
-console.log(solution(7, [128, 460, 603, 40, 521, 137, 123])); // 137
+console.log(solution(7, [128, 460, 603, 40, 521, 137, 123])) // 137

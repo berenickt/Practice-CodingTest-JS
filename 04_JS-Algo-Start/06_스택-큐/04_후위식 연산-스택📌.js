@@ -8,27 +8,27 @@
  * @returns
  */
 function solution(string) {
-  let answer;
-  let stack = [];
+  let answer
+  let stack = []
 
   for (let element of string) {
     // 숫자면, 스택에 push
-    if (!isNaN(element)) stack.push(Number(element));
+    if (!isNaN(element)) stack.push(Number(element))
     // 숫자가 아니면(=연산자이면)
     else {
       // 스택에서 우항, 좌항 순서로 꺼내기
-      let rt = stack.pop();
-      let lt = stack.pop();
+      let rt = stack.pop()
+      let lt = stack.pop()
 
       // 각 연산기호에 따라 계산
-      if (element === '+') stack.push(lt + rt);
-      else if (element === '-') stack.push(lt - rt);
-      else if (element === '*') stack.push(lt * rt);
-      else if (element === '/') stack.push(lt / rt);
+      if (element === '+') stack.push(lt + rt)
+      else if (element === '-') stack.push(lt - rt)
+      else if (element === '*') stack.push(lt * rt)
+      else if (element === '/') stack.push(lt / rt)
     }
   }
-  answer = stack[0];
-  return answer;
+  answer = stack[0]
+  return answer
 }
 
-console.log(solution('352+*9-')); // 5 + 2 * 3 - 9 = 12
+console.log(solution('352+*9-')) // 5 + 2 * 3 - 9 = 12

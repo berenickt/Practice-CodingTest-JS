@@ -15,29 +15,29 @@
  * @returns 아나그램이면 'YES', 아니면 'NO'
  */
 function solution(str1, str2) {
-  let answer = 'YES';
-  let hash = new Map();
+  let answer = 'YES'
+  let hash = new Map()
 
   for (let element of str1) {
     // 해시에 값이 있다면, 삽입(요소, 기존요소+1)
-    if (hash.has(element)) hash.set(element, hash.get(element) + 1);
+    if (hash.has(element)) hash.set(element, hash.get(element) + 1)
     // 해시(요소, 1)
-    else hash.set(element, 1);
+    else hash.set(element, 1)
   }
   // console.log(hash); // A->2 b->1 a->1 e->2 c->1
 
   for (let element of str2) {
     // 해시에 값이 없거나 0이면
-    if (!hash.has(element) || hash.get(element) === 0) return 'NO';
+    if (!hash.has(element) || hash.get(element) === 0) return 'NO'
     // 해시(요소, 요소-1)
-    hash.set(element, hash.get() - 1);
+    hash.set(element, hash.get() - 1)
   }
   // console.log(hash); // A->NaN b->NaN a->NaN e->NaN c->NaN
 
-  return answer;
+  return answer
 }
 
-console.log(solution('AbaAeCe', 'baeeACA'));
+console.log(solution('AbaAeCe', 'baeeACA'))
 
 /** Map 객체
  * set으로 맵 객체 삽입

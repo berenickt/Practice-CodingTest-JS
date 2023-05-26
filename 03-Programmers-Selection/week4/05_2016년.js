@@ -1,4 +1,4 @@
-const week = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+const week = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT']
 
 /** https://school.programmers.co.kr/learn/courses/30/lessons/12901
  * 2016년 1월 1일은 금요일입니다.
@@ -12,12 +12,12 @@ const week = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
  * @returns 2016년 a월 b일이 무슨 요일
  */
 function solution(a, b) {
-  let dateStr = '2016-' + a + '- ' + b;
-  let date = new Date(dateStr);
-  return week[date.getDay()];
+  let dateStr = '2016-' + a + '- ' + b
+  let date = new Date(dateStr)
+  return week[date.getDay()]
 }
 
 function solution2(a, b) {
-  const days = new Date(2016, a - 1, b).getDay();
-  return week[days];
+  const days = new Date(2016, a - 1, b).getDay()
+  return week[days]
 }

@@ -9,13 +9,13 @@
  * 양쪽 두 수를 더한 것에, 두 수 사이의 숫자 수 + 1을 곱하고 나누기 2를 하는 게 가우스 방식
  */
 function solution(a, b) {
-  return ((a + b) * (Math.abs(b - a) + 1)) / 2;
+  return ((a + b) * (Math.abs(b - a) + 1)) / 2
 }
 
 // for문으로 푸는 법
 function solution2(a, b, s = 0) {
-  for (var i = Math.min(a, b); i <= Math.max(a, b); i++) s += i;
-  return s;
+  for (var i = Math.min(a, b); i <= Math.max(a, b); i++) s += i
+  return s
 }
 
-console.log(solution(3, 5));
+console.log(solution(3, 5))

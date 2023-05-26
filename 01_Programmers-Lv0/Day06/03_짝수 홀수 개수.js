@@ -5,9 +5,9 @@
  * @returns num_list의 원소 중 짝수와 홀수의 개수를 담은 배열
  */
 function solution(num_list) {
-  const odd = num_list.filter((a) => a % 2 === 0).length;
-  const even = num_list.filter((a) => a % 2 === 1).length;
-  return [odd, even];
+  const odd = num_list.filter(a => a % 2 === 0).length
+  const even = num_list.filter(a => a % 2 === 1).length
+  return [odd, even]
 }
 
-console.log(solution([1, 2, 3, 4, 5]));
+console.log(solution([1, 2, 3, 4, 5]))

@@ -7,8 +7,8 @@ for (초기문; 조건문; 증감문) {
 }
 
 // 1부터 100까지의 합 계산
-let summary = 0;
+let summary = 0
 for (let i = 1; i <= 100; i++) {
-  summary += i;
+  summary += i
 }
-console.log(summary);
+console.log(summary)

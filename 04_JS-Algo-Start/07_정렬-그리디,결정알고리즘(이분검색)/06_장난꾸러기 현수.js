@@ -22,18 +22,18 @@
  * 2. 오름차순 정렬된 것 중에서 순서가 안맞는 인덱스가 현수
  */
 function solution(array) {
-  let answer = [];
-  let sortArr = array.slice(); // 1차원이면 깊은복사, 2차원이면 얕은복사
+  let answer = []
+  let sortArr = array.slice() // 1차원이면 깊은복사, 2차원이면 얕은복사
 
-  sortArr.sort((a, b) => a - b); // 오름차순
+  sortArr.sort((a, b) => a - b) // 오름차순
 
   // (입력배열요소 !== 오름차 정렬된 배열요소)면, 정답
   for (let i = 0; i < array.length; i++) {
-    if (array[i] !== sortArr[i]) answer.push(i + 1);
+    if (array[i] !== sortArr[i]) answer.push(i + 1)
   }
 
-  return answer;
+  return answer
 }
 
-console.log(solution([120, 125, 152, 130, 135, 135, 143, 127, 160])); // [ 3, 8 ], 현수가 152, 짝궁이 127
-console.log(solution([120, 130, 150, 150, 130, 150])); // [ 3, 5 ]
+console.log(solution([120, 125, 152, 130, 135, 135, 143, 127, 160])) // [ 3, 8 ], 현수가 152, 짝궁이 127
+console.log(solution([120, 130, 150, 150, 130, 150])) // [ 3, 5 ]

@@ -5,8 +5,8 @@
  * join('') : 모든 요소를 연결해 하나의 문자열로
  */
 function solution(my_string) {
-  return [...new Set(my_string)].join('');
+  return [...new Set(my_string)].join('')
 }
 
-console.log('people'); // "peol"
-console.log('We are the world'); // "We arthwold"
+console.log('people') // "peol"
+console.log('We are the world') // "We arthwold"

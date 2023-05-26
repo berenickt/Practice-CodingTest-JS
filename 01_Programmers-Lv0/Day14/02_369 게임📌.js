@@ -7,8 +7,8 @@
  */
 function solution(order) {
   // (문자 단위로 쪼개고).(3, 6, 9인지 확인).크기
-  return [...('' + order)].filter(num => num === '3' || num === '6' || num === '9').length;
+  return [...('' + order)].filter(num => num === '3' || num === '6' || num === '9').length
 }
 
-console.log(solution(3)); // 1
-console.log(solution(29423)); // 2
+console.log(solution(3)) // 1
+console.log(solution(29423)) // 2

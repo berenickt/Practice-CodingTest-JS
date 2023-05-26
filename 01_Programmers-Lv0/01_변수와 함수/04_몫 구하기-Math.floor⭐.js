@@ -6,9 +6,9 @@
  */
 function solution(num1, num2) {
   // return Math.floor(num1 / num2);
-  return parseInt(num1 / num2);
+  return parseInt(num1 / num2)
 }
 
-const solution2 = (num1, num2) => parseInt(num1 / num2);
+const solution2 = (num1, num2) => parseInt(num1 / num2)
 
-console.log(solution(3, 2)); // 1
+console.log(solution(3, 2)) // 1

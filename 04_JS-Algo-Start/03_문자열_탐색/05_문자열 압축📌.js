@@ -12,21 +12,21 @@
  * @returns 반복되는 문자옆에 반복횟수가 있는 문자열
  */
 function solution(string) {
-  let answer = '';
-  let count = 1; // 중복 숫자를 카운트를 당을 변수
-  string = string + ' '; // 맨 마지막 문자와의 비교를 위해 맨뒤에 빈문자열 추가
+  let answer = ''
+  let count = 1 // 중복 숫자를 카운트를 당을 변수
+  string = string + ' ' // 맨 마지막 문자와의 비교를 위해 맨뒤에 빈문자열 추가
 
   // **** 맨뒤에 빈문자를 추가해서 순회할 때는 맨 뒤의 앞까지만 순회
   for (let i = 0; i < string.length - 1; i++) {
     // console.log(string[i]); // K K H S S S S S S S E 빈문자열
-    if (string[i] === string[i + 1]) count++; // 앞뒤 문자가 같으면
+    if (string[i] === string[i + 1]) count++ // 앞뒤 문자가 같으면
     else {
-      answer += string[i];
-      if (count > 1) answer += String(count); // 중복 카운트를 문자열에 붙여주기
-      count = 1; // 중복 문자가 끝나면 다시 카운트 초기화
+      answer += string[i]
+      if (count > 1) answer += String(count) // 중복 카운트를 문자열에 붙여주기
+      count = 1 // 중복 문자가 끝나면 다시 카운트 초기화
     }
   }
   // return answer;
 }
 
-console.log(solution('KKHSSSSSSSE'));
+console.log(solution('KKHSSSSSSSE'))

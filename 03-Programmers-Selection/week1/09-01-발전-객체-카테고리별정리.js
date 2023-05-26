@@ -18,8 +18,8 @@ let movies = [
   { title: '파리의 인어', genre: '로맨스', 상영관: '메가박스' },
   { title: '심슨', genre: '코미디', 상영관: '메가박스' },
   { title: '포레스트 검프', genre: '드라마', 상영관: 'cgv' },
-];
+]
 
-let action = movies.filter((data) => data.genre === '액션');
-let cgv = movies.filter((data) => data.상영관 === 'cgv');
-let romance = movies.filter((data) => data.상영관 === 'cgv' && data.genre === '로맨스');
+let action = movies.filter(data => data.genre === '액션')
+let cgv = movies.filter(data => data.상영관 === 'cgv')
+let romance = movies.filter(data => data.상영관 === 'cgv' && data.genre === '로맨스')

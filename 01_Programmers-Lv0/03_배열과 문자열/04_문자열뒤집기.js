@@ -3,6 +3,6 @@
  * @returns 거꾸로 뒤집은 문자열
  */
 function solution(my_string) {
-  return my_string.split('').reverse().join('');
+  return my_string.split('').reverse().join('')
 }
-console.log(solution('jaron'));
+console.log(solution('jaron'))

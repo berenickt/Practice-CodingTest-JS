@@ -6,18 +6,18 @@
  * delete로 삭제
  * clear로 맵 안의 프로퍼티 전부삭제
  */
-const map1 = new Map();
+const map1 = new Map()
 
-map1.set('a', 1);
-map1.set('b', 2);
-map1.set('c', 3);
-console.log(map1.get('a')); // 1
+map1.set('a', 1)
+map1.set('b', 2)
+map1.set('c', 3)
+console.log(map1.get('a')) // 1
 
-map1.set('a', 97);
-console.log(map1.get('a')); // 97
+map1.set('a', 97)
+console.log(map1.get('a')) // 97
 
-console.log(map1.size); // 3
+console.log(map1.size) // 3
 
 // **** delete로 삭제
-map1.delete('b');
-console.log(map1.size); // 2
+map1.delete('b')
+console.log(map1.size) // 2

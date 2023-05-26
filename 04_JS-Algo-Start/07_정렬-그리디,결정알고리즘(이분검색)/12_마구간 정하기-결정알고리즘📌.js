@@ -15,22 +15,22 @@
  * @returns 가장 가까운 두 말의 최대 거리
  */
 function solution(horses, coordinates) {
-  let answer;
-  coordinates.sort((a, b) => a - b); // 마구간 좌표 오름차순
+  let answer
+  coordinates.sort((a, b) => a - b) // 마구간 좌표 오름차순
 
-  let left = 1;
-  let right = coordinates[coordinates.length - 1];
+  let left = 1
+  let right = coordinates[coordinates.length - 1]
 
   while (left <= right) {
-    let mid = parseInt((left + right) / 2);
+    let mid = parseInt((left + right) / 2)
 
     if (count(coordinates, mid) >= horses) {
-      answer = mid;
-      left = mid + 1;
-    } else right = mid - 1;
+      answer = mid
+      left = mid + 1
+    } else right = mid - 1
   }
 
-  return answer;
+  return answer
 }
 
 /**
@@ -40,18 +40,18 @@ function solution(horses, coordinates) {
  * @returns
  */
 function count(stable, dist) {
-  let count = 1;
-  let endPoint = stable[0];
+  let count = 1
+  let endPoint = stable[0]
 
   for (let i = 1; i < stable.length; i++) {
     if (stable[i] - endPoint >= dist) {
-      count++;
-      endPoint = stable[i];
+      count++
+      endPoint = stable[i]
     }
   }
 
-  return count;
+  return count
 }
 
-console.log(solution(3, [1, 2, 8, 4, 9])); // 3
-console.log(solution(3, [5, 6, 8, 12, 14])); // 3
+console.log(solution(3, [1, 2, 8, 4, 9])) // 3
+console.log(solution(3, [5, 6, 8, 12, 14])) // 3

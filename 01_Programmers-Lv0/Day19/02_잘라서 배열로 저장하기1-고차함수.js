@@ -5,11 +5,11 @@
  * @returns my_str을 길이 n씩 잘라서 저장한 배열
  */
 function solution(my_str, n) {
-  let res = [];
-  for (let i = 0; i < my_str.length; i += n) res.push(my_str.slice(i, i + n));
-  return res;
+  let res = []
+  for (let i = 0; i < my_str.length; i += n) res.push(my_str.slice(i, i + n))
+  return res
 }
 
 // "abc1Addfggg4556b" 를 길이 6씩 잘라 배열에 저장한 ["abc1Ad", "dfggg4", "556b"]를 return
-console.log(solution('abc1Addfggg4556b', 6)); // ["abc1Ad", "dfggg4", "556b"]
-console.log(solution('abcdef123', 3)); // ["abc", "def", "123"]
+console.log(solution('abc1Addfggg4556b', 6)) // ["abc1Ad", "dfggg4", "556b"]
+console.log(solution('abcdef123', 3)) // ["abc", "def", "123"]

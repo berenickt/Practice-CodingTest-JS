@@ -5,8 +5,8 @@
  */
 
 function solution(string) {
-  let answer;
-  let stack = [];
+  let answer
+  let stack = []
 
   for (let element of string) {
     // 닫는 괄호라면, 여는 괄호까지 pop이 되는 동안 스택에서 빼기
@@ -14,11 +14,11 @@ function solution(string) {
       while (stack.pop() !== '(');
     }
     // 아니라면 스택에 계속 넣기
-    else stack.push(element);
+    else stack.push(element)
   }
   // 문자 합치기
-  answer = stack.join('');
-  return answer;
+  answer = stack.join('')
+  return answer
 }
 
-console.log(solution('(A(BC)D)EF(G(H)(IJ)K)LM(N)')); // EFLM
+console.log(solution('(A(BC)D)EF(G(H)(IJ)K)LM(N)')) // EFLM

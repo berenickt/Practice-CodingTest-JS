@@ -4,15 +4,15 @@
  * - 함수의 이름과 입력데이터는 자유롭게 지어도 됩니다.
  */
 function divide(num1, num2) {
-  return num1 / num2;
+  return num1 / num2
 }
 
 const divide = function (num1, num2) {
-  return num1 / num2;
-};
+  return num1 / num2
+}
 
 const divide = (num1, num2) => {
-  return num1 / num2;
-};
+  return num1 / num2
+}
 
-divide(10, 2); // 5
+divide(10, 2) // 5

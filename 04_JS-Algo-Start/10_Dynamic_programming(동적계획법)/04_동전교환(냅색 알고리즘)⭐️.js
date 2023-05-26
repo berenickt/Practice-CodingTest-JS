@@ -9,22 +9,22 @@
  */
 function solution(change, coin) {
   // 0이 아닌 임의의 큰 숫자로 배열 초기화 (최소값으로 바꿔주기위해)
-  let dy = Array.from({ length: change + 1 }, () => 1000);
+  let dy = Array.from({ length: change + 1 }, () => 1000)
 
-  dy[0] = 0; // 0원 거슬러주는것은 0개 필요
+  dy[0] = 0 // 0원 거슬러주는것은 0개 필요
 
   // 동전 종류만큼 순회
   for (let i = 1; i < coin.length; i++) {
     // 각 동전종류마다 거스름돈까지 순회, j는 거스름돈을 의미
     for (let j = coin[i]; j <= change; j++) {
       // 각각의 거스름돈을 거슬러줄 떄, 기존 j와 코인종류별 j를 비교해, 더 작은 값으로 바꾸기
-      dy[j] = Math.min(dy[j], dy[j - coin[i]] + 1);
+      dy[j] = Math.min(dy[j], dy[j - coin[i]] + 1)
     }
   }
-  return dy[change];
+  return dy[change]
 }
 
-console.log(solution(15, [1, 2, 5])); // 3   |   5원 3개 === 15원
+console.log(solution(15, [1, 2, 5])) // 3   |   5원 3개 === 15원
 
 // 냅색 알고리즘(가방 문제)은 유명한 Dynamic Programming의 문제 중 하나이다.
 // DFS로도 풀이가 가능하지만,

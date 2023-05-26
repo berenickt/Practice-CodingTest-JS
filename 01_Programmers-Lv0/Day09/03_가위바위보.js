@@ -8,9 +8,9 @@ function solution(rsp) {
     0: 5, // 바위 -> 보
     2: 0, // 가위 -> 바위
     5: 2, // 보 -> 가위
-  };
+  }
   // (새 배열로 입력값을 받아서).(순회).(합치기)
-  return [...rsp].map((num) => win[num]).join('');
+  return [...rsp].map(num => win[num]).join('')
 }
 
 // console.log(solution('2'));

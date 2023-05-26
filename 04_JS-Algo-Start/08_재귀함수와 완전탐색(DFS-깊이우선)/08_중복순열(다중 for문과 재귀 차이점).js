@@ -7,25 +7,25 @@
  * @returns 구슬을 여러 번 뽑아서 일렬로 나열하는 경우의 수
  */
 function solution(bead, pick) {
-  let answer = [];
-  let temp = Array.from({ length: pick }, () => 0); // 뽑는 횟수가 저장되는 곳
+  let answer = []
+  let temp = Array.from({ length: pick }, () => 0) // 뽑는 횟수가 저장되는 곳
 
   function DFS(level) {
     // 뽑은 횟수만큼 되면, 깊은 복사로 새 배열 객체를 정답배열에 넣기
-    if (level === pick) answer.push(temp.slice());
+    if (level === pick) answer.push(temp.slice())
     else {
       // 번호가 적힌 구슬까지 순회
       for (let index = 1; index <= bead; index++) {
-        temp[level] = index;
-        DFS(level + 1);
+        temp[level] = index
+        DFS(level + 1)
       }
     }
   }
-  DFS(0);
-  return answer;
+  DFS(0)
+  return answer
 }
 
-console.log(solution(3, 2));
+console.log(solution(3, 2))
 // 3*3 = 9가지의 경우의 수
 // [
 //   [ 1, 1 ], [ 1, 2 ], [ 1, 3 ],

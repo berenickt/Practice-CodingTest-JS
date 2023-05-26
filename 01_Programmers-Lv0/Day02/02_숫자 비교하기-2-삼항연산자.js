@@ -7,6 +7,6 @@
  * 2. 비교 결과에 따라 1, -1
  */
 function solution(num1, num2) {
-  return num1 === num2 ? 1 : -1;
+  return num1 === num2 ? 1 : -1
 }
-console.log(solution(3, 2));
+console.log(solution(3, 2))

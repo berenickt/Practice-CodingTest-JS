@@ -16,6 +16,6 @@ let List = [
   { number: 6, title: '마우스 패드', price: 1800 },
   { number: 7, title: '휴대폰 케이스', price: 5500 },
   { number: 8, title: '마우스', price: 6500 },
-];
+]
 
-List = List.sort((a, b) => b.price - a.price);
+List = List.sort((a, b) => b.price - a.price)

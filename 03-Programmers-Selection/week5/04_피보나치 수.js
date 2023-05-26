@@ -14,22 +14,22 @@ function solution(n) {
   // **** 피보나치 수의 결과를 저장하는 배열
   // 0번째 인덱스는 0번째 피보나치의 결과
   // 1번째 인덱스는 1번째 피보나치의 결과
-  const answer = [0, 1];
+  const answer = [0, 1]
 
   for (let i = 2; i <= n; i++) {
     // (A + B) % C === ((A % C) + (B % C)) % C
-    answer[i] = (answer[i - 1] + answer[i - 2]) % 1234567;
+    answer[i] = (answer[i - 1] + answer[i - 2]) % 1234567
   }
-  return answer[n];
+  return answer[n]
 }
 
 function solution2(n) {
-  let prev = 0; // 0번째 피보나치 수의 결과
+  let prev = 0 // 0번째 피보나치 수의 결과
 
   return new Array(n - 1).fill(1).reduce(acc => {
-    const sum = (acc + prev) % 1234567;
-    prev = acc;
+    const sum = (acc + prev) % 1234567
+    prev = acc
 
-    return sum;
-  }, 1); // 1번째 피보나치 수의 결과를 초기값으로 넣어준다.
+    return sum
+  }, 1) // 1번째 피보나치 수의 결과를 초기값으로 넣어준다.
 }

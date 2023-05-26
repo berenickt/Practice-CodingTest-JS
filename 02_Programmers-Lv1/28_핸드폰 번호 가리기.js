@@ -9,9 +9,9 @@
  * 3. 2개를 다시 붙이기
  */
 function solution(phone_number) {
-  return '*'.repeat(phone_number.length - 4) + phone_number.slice(-4);
+  return '*'.repeat(phone_number.length - 4) + phone_number.slice(-4)
 }
 
 function solution2(s) {
-  return s.replace(/\d(?=\d{4})/g, '*');
+  return s.replace(/\d(?=\d{4})/g, '*')
 }

@@ -10,31 +10,31 @@
  * 3. 2에서 나온 배열의 3번째 숫자는 5
  */
 function solution(array, commands) {
-  const answer = [];
+  const answer = []
 
   for (let idx = 0; idx < commands.length; idx++) {
-    const i = commands[idx][0]; // 2, 4, 1
-    const j = commands[idx][1]; // 5, 4, 7
-    const k = commands[idx][2]; // 3, 1, 3
+    const i = commands[idx][0] // 2, 4, 1
+    const j = commands[idx][1] // 5, 4, 7
+    const k = commands[idx][2] // 3, 1, 3
 
     // console.log(array.slice(i - 1, j)); // i=2, j=5이면, [5, 2, 6, 3]
     const result = array.slice(i - 1, j).sort((a, b) => {
-      return a - b;
-    });
-    answer.push(result[k - 1]);
+      return a - b
+    })
+    answer.push(result[k - 1])
   }
 
-  return answer;
+  return answer
 }
 
 function solution2(array, commands) {
   const answer = commands.map(el => {
-    const result = array.slice(el[0] - 1, el[1]).sort((a, b) => a - b);
+    const result = array.slice(el[0] - 1, el[1]).sort((a, b) => a - b)
 
-    return result[el[2] - 1];
-  });
+    return result[el[2] - 1]
+  })
 
-  return answer;
+  return answer
 }
 
 console.log(
@@ -46,4 +46,4 @@ console.log(
       [1, 7, 3],
     ],
   ),
-); // [5, 6, 3]
+) // [5, 6, 3]

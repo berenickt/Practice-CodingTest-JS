@@ -3,11 +3,11 @@
  * @returns n 이하의 짝수를 모두 더한 값
  */
 function solution(n) {
-  sum = 0;
+  sum = 0
   for (let i = 0; i <= n; i++) {
-    if (i % 2 == 0) sum += i;
+    if (i % 2 == 0) sum += i
   }
-  return sum;
+  return sum
 }
 
-console.log(solution(5));
+console.log(solution(5))

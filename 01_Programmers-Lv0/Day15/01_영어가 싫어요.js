@@ -4,16 +4,16 @@
  * @returns numbers를 정수로 바꿔 return
  */
 function solution(numbers) {
-  let numStr = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+  let numStr = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
 
   numStr.forEach((str, index) => {
-    numbers = numbers.replaceAll(str, index);
-  });
+    numbers = numbers.replaceAll(str, index)
+  })
 
-  return Number(numbers);
+  return Number(numbers)
 }
-console.log(solution('onetwothreefourfivesixseveneightnine')); // 123456789
-console.log(solution('onefourzerosixseven')); // 14067
+console.log(solution('onetwothreefourfivesixseveneightnine')) // 123456789
+console.log(solution('onefourzerosixseven')) // 14067
 
 // arr.forEach((item, index, thisArr)
 // - item : 배열 요소 값

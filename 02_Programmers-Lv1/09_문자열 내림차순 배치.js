@@ -8,7 +8,7 @@
  */
 function solution(s) {
   // (문자열로 나누기).(문자단위로 정렬).(순서뒤집기).(합치기)
-  return s.split('').sort().reverse().join('');
+  return s.split('').sort().reverse().join('')
 }
 
-console.log(solution('Zbcdefg'));
+console.log(solution('Zbcdefg'))

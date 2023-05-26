@@ -1,18 +1,18 @@
 // 유클리드 호제법을 이용한 최대공약수 구하기
 function fnGCD(a, b) {
-  return a % b === 0 ? b : fnGCD(b, a % b);
+  return a % b === 0 ? b : fnGCD(b, a % b)
 }
 // denum : 분자
 // num : 분모
 function solution(denum1, num1, denum2, num2) {
-  let denum = denum1 * num2 + denum2 * num1;
-  let num = num1 * num2;
-  let gcd = fnGCD(denum, num); // 최대공약수
+  let denum = denum1 * num2 + denum2 * num1
+  let num = num1 * num2
+  let gcd = fnGCD(denum, num) // 최대공약수
 
-  return [denum / gcd, num / gcd];
+  return [denum / gcd, num / gcd]
 }
 
-console.log(solution(1, 2, 3, 4));
+console.log(solution(1, 2, 3, 4))
 
 /** 유클리드 호제법
  * 2개의 자연수(또는 정식) a, b에 대해서 a를 b로 나눈 나머지를 r이라 하면(단, a>b)

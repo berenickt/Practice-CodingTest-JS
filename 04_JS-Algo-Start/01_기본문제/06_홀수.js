@@ -10,24 +10,24 @@
  * 홀수들 중 최소값은 41
  */
 function solution(arr) {
-  let answer = [];
-  let sum = 0;
-  let min = Number.MAX_SAFE_INTEGER; // 가장 큰 값으로 최소화
+  let answer = []
+  let sum = 0
+  let min = Number.MAX_SAFE_INTEGER // 가장 큰 값으로 최소화
 
   // 1. 홀수들을 찾은 후 그 값들을 모두 더함
   // 2. 홀수들 중의 최소값
   for (let x of arr) {
     if (x % 2 === 1) {
-      sum += x;
+      sum += x
 
       // 첫 번쨰 홀수가 맨 처음 min에 들어감, 그 이후 비교해서 더 작은 값이 들어감
-      if (x < min) min = x;
+      if (x < min) min = x
     }
   }
-  answer.push(sum);
-  answer.push(min);
-  return answer;
+  answer.push(sum)
+  answer.push(min)
+  return answer
 }
 
-arr = [12, 77, 38, 41, 53, 92, 85];
-console.log(solution(arr));
+arr = [12, 77, 38, 41, 53, 92, 85]
+console.log(solution(arr))

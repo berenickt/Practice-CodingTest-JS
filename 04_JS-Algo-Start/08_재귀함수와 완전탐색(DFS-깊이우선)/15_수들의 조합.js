@@ -13,25 +13,25 @@
  * @returns num중 pick개 뽑는 조합의 합이 randomNum의 배수인 경우의 수
  */
 function solution(num, pick, arr, randomNum) {
-  let answer = 0;
-  let temp = Array.from({ length: pick }, () => 0); // ** 확인용
+  let answer = 0
+  let temp = Array.from({ length: pick }, () => 0) // ** 확인용
 
   function DFS(level, start, sum) {
     if (level === pick) {
       // randomNum의 배수(6의 배수)이면, 경우의 수 추가
-      if (sum % randomNum === 0) answer++;
-      console.log(sum, temp); // ** 확인용
+      if (sum % randomNum === 0) answer++
+      console.log(sum, temp) // ** 확인용
     } else {
       for (let index = start; index < num; index++) {
-        temp[level] = arr[index]; // ** 확인용
-        DFS(level + 1, index + 1, sum + arr[index]);
+        temp[level] = arr[index] // ** 확인용
+        DFS(level + 1, index + 1, sum + arr[index])
       }
     }
   }
 
-  DFS(0, 0, 0);
-  return answer;
+  DFS(0, 0, 0)
+  return answer
 }
 
 // 5개의 숫자 중 3개를 뽑는데, 6의 배수인 경우의 수
-console.log(solution(5, 3, [2, 4, 5, 8, 12], 6)); // 2
+console.log(solution(5, 3, [2, 4, 5, 8, 12], 6)) // 2

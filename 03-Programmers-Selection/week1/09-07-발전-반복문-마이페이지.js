@@ -23,24 +23,24 @@ const myShopping = [
   { category: '의류', price: 7000 },
   { category: '장난감', price: 5000 },
   { category: '의류', price: 10000 },
-];
+]
 
-let count = 0;
-let money = 0;
-let tier = '';
+let count = 0
+let money = 0
+let tier = ''
 for (let i = 0; i < myShopping.length; i++) {
   if (myShopping[i].category === '의류') {
-    count++;
-    money = money + myShopping[i].price;
+    count++
+    money = money + myShopping[i].price
   }
 }
 
 if (count >= 5) {
-  tier = 'Gold';
+  tier = 'Gold'
 } else if (count >= 3) {
-  tier = 'Silver';
+  tier = 'Silver'
 } else if (count >= 0) {
-  tier = 'Bronze';
+  tier = 'Bronze'
 }
 
-console.log('의류를 구매한 횟수는 총 ' + count + '회 금액은 ' + money + '원이며 등급은 ' + tier + '입니다.');
+console.log('의류를 구매한 횟수는 총 ' + count + '회 금액은 ' + money + '원이며 등급은 ' + tier + '입니다.')

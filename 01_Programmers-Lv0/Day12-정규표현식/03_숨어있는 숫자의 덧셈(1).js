@@ -6,7 +6,7 @@
 function solution(my_string) {
   return my_string
     .match(/[0-9]/g) // 숫자만 찾아서
-    .reduce((acc, cur) => acc + +cur, 0); // 숫자 다 더하기
+    .reduce((acc, cur) => acc + +cur, 0) // 숫자 다 더하기
 }
 
-console.log(solution('aAb1B2cC34oOp')); // 1 + 2 + 3 + 4 = 10
+console.log(solution('aAb1B2cC34oOp')) // 1 + 2 + 3 + 4 = 10

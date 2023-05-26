@@ -12,23 +12,23 @@
  * 종류별로 경우의 수를 구할 떄는 Hash를 사용하는 것이 편리합니다.
  */
 function solution(clothes) {
-  let answer = 1;
-  const hash = new Map();
+  let answer = 1
+  const hash = new Map()
 
   // **** 1. 종류별로 분류
   for (let [value, key] of clothes) {
     // 추가(키, 키가 있으면 기존 키 + 1 || 키가 없으면 1로 초기화)
-    hash.set(key, hash.get(key) + 1 || 1);
+    hash.set(key, hash.get(key) + 1 || 1)
   }
 
   // **** 2. 입지 않는 경우 추가
   for (let [key, value] of hash) {
     // console.log(`${key}는 ${value}개 있다!`);
-    answer *= value + 1;
+    answer *= value + 1
   }
 
   // **** 3. 최소 1개 이상은 입으므로 아예 입지 않는 경우 1을 빼준다
-  return answer - 1;
+  return answer - 1
 }
 
 console.log(
@@ -38,7 +38,7 @@ console.log(
     ['blue_sunglasses', 'eyewear'],
     ['green_turban', 'headgear'],
   ]),
-); // 5
+) // 5
 
 /*** Map 객체
  * https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Map

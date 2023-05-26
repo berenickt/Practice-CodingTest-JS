@@ -10,8 +10,8 @@
  */
 function solution(array, commands) {
   return commands.map(element => {
-    array.slice(element[0] - 1, element[1]).sort((a, b) => a - b)[element[2] - 1];
-  });
+    array.slice(element[0] - 1, element[1]).sort((a, b) => a - b)[element[2] - 1]
+  })
 }
 
 // prettier-ignore

@@ -17,23 +17,23 @@
  * -- for문, while문, 재귀 중 아무거나 사용하여 완전탐색
  */
 function solution(brown, yellow) {
-  const sum = brown + yellow; // 12
+  const sum = brown + yellow // 12
 
   // 카펫의 최소높이는 3부터 (위아래 갈색, 가운데가 노란색이라서)
   for (let height = 3; height <= brown; height++) {
     // 임의의 높이로 나눌때 나머지가 없을경우 (e.g. sum : 12면 -> height : 3, 4, 6 -> weight : 4, 3, 2 )
     if (sum % height === 0) {
-      let weight = sum / height;
+      let weight = sum / height
 
       // 테두리를 제외한 길이를 구해야하기 때문에 각각 -2(위아래, 좌우) 해준 뒤, 곱셈한 결과가 yellow와 같다면,
       // 해당 높이와 길이 리턴
       if ((height - 2) * (weight - 2) === yellow) {
-        return [weight, height];
+        return [weight, height]
       }
     }
   }
 }
 
-console.log(solution(10, 2)); // [ 4, 3 ]
-console.log(solution(8, 1)); // [ 3, 3 ]
-console.log(solution(24, 24)); // [ 8, 6 ]
+console.log(solution(10, 2)) // [ 4, 3 ]
+console.log(solution(8, 1)) // [ 3, 3 ]
+console.log(solution(24, 24)) // [ 8, 6 ]

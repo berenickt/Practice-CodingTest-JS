@@ -3,28 +3,28 @@
  * e.g. N = 123이면 1 + 2 + 3 = 6을 return
  */
 function solution(n) {
-  n = String(n);
-  let answer = 0;
+  n = String(n)
+  let answer = 0
   for (let i = 0; i < n.length; i++) {
-    answer += Number(n[i]);
+    answer += Number(n[i])
   }
-  return answer;
+  return answer
 }
 
 function solution2(n) {
   const answer = String(n)
     .split('')
     .reduce((acc, cur) => {
-      return acc + Number(cur);
-    }, 0);
-  return answer;
+      return acc + Number(cur)
+    }, 0)
+  return answer
 }
 
 function solution3(num) {
-  let sum = 0;
+  let sum = 0
   while (num > 0) {
-    sum += num % 10;
-    num = Math.floor(num / 10);
+    sum += num % 10
+    num = Math.floor(num / 10)
   }
-  return sum;
+  return sum
 }

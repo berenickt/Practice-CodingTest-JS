@@ -4,7 +4,7 @@
  * @returns `my_string`에서 `letter`를 제거한 문자열
  */
 function solution(my_string, letter) {
-  return my_string.replaceAll(letter, '');
+  return my_string.replaceAll(letter, '')
 }
 
-console.log(solution('abcdef', 'f'));
+console.log(solution('abcdef', 'f'))

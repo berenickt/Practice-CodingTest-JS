@@ -5,6 +5,6 @@
  * 2. 맨 앞의 2개 곱셈
  */
 function solution(numbers) {
-  const [first, second, ...rest] = numbers.sort((a, b) => b - a);
-  return first * second;
+  const [first, second, ...rest] = numbers.sort((a, b) => b - a)
+  return first * second
 }

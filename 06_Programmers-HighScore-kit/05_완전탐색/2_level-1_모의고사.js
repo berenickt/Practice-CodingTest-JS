@@ -7,7 +7,7 @@ const answerTable = [
 
   // 3번 수포자가 찍는 방식 : 10개의 패턴
   [3, 3, 1, 1, 2, 2, 4, 4, 5, 5],
-];
+]
 
 /**
  * 수포자는 수학을 포기한 사람의 준말입니다.
@@ -23,68 +23,68 @@ const answerTable = [
  */
 function solution(answers) {
   // 학생들의 점수를 저장하는 배열
-  const score = [0, 0, 0];
+  const score = [0, 0, 0]
 
   for (let i = 0; i < answers.length; i++) {
     for (let l = 0; l < answerTable.length; l++) {
       if (answerTable[l][i % answerTable[l].length] === answers[i]) {
-        score[l]++;
+        score[l]++
       }
     }
   }
   // 제일 많이 맞춘 문제의 수를 찾아온다.
-  const biggest = Math.max(...score);
+  const biggest = Math.max(...score)
 
-  const answer = [];
+  const answer = []
   for (let i = 0; i < score.length; i++) {
     if (biggest === score[i]) {
-      answer.push(i + 1);
+      answer.push(i + 1)
     }
   }
-  return answer;
+  return answer
 }
 
 function solution2(answers) {
   const scoreList = answerTable.map((el, i) => {
     const score = answers.reduce((acc, cur, l) => {
-      return acc + (el[l % el.length] === cur ? 1 : 0);
-    }, 0);
-    return { student: i + 1, score }; // score : score
-  });
+      return acc + (el[l % el.length] === cur ? 1 : 0)
+    }, 0)
+    return { student: i + 1, score } // score : score
+  })
 
   // 최대로 맞춘 문제의 수를 가져온다.
   const biggest = Math.max(
     ...scoreList.map(el => {
-      return el.score; // 결과값 : [5, 0, 0]
+      return el.score // 결과값 : [5, 0, 0]
     }),
-  );
+  )
 
   const answer = scoreList
     .filter(el => {
-      return biggest === el.score;
+      return biggest === el.score
     })
-    .map(el => el.student);
+    .map(el => el.student)
 
-  return answer;
+  return answer
 }
 
 function solution3(answers) {
-  const scores = [0, 0, 0];
+  const scores = [0, 0, 0]
 
   answers.forEach((answer, i) => {
     for (let j = 0; j < answerTable.length; j++) {
-      const patternLength = answerTable[j].length;
-      if (answer === answerTable[j][i % patternLength]) scores[j]++;
+      const patternLength = answerTable[j].length
+      if (answer === answerTable[j][i % patternLength]) scores[j]++
     }
-  });
+  })
 
-  const answer = [];
-  const maxScore = Math.max(...scores);
+  const answer = []
+  const maxScore = Math.max(...scores)
   scores.forEach((score, i) => {
-    if (score === maxScore) answer.push(i + 1);
-  });
-  return answer;
+    if (score === maxScore) answer.push(i + 1)
+  })
+  return answer
 }
 
-console.log(solution3([1, 2, 3, 4, 5])); // [1]
-console.log(solution3([1, 3, 2, 4, 2])); // [1, 2, 3]
+console.log(solution3([1, 2, 3, 4, 5])) // [1]
+console.log(solution3([1, 3, 2, 4, 2])) // [1, 2, 3]

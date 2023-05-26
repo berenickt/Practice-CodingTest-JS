@@ -10,19 +10,19 @@
  * cf. 성능이 매우 안좋은 정렬이기 때문에 잘 사용되지는 않는다
  */
 function bubbleSort(array) {
-  let answer = array; // 얕은 복사
+  let answer = array // 얕은 복사
 
   for (let i = 0; i < array.length - 1; i++) {
     for (let j = 0; j < array.length - i - 1; j++) {
       // 뒤에꺼가 앞에꺼보다 크면, 자리 바꾸기
       if (array[j] > array[j + 1]) {
-        [array[j], array[j + 1]] = [array[j + 1], array[j]];
+        ;[array[j], array[j + 1]] = [array[j + 1], array[j]]
       }
     }
-    console.log(`${i}회전: ${array}`);
+    console.log(`${i}회전: ${array}`)
   }
 
-  return answer;
+  return answer
 }
 
-console.log(bubbleSort([5, 3, 2, 4, 1])); // [ 1, 2, 3, 4, 5 ]
+console.log(bubbleSort([5, 3, 2, 4, 1])) // [ 1, 2, 3, 4, 5 ]

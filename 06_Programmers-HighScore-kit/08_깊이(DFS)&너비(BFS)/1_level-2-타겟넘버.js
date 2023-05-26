@@ -11,11 +11,11 @@
  * 2의 20승인 100만번 정도가 최악의 경우의 수
  */
 function solution(numbers, target) {
-  let answer = 0;
-  const length = numbers.length;
+  let answer = 0
+  const length = numbers.length
 
-  DFS(0, 0); //함수 호출 (0번째 숫자, 현재까지 합계 0)
-  return answer;
+  DFS(0, 0) //함수 호출 (0번째 숫자, 현재까지 합계 0)
+  return answer
 
   // numbers의 인덱스와 현재까지의 합계
   function DFS(index, sum) {
@@ -24,17 +24,17 @@ function solution(numbers, target) {
     if (index === length) {
       // 현재까지의 합계가 target이면 answer++
       if (target === sum) {
-        answer++;
+        answer++
       }
-      return;
+      return
     }
 
     // **** 2. 수행동작
     // 모든 숫자가 (+)인 경우를 모두 탐색한 뒤
     // 다음 인덱스의 숫자가 (-)인 경우를 탐색
-    DFS(index + 1, sum + numbers[index]);
-    DFS(index + 1, sum - numbers[index]);
+    DFS(index + 1, sum + numbers[index])
+    DFS(index + 1, sum - numbers[index])
   }
 }
 
-console.log(solution([1, 1, 1, 1, 1], 3));
+console.log(solution([1, 1, 1, 1, 1], 3))

@@ -6,16 +6,16 @@
  */
 function solution(x) {
   // 자릿수의 합의 총 값을 저장하는 변수
-  let sum = 0;
+  let sum = 0
 
   // 숫자 타입의 x 값을 문자열 타입으로 변환
-  x = String(x);
+  x = String(x)
   for (let i = 0; i < x.length; i++) {
-    sum += Number(x[i]);
+    sum += Number(x[i])
   }
 
   // 조건식을 리턴 : 나머지 값이 없다면 true, 있다면 false
-  return x % sum === 0;
+  return x % sum === 0
 }
 
 // **** reduce
@@ -25,10 +25,10 @@ function solution2(x) {
     .toString()
     .split('')
     .reduce((acc, cur) => {
-      return acc + Number(cur);
-    }, 0);
-  return x % sum === 0;
+      return acc + Number(cur)
+    }, 0)
+  return x % sum === 0
 }
 
-console.log(solution(121)); // 144
-console.log(solution(3)); // -1
+console.log(solution(121)) // 144
+console.log(solution(3)) // -1

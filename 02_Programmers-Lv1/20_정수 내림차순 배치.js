@@ -12,8 +12,8 @@ function solution(n) {
       .toString() // 문자열로 변환
       .split('') // 문자 단위로 쪼개기
       .sort((a, b) => b - a) // 내림차순
-      .join('') // 문자 합치기
-  );
+      .join(''), // 문자 합치기
+  )
 }
 
-console.log(solution(118372));
+console.log(solution(118372))

@@ -15,9 +15,9 @@
  * - 배열의 기능들 중에는 따로 선언해서 담아주어야 하는 경우도 있습니다.
  * - 어떤 기능들이 원본을 바꾸는지 파악해야 합니다.
  */
-let email = 'codecamp@gmail.com'; // codeca**@gmail.com
+let email = 'codecamp@gmail.com' // codeca**@gmail.com
 
-let data = email.split('@');
-console.log(data); // [ 'codecamp', 'gmail.com' ]
-data[0] = data[0].slice(0, data[0].length - 2) + '**';
-data.join('@');
+let data = email.split('@')
+console.log(data) // [ 'codecamp', 'gmail.com' ]
+data[0] = data[0].slice(0, data[0].length - 2) + '**'
+data.join('@')

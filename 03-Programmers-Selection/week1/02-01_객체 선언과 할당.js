@@ -4,8 +4,8 @@
  * - 객체와 배열의 차이점을 잘 구분하세요.
  */
 
-let student = {};
+let student = {}
 
-student.name = '철수';
+student.name = '철수'
 
-console.log(student); // { name : "철수" }
+console.log(student) // { name : "철수" }

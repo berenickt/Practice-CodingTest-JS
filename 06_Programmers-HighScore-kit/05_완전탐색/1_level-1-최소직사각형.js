@@ -15,9 +15,9 @@
  */
 function solution(sizes) {
   // console.log(...sizes); // [ 60, 50 ], [ 30, 70 ], [ 60, 30 ], [ 80, 40 ]
-  const maxWidth = Math.max(...sizes.map(card => Math.min(...card))); // 50 30 30 40
-  const maxHeight = Math.max(...sizes.map(card => Math.max(...card))); // 60 70 60 80
-  return maxWidth * maxHeight;
+  const maxWidth = Math.max(...sizes.map(card => Math.min(...card))) // 50 30 30 40
+  const maxHeight = Math.max(...sizes.map(card => Math.max(...card))) // 60 70 60 80
+  return maxWidth * maxHeight
 }
 
 console.log(
@@ -27,7 +27,7 @@ console.log(
     [60, 30],
     [80, 40],
   ]),
-); // 4000
+) // 4000
 // console.log(
 //   solution([
 //     [10, 7],

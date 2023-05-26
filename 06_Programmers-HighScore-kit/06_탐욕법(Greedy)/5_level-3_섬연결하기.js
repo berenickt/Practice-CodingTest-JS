@@ -10,29 +10,29 @@
  * 3. 모든 노드가 연결되었을 때 종료한다.
  */
 function solution(n, costs) {
-  if (n === 1) return 0;
-  costs.sort((a, b) => a[2] - b[2]);
+  if (n === 1) return 0
+  costs.sort((a, b) => a[2] - b[2])
 
-  const tmp = costs.shift();
-  let con = new Set([new Set([tmp[0], tmp[1]])]);
-  let sum = tmp[2];
+  const tmp = costs.shift()
+  let con = new Set([new Set([tmp[0], tmp[1]])])
+  let sum = tmp[2]
 
   while (1) {
-    if ([...con][0].size === n) break;
-    const [a, b, val] = costs.shift();
-    if ([...con].some((v) => v.has(a) && v.has(b))) continue;
-    sum += val;
+    if ([...con][0].size === n) break
+    const [a, b, val] = costs.shift()
+    if ([...con].some(v => v.has(a) && v.has(b))) continue
+    sum += val
 
-    const conA = [...con].find((v) => v.has(a));
-    if (conA) con.delete(conA);
-    const conB = [...con].find((v) => v.has(b));
-    if (conB) con.delete(conB);
+    const conA = [...con].find(v => v.has(a))
+    if (conA) con.delete(conA)
+    const conB = [...con].find(v => v.has(b))
+    if (conB) con.delete(conB)
 
-    if (conA && conB) con.add(new Set([...conA, ...conB]));
-    else if (conA) con.add(new Set([...conA, b]));
-    else if (conB) con.add(new Set([...conB, a]));
-    else con.add(new Set([a, b]));
+    if (conA && conB) con.add(new Set([...conA, ...conB]))
+    else if (conA) con.add(new Set([...conA, b]))
+    else if (conB) con.add(new Set([...conB, a]))
+    else con.add(new Set([a, b]))
   }
 
-  return sum;
+  return sum
 }

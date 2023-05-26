@@ -4,6 +4,6 @@
  * @returns 총얼마를 지불해야 하는지
  */
 function solution(lamlSkewers, drink) {
-  return lamlSkewers * 12000 + (drink - Math.floor(lamlSkewers / 10)) * 2000;
+  return lamlSkewers * 12000 + (drink - Math.floor(lamlSkewers / 10)) * 2000
 }
-console.log(solution(10, 3));
+console.log(solution(10, 3))

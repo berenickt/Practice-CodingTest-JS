@@ -5,6 +5,6 @@
  */
 function solution(slice, person) {
   // 10 / 7 = 1.xx
-  return Math.ceil(person / slice);
+  return Math.ceil(person / slice)
 }
-console.log(solution(7, 10));
+console.log(solution(7, 10))

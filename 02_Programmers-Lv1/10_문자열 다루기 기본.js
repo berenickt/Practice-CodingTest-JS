@@ -8,32 +8,32 @@
  * 2. 숫자로만 되어있는지(AND), 길이가 4 또는(OR) 6인지를 확인
  */
 function solution(s) {
-  let parseInts = parseInt(s);
+  let parseInts = parseInt(s)
   if (s.length == 4 || s.length == 6) {
     if (s == parseInts) {
-      return true;
+      return true
     }
   }
-  return false;
+  return false
 }
 
 function solution2(s) {
   // 길이가 4 혹은 6이 아니면 false 반환
-  if (s.length !== 4 && s.length !== 6) return false;
+  if (s.length !== 4 && s.length !== 6) return false
 
   // 각 자리중에 숫자가 아닌 것이 하나라도 있으면 false 반환
   for (let i = 0; i < s.length; i++) {
-    if (isNaN(Number(s[i]))) return false;
+    if (isNaN(Number(s[i]))) return false
   }
 
   // 위의 모든 조건에 포함되지 않으면
   // (길이가 4 혹은 6이고, 숫자로만 구성되어 있으면) true 반환
-  return true;
+  return true
 }
 
 // **** 정규식
 function solution3(s) {
-  return s.search(/\D/g) < 0 && (s.length === 4 || s.length === 6);
+  return s.search(/\D/g) < 0 && (s.length === 4 || s.length === 6)
 }
 
-console.log(solution('a234'));
+console.log(solution('a234'))

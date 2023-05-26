@@ -12,22 +12,22 @@
  *
  */
 function solution(weight, arr) {
-  let answer = Number.MIN_SAFE_INTEGER;
+  let answer = Number.MIN_SAFE_INTEGER
 
   function DFS(level, sum) {
-    if (sum > weight) return; // ( 바둑이 무게 합 > 트럭무게 )면 종료
+    if (sum > weight) return // ( 바둑이 무게 합 > 트럭무게 )면 종료
 
     if (level === arr.length) {
       // console.log(sum); // 32가지 경우의 수
-      answer = Math.max(answer, sum); // 기존 sum보다 크면, 새 sum으로 바꿔주기
+      answer = Math.max(answer, sum) // 기존 sum보다 크면, 새 sum으로 바꿔주기
     } else {
-      DFS(level + 1, sum + arr[level]); // 값 더하면서 다음 Level로 이동 (태우는 경우)
-      DFS(level + 1, sum); // 다음 Level로만 이동 (태우지 않는 경우)
+      DFS(level + 1, sum + arr[level]) // 값 더하면서 다음 Level로 이동 (태우는 경우)
+      DFS(level + 1, sum) // 다음 Level로만 이동 (태우지 않는 경우)
     }
   }
-  DFS(0, 0);
-  return answer;
+  DFS(0, 0)
+  return answer
 }
 
-console.log(solution(259, [81, 58, 42, 33, 61])); // 242
+console.log(solution(259, [81, 58, 42, 33, 61])) // 242
 // 바둑이들을 태울 수 있는 경우의 수 = 2^5 = 32

@@ -21,21 +21,21 @@
  * @returns 마지막 남은 왕자의 번호
  */
 function solution(n, k) {
-  let answer;
+  let answer
   // n개 만큼의 배열 초기화, 길이가 8짜리인 유사배열 생성
   // console.log(Array.from({ length: n }));
-  let queue = Array.from({ length: n }, (value, index) => index + 1);
+  let queue = Array.from({ length: n }, (value, index) => index + 1)
 
   // 큐가 0이 될 떄까지
   while (queue.length) {
     // 맨 앞의 값을 빼고(shift), 맨 뒤에 추가(push)
-    for (let i = 1; i < k; i++) queue.push(queue.shift());
-    queue.shift(); // k번을 외치면 맨 앞 삭제
+    for (let i = 1; i < k; i++) queue.push(queue.shift())
+    queue.shift() // k번을 외치면 맨 앞 삭제
 
     // queue의 길이가 1이 되어 남은 왕자를 return
-    if (queue.length === 1) answer = queue.shift();
+    if (queue.length === 1) answer = queue.shift()
   }
-  return answer;
+  return answer
 }
 
-console.log(solution(8, 3)); // 7
+console.log(solution(8, 3)) // 7

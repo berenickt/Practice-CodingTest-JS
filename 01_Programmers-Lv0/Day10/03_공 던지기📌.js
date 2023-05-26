@@ -5,7 +5,7 @@
  */
 function solution(numbers, k) {
   // numbers[ 2 * (공 던진 횟수-1) ]
-  return numbers[(2 * (k - 1)) % numbers.length];
+  return numbers[(2 * (k - 1)) % numbers.length]
 }
 
-console.log(solution([1, 2, 3, 4], 2));
+console.log(solution([1, 2, 3, 4], 2))

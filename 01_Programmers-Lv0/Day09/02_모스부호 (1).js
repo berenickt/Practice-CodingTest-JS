@@ -13,8 +13,8 @@ function solution(letter) {
   }
   return letter
     .split(' ')
-    .map((l) => morse[l]) // morse로 대응
-    .join('');
+    .map(l => morse[l]) // morse로 대응
+    .join('')
 }
 
-console.log(solution('.... . .-.. .-.. ---'));
+console.log(solution('.... . .-.. .-.. ---'))

@@ -7,12 +7,12 @@
  * 3. [중복 제거한 폰켓몬 수] <  [N/2]라면 답은 [중복 제거한 폰켓몬 수]
  */
 function solution(nums) {
-  const max = nums.length / 2; // 최대로 가질 수 있는 폰켓몬 수
-  const limit = [...new Set(nums)]; // 중복없는 폰켓몬
+  const max = nums.length / 2 // 최대로 가질 수 있는 폰켓몬 수
+  const limit = [...new Set(nums)] // 중복없는 폰켓몬
 
   // 중복없는 폰켓몬 수가 홀수면 ? max : arr.length
-  return limit.length > max ? max : limit.length;
+  return limit.length > max ? max : limit.length
 }
 
-console.log(solution([3, 1, 2, 3])); // 2마리
-console.log(solution([3, 3, 3, 2, 2, 4])); // 3마리
+console.log(solution([3, 1, 2, 3])) // 2마리
+console.log(solution([3, 3, 3, 2, 2, 4])) // 3마리

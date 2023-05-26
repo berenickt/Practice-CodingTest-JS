@@ -6,20 +6,20 @@
  * 이중 For문을 사용하여 각 행과 열을 더하기
  */
 function solution(arr1, arr2) {
-  let answer = [];
+  let answer = []
 
   // 행 순회
   for (let i = 0; i < arr1.length; i++) {
-    let row = [];
+    let row = []
 
     // 열 순회
     for (let j = 0; j < arr1[0].length; j++) {
-      row.push(arr1[i][j] + arr2[i][j]);
+      row.push(arr1[i][j] + arr2[i][j])
     }
-    answer.push(row);
+    answer.push(row)
   }
 
-  return answer;
+  return answer
 }
 
 /** forEach문
@@ -28,11 +28,11 @@ function solution(arr1, arr2) {
  * @returns
  */
 function solution2(arr1, arr2) {
-  const answer = [];
+  const answer = []
   arr1.forEach((row, rowIndex) => {
-    answer.push(row.map((col, colIndex) => col + arr2[rowIndex][colIndex]));
-  });
-  return answer;
+    answer.push(row.map((col, colIndex) => col + arr2[rowIndex][colIndex]))
+  })
+  return answer
 }
 
 /** map을 이용하는 방법
@@ -43,7 +43,7 @@ function solution2(arr1, arr2) {
  * map을 쓰는 이유는 1,2가 4,6으로, 2,3이 7,9로 1대1로 바뀌기 때문
  */
 function sumMatrix(A, B) {
-  return A.map((a, i) => a.map((b, j) => b + B[i][j]));
+  return A.map((a, i) => a.map((b, j) => b + B[i][j]))
 }
 
 console.log(
@@ -55,6 +55,6 @@ console.log(
     [
       [3, 4],
       [5, 6],
-    ]
-  )
-);
+    ],
+  ),
+)

@@ -7,8 +7,8 @@
  * @returns
  */
 function solution(s) {
-  return parseInt(s);
+  return parseInt(s)
   // return Number(s);
 }
 
-console.log(solution('-1234'));
+console.log(solution('-1234'))

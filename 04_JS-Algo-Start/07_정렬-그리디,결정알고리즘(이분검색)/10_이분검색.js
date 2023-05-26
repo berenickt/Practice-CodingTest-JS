@@ -13,31 +13,31 @@
  * 2. target의 위치 찾기
  */
 function solution(target, array) {
-  let answer;
+  let answer
 
   // 1. 오름차순
-  array.sort((a, b) => a - b);
+  array.sort((a, b) => a - b)
 
   // 포인터 변수 2개 선언
-  let left = 0;
-  let right = array.length - 1;
+  let left = 0
+  let right = array.length - 1
 
   // left가 right보다 작거나 같을 동안에만 반복
   while (left <= right) {
-    let mid = parseInt((left + right) / 2);
+    let mid = parseInt((left + right) / 2)
 
     // mid가 목표하는 수와 같다면, [mid+1]인덱스가 정답
     if (array[mid] === target) {
-      answer = mid + 1;
-      break;
+      answer = mid + 1
+      break
     }
     // mid가 목표하는 수보다 크다면, 오른쪽 포인터를 mid 왼쪽에
-    else if (array[mid] > target) right = mid - 1;
+    else if (array[mid] > target) right = mid - 1
     // mid가 목표하는 수보다 작다면, 왼쪽 포인터를 mid 오른쪽에
-    else left = mid + 1;
+    else left = mid + 1
   }
 
-  return answer;
+  return answer
 }
 
-console.log(solution(32, [23, 87, 65, 12, 57, 32, 99, 81])); // 3
+console.log(solution(32, [23, 87, 65, 12, 57, 32, 99, 81])) // 3

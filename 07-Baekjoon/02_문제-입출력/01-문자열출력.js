@@ -3,4 +3,4 @@
  * - JavaScript를 이용해 문자열을 출력할 수 있어야 한다.
  * - console.log() 함수를 이용해 원하는 변수 혹은 상수를 출력
  */
-console.log('Hello World!');
+console.log('Hello World!')

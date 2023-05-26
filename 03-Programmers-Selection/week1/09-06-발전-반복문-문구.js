@@ -18,8 +18,8 @@ const fruits = [
   { number: 8, title: '천혜향' },
   { number: 9, title: '과일선물세트' },
   { number: 10, title: '귤' },
-];
+]
 
 for (let i = 0; i <= 2; i++) {
-  console.log('현재 ' + fruits[i].number + '위 과일은 ' + fruits[i].title + '입니다.');
+  console.log('현재 ' + fruits[i].number + '위 과일은 ' + fruits[i].title + '입니다.')
 }

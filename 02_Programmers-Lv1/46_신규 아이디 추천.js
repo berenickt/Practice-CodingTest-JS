@@ -11,7 +11,7 @@ function solution(new_id) {
     .replace(/^\.|\.$/g, '') // 4
     .replace(/^$/, 'a') // 5
     .slice(0, 15)
-    .replace(/\.$/, ''); // 6
-  const len = answer.length;
-  return len > 2 ? answer : answer + answer.charAt(len - 1).repeat(3 - len);
+    .replace(/\.$/, '') // 6
+  const len = answer.length
+  return len > 2 ? answer : answer + answer.charAt(len - 1).repeat(3 - len)
 }

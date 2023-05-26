@@ -9,29 +9,29 @@
  * @returns 가장 value가 많은 key = 회장
  */
 function solution(voteResult) {
-  let answer;
-  let hash = new Map();
+  let answer
+  let hash = new Map()
 
   for (let element of voteResult) {
     // 해시에 값이 있다면, 삽입(요소, 기존요소+1)
-    if (hash.has(element)) hash.set(element, hash.get(element) + 1);
-    else hash.set(element, 1);
+    if (hash.has(element)) hash.set(element, hash.get(element) + 1)
+    else hash.set(element, 1)
   }
 
-  let max = Number.MIN_SAFE_INTEGER; // 최소값으로 해야 첫 번쨰 값이 들어감
+  let max = Number.MIN_SAFE_INTEGER // 최소값으로 해야 첫 번쨰 값이 들어감
 
   for (let [key, val] of hash) {
     // console.log(key, val); B->3 A->3 C->5 D->2 E->2
     if (val > max) {
       // console.log(val); // 3 5
-      max = val;
-      answer = key;
+      max = val
+      answer = key
     }
   }
-  return answer;
+  return answer
 }
 
-console.log(solution('BACBACCACCBDEDE'));
+console.log(solution('BACBACCACCBDEDE'))
 
 /** Map 객체
  * set으로 맵 객체 삽입

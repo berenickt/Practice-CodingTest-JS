@@ -6,18 +6,18 @@
  * @returns 가장 긴 문자열
  */
 function solution(s) {
-  let answer = '';
-  let max = Number.MIN_SAFE_INTEGER; // 가장 작은 수
+  let answer = ''
+  let max = Number.MIN_SAFE_INTEGER // 가장 작은 수
 
   for (let x of s) {
     // 1. 요소의 길이가 가장 작은 수보다 크면, 맨 첫값은 무조건 들어가고, 이후 비교
     if (x.length > max) {
-      max = x.length;
-      answer = x;
+      max = x.length
+      answer = x
     }
   }
-  return answer;
+  return answer
 }
 
-let str = ['teacher', 'time', 'student', 'beautiful', 'good'];
-console.log(solution(str)); // beautiful
+let str = ['teacher', 'time', 'student', 'beautiful', 'good']
+console.log(solution(str)) // beautiful

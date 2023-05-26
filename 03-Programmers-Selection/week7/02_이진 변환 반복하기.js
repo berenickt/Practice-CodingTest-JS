@@ -9,45 +9,45 @@
  *          이진 변환의 횟수와 변환 과정에서 제거된 모든 0의 개수를 각각 배열에 담아 return
  */
 function solution_for(s) {
-  let count = 0;
-  let remove = 0;
+  let count = 0
+  let remove = 0
 
   while (s !== '1') {
-    count++;
+    count++
 
-    let temp = '';
+    let temp = ''
     for (let i = 0; i < s.length; i++) {
       if (s[i] === '0') {
-        remove++;
-        continue;
+        remove++
+        continue
       }
-      temp += s[i];
+      temp += s[i]
     }
 
-    s = temp.length;
-    s = s.toString(2);
+    s = temp.length
+    s = s.toString(2)
   }
-  return [count, remove];
+  return [count, remove]
 }
 
 function solution2(s) {
-  let [count, remove] = [0, 0];
+  let [count, remove] = [0, 0]
 
   function recursion(s) {
     if (s === '1') {
-      return [count, remove];
+      return [count, remove]
     }
-    count++;
+    count++
 
     s = s.split('').filter(num => {
-      if (num === '0') remove++;
-      return num !== '0';
-    }).length;
+      if (num === '0') remove++
+      return num !== '0'
+    }).length
 
-    return recursion(s.toString(2));
+    return recursion(s.toString(2))
   }
-  return recursion(s);
+  return recursion(s)
 }
 
-console.log(solution(45)); // 7
-console.log(solution(125)); // 229
+console.log(solution(45)) // 7
+console.log(solution(125)) // 229

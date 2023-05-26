@@ -1,13 +1,13 @@
 # filter : 리턴하는 값이 true인 것들만 모아서 새로운 배열을 반환
 
 ```js
-배열.filter((value, index, array) => {});
+배열.filter((value, index, array) => {})
 ```
 
 # reduce : 첫번쟤 인수는 콜백함수
 
 ```js
-배열.reduce((accumulator, currentValue, index, array) => {}, 초기값);
+배열.reduce((accumulator, currentValue, index, array) => {}, 초기값)
 ```
 
 - 첫 번쨰 인수는 콜백함수

@@ -10,25 +10,25 @@
  * cf. 최소공배수 : 두 수의 공통되는 배수 중에서 제일 작은 수
  */
 function solution(n, m) {
-  const biggest = Math.max(n, m);
+  const biggest = Math.max(n, m)
 
   // 최대공약수 구하기
-  let max = 0; // 공약수 중에서 제일 큰 수만 저장
+  let max = 0 // 공약수 중에서 제일 큰 수만 저장
   for (let i = 1; i <= biggest; i++) {
     if (n % i === 0 && m % i === 0) {
-      max = i;
+      max = i
     }
   }
 
   // 최소공배수 구하기
-  let min = 0; // 공배수 중에서 제일 작은 수만 저장
+  let min = 0 // 공배수 중에서 제일 작은 수만 저장
   for (let i = biggest; i <= n * m; i += biggest) {
     if (i % Math.min(n, m) === 0) {
-      min = i;
-      break;
+      min = i
+      break
     }
   }
-  return [max, min];
+  return [max, min]
 }
 
 /** 유클리드 호제법, 최대공약수를 구하기 위한 알고리즘 (공식)
@@ -39,25 +39,25 @@ function solution(n, m) {
  * 반복했을 때에 나머지 값이 0이 나오면, 작은 수(b)가 최대공약수가 된다.
  */
 function solution2(n, m) {
-  let maxNum = Math.max(n, m);
-  let minNum = Math.min(n, m);
-  let restNum = 0;
+  let maxNum = Math.max(n, m)
+  let minNum = Math.min(n, m)
+  let restNum = 0
 
   while (maxNum % minNum > 0) {
-    restNum = maxNum % minNum; // 큰 수에서 작은 수를 나눈 나머지 값을 저장
-    maxNum = minNum; // 큰 수는 나눴을 때의 작은 수를 가져온다.
-    minNum = restNum; // 작은 수에는 나머지 값을 가져온다.
+    restNum = maxNum % minNum // 큰 수에서 작은 수를 나눈 나머지 값을 저장
+    maxNum = minNum // 큰 수는 나눴을 때의 작은 수를 가져온다.
+    minNum = restNum // 작은 수에는 나머지 값을 가져온다.
   }
   // 최소공배수는 두 수를 곱합 수에 최대공약수를 나눠준 몫의 값
-  return [minNum, (n * m) / minNum];
+  return [minNum, (n * m) / minNum]
 }
 
 function solution3(n, m) {
   // 최대공약수 구하기
-  let gcd = (n, m) => (n % m === 0 ? m : gcd(m, n % m));
+  let gcd = (n, m) => (n % m === 0 ? m : gcd(m, n % m))
 
   // 최소공배수 구하기
-  let lcm = (n, m) => (n * m) / gcd(n, m);
+  let lcm = (n, m) => (n * m) / gcd(n, m)
 
-  return [gcd(n, m), lcm(n, m)];
+  return [gcd(n, m), lcm(n, m)]
 }

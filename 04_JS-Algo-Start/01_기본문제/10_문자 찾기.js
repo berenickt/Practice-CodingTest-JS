@@ -7,21 +7,21 @@
  * @returns
  */
 function solution(s, t) {
-  let answer = 0;
+  let answer = 0
   for (let x of s) {
-    if (x === t) answer++;
+    if (x === t) answer++
   }
-  return answer;
+  return answer
 }
 
-let str = "COMPUTERPROGRAMMINGR";
-console.log(solution(str, "R"));
+let str = 'COMPUTERPROGRAMMINGR'
+console.log(solution(str, 'R'))
 
 // split : 지정한 구분자를 이용하여 여러 개의 문자열로 나눔 ----------------------
 function solution2(s, t) {
-  let answer = s.split(t).length;
-  return answer - 1;
+  let answer = s.split(t).length
+  return answer - 1
 }
 
-let str2 = "COMPUTERPROGRAMMINGR";
-console.log(solution2(str2, "R"));
+let str2 = 'COMPUTERPROGRAMMINGR'
+console.log(solution2(str2, 'R'))

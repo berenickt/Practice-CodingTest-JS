@@ -3,9 +3,9 @@
  * 2. 개수 비교 후 같으면 true, 다르면 false
  */
 function solution(s) {
-  const p = s.toLowerCase().split('p').length;
-  const y = s.toLowerCase().split('y').length;
-  return p === y ? true : false;
+  const p = s.toLowerCase().split('p').length
+  const y = s.toLowerCase().split('y').length
+  return p === y ? true : false
 }
 
 /** 정규식으로 푸는 법
@@ -16,7 +16,7 @@ function solution(s) {
  * 2. 개수 비교 후 같으면 true, 다르면 false
  */
 function solution2(s) {
-  return s.replace(/p/gi).length == s.replace(/y/gi).length;
+  return s.replace(/p/gi).length == s.replace(/y/gi).length
 }
 
-console.log(solution('pPoooyY'));
+console.log(solution('pPoooyY'))

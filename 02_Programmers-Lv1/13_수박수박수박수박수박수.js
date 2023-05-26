@@ -9,8 +9,8 @@
  * 2. 개수만큼 자르기
  */
 function solution(n) {
-  return '수박'.repeat(n).substring(0, n);
+  return '수박'.repeat(n).substring(0, n)
 }
 
-console.log(solution(3));
-console.log(solution(4));
+console.log(solution(3))
+console.log(solution(4))

@@ -4,5 +4,5 @@
  * @returns 모든 사람이 피자를 한 조각 이상 먹기 위해 필요한 피자의 수
  */
 function solution(n) {
-  return Math.ceil(n / 7);
+  return Math.ceil(n / 7)
 }

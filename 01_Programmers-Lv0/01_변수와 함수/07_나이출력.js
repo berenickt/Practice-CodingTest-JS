@@ -3,9 +3,9 @@
  * @returns 2022년을 기준 출생 연도
  */
 function solution(age) {
-  return 2023 - age;
+  return 2023 - age
 }
 
 // or
 
-const solution2 = (age) => 2023 - age;
+const solution2 = age => 2023 - age

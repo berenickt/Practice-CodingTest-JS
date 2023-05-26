@@ -5,12 +5,12 @@
 function solution(common) {
   if (common[2] - common[1] === common[1] - common[0]) {
     // 4 + 2 - 1 = 5
-    return common[common.length - 1] + common[1] - common[0];
+    return common[common.length - 1] + common[1] - common[0]
   } else {
     // 8 * (4 - 2) = 16
-    return common[common.length - 1] * (common[1] / common[0]);
+    return common[common.length - 1] * (common[1] / common[0])
   }
 }
 
-console.log(solution([1, 2, 3, 4])); // 5
-console.log(solution([2, 4, 8])); // 16
+console.log(solution([1, 2, 3, 4])) // 5
+console.log(solution([2, 4, 8])) // 16

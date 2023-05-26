@@ -10,6 +10,6 @@
  */
 const AuthNum = () => {
   setTimeout(function () {
-    console.log('자동 로그아웃');
-  }, 1000);
-};
+    console.log('자동 로그아웃')
+  }, 1000)
+}

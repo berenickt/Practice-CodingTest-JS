@@ -2,6 +2,6 @@
 
 ```js
 for (const 인덱스 in 배열) {
-  console.log(인덱스);
+  console.log(인덱스)
 }
 ```

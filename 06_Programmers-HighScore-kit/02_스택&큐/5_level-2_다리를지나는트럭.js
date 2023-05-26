@@ -17,62 +17,62 @@
  * @returns 모든 트럭이 다리를 건너려면 최소 몇 초가 걸리는지
  */
 function solution(bridgeLength, weight, truckWeights) {
-  let time = 0;
+  let time = 0
 
   // **** 다리 위에 올라갈 수 있는 트럭 수
-  let NumOfTruckOnBridge = Array.from({ length: bridgeLength }, () => 0);
+  let NumOfTruckOnBridge = Array.from({ length: bridgeLength }, () => 0)
   // **** 다리가 최대로 견딜 수 있는 무게 === 다리 위 무게 합
-  let sumOnBridge = 0;
+  let sumOnBridge = 0
 
   // **** 1초를 증가시키고, 맨 처음 트럭을 다리에 올린다.
-  time++;
-  NumOfTruckOnBridge.shift();
-  sumOnBridge += truckWeights[0];
-  NumOfTruckOnBridge.push(truckWeights.shift());
+  time++
+  NumOfTruckOnBridge.shift()
+  sumOnBridge += truckWeights[0]
+  NumOfTruckOnBridge.push(truckWeights.shift())
 
   // **** 대기 트럭 배열이 남아있거나, 다리 위에 올라간 트럭 배열이 남아있는 동안,
   while (sumOnBridge > 0) {
     // 시간이 1초 지났을 때,
-    time++;
+    time++
 
     // 다리 위에 올라갈 수 있는 트럭 수(큐)의 맨 앞을 꺼내고,
-    sumOnBridge -= NumOfTruckOnBridge.shift();
+    sumOnBridge -= NumOfTruckOnBridge.shift()
 
     // ** 만약 다음 트럭의 무게를 더해도 다리가 버틸 수 있다면,
     if (truckWeights.length > 0 && sumOnBridge + truckWeights[0] <= weight) {
       // 다음 트럭을 다리 배열에 넣는다.
-      sumOnBridge += truckWeights[0];
-      NumOfTruckOnBridge.push(truckWeights.shift());
+      sumOnBridge += truckWeights[0]
+      NumOfTruckOnBridge.push(truckWeights.shift())
     }
     // ** 다음 트럭의 무게를 다리가 못버틴다면, 해당 트럭을 뺀다.
-    else NumOfTruckOnBridge.push(0);
+    else NumOfTruckOnBridge.push(0)
   }
 
-  return time;
+  return time
 }
 
 function solution2(bridgeLength, weight, truckWeights) {
-  let time = 0;
-  let NumOfTruckOnBridge = new Array(bridgeLength).fill(0);
+  let time = 0
+  let NumOfTruckOnBridge = new Array(bridgeLength).fill(0)
 
   while (NumOfTruckOnBridge.length) {
     // 맨 처음 트럭을 다리에 올린다.
-    NumOfTruckOnBridge.shift();
+    NumOfTruckOnBridge.shift()
 
     if (truckWeights.length) {
-      const sumOnBridge = NumOfTruckOnBridge.reduce((acc, cur) => acc + cur, 0);
+      const sumOnBridge = NumOfTruckOnBridge.reduce((acc, cur) => acc + cur, 0)
 
       // ** 만약 다음 트럭의 무게를 더해도 다리가 버틸 수 있다면, 다음 트럭을 다리 배열에 넣는다.
-      if (sumOnBridge + truckWeights[0] <= weight) NumOfTruckOnBridge.push(truckWeights.shift());
+      if (sumOnBridge + truckWeights[0] <= weight) NumOfTruckOnBridge.push(truckWeights.shift())
       // ** 다음 트럭의 무게를 다리가 못버틴다면, 해당 트럭을 뺀다.
-      else NumOfTruckOnBridge.push(0);
+      else NumOfTruckOnBridge.push(0)
     }
 
-    time++;
+    time++
   }
-  return time;
+  return time
 }
 
-console.log(solution(2, 10, [7, 4, 5, 6])); // 8
-console.log(solution(100, 100, [10])); // 101
-console.log(solution(100, 100, [10, 10, 10, 10, 10, 10, 10, 10, 10, 10])); // 110
+console.log(solution(2, 10, [7, 4, 5, 6])) // 8
+console.log(solution(100, 100, [10])) // 101
+console.log(solution(100, 100, [10, 10, 10, 10, 10, 10, 10, 10, 10, 10])) // 110

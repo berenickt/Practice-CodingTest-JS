@@ -2,9 +2,9 @@
 function isPrime(x) {
   // n 제곱근 후 올림
   for (let i = 2; i <= Math.sqrt(x); i++) {
-    if (x % i === 0) return false;
+    if (x % i === 0) return false
   }
-  return true;
+  return true
 }
 
 /** https://school.programmers.co.kr/learn/courses/30/lessons/42839
@@ -16,12 +16,12 @@ function isPrime(x) {
  * @returns
  */
 function solution(n) {
-  let answer = 0; // 소수의 개수를 저장
+  let answer = 0 // 소수의 개수를 저장
 
   // 1은 소수가 아니므로 2부터 n까지 순회
   for (let i = 2; i <= n; i++) {
     // 소수이면 소수의 개수에 1 추가
-    if (isPrime(i)) answer++;
+    if (isPrime(i)) answer++
   }
-  return answer;
+  return answer
 }

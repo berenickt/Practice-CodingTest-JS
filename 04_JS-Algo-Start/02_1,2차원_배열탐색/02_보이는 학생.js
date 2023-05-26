@@ -7,20 +7,20 @@
  * @returns
  */
 function solution(arr) {
-  let answer = 1;
-  let max = arr[0]; // 맨앞의 값으로 초기화
+  let answer = 1
+  let max = arr[0] // 맨앞의 값으로 초기화
 
   // ** 2번쨰부터 max보다 크면, 보인다는 의미
   // 1. 그 보이는 횟수를 카운트하고,
   // 2. 보인 학생의 키가 가장 크다는 소리이므로, 보인 학생을 max로
   for (let i = 1; i < arr.length; i++) {
     if (arr[i] > max) {
-      answer++;
-      max = arr[i];
+      answer++
+      max = arr[i]
     }
   }
-  return answer;
+  return answer
 }
 
-let arr = [130, 135, 148, 140, 145, 150, 150, 153];
-console.log(solution(arr));
+let arr = [130, 135, 148, 140, 145, 150, 150, 153]
+console.log(solution(arr))

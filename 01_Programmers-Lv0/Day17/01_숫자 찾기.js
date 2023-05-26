@@ -8,11 +8,11 @@
  */
 function solution(num, k) {
   // (문자 단위로 나누고).(인덱스가 k인 값 찾기)
-  const index = [...('' + num)].findIndex((n) => +n === k);
-  return index === -1 ? -1 : index + 1;
+  const index = [...('' + num)].findIndex(n => +n === k)
+  return index === -1 ? -1 : index + 1
 }
 
 // 29183에서 1은 3번째에 있습니다.
-console.log(solution(29183, 1)); // 3
-console.log(solution(232443, 4)); // 4
-console.log(solution(123456, 7)); // -1
+console.log(solution(29183, 1)) // 3
+console.log(solution(232443, 4)) // 4
+console.log(solution(123456, 7)) // -1

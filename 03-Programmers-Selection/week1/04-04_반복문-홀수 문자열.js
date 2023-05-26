@@ -5,14 +5,14 @@
  * - 짝수를 제외하는 조건을 추가해야 합니다.
  */
 function makeOdd(num) {
-  let str = '';
+  let str = ''
 
   for (let i = 1; i <= num; i++) {
     if (i % 2 === 1) {
-      str += i; // str = str + i;
+      str += i // str = str + i;
     }
   }
 }
 
-makeOdd(5); // 135
-makeOdd(7); // 1357
+makeOdd(5) // 135
+makeOdd(7) // 1357

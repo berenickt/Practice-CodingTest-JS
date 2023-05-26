@@ -5,7 +5,7 @@
  * @returns `numbers`의 `num1`번째 인덱스부터 `num2`번째 인덱스까지 자른 정수 배열
  */
 function solution(numbers, num1, num2) {
-  return numbers.slice(num1, num2 + 1);
+  return numbers.slice(num1, num2 + 1)
 }
 
-console.log(solution([1, 2, 3, 4, 5], 1, 3));
+console.log(solution([1, 2, 3, 4, 5], 1, 3))

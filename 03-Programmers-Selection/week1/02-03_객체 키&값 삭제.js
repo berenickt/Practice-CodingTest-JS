@@ -7,8 +7,8 @@ let student = {
   name: '철수',
   age: 8,
   drink: '사이다',
-};
+}
 
-delete student.drink;
+delete student.drink
 
-console.log(student); // { name : "철수", age: 8 }
+console.log(student) // { name : "철수", age: 8 }

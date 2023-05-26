@@ -10,16 +10,16 @@
  */
 function solution(n) {
   // n이 정수라면 ? n+1의 제곱 반환 : -1
-  return Number.isInteger(Math.sqrt(n)) ? (Math.sqrt(n) + 1) ** 2 : -1;
+  return Number.isInteger(Math.sqrt(n)) ? (Math.sqrt(n) + 1) ** 2 : -1
 }
 
 function solution(n) {
   // n의 제곱근값을 x에 저장
-  let x = Math.sqrt(n);
+  let x = Math.sqrt(n)
 
   // x가 정수이면 x+1의 제곱 반환, x가 정수가 아니면 -1 반환
-  return Number.isInteger(x) ? Math.pow(x + 1, 2) : -1;
+  return Number.isInteger(x) ? Math.pow(x + 1, 2) : -1
 }
 
-console.log(solution(121)); // 144
-console.log(solution(3)); // -1
+console.log(solution(121)) // 144
+console.log(solution(3)) // -1

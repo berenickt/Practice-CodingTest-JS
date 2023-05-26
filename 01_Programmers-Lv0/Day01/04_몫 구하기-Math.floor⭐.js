@@ -4,6 +4,6 @@
  * @returns num1 / num2
  */
 function solution(num1, num2) {
-  return Math.floor(num1 / num2);
+  return Math.floor(num1 / num2)
 }
-console.log(solution(3, 2)); // 1
+console.log(solution(3, 2)) // 1

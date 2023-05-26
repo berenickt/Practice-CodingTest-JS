@@ -17,19 +17,19 @@
  * 3. valur가 0이 아닌 마지막 주자를 찾는다.
  */
 function solution(participant, completion) {
-  const hash = new Map();
+  const hash = new Map()
 
   // 동명이인이 있을 수 있기 때문에
   // 참가자 hash에 ([key: 참가자 이름], [(value: 이미 추가한 key가 있다면 해당 값에 +1 아니면 0) + 1])
   // 완주한 선수의 value는 0, 완주하지 못한 선수의 value는 0보다 큰 값을 가짐
-  participant.forEach(name => hash.set(name, (hash.get(name) || 0) + 1));
-  completion.forEach(name => hash.set(name, (hash.get(name) || 0) - 1));
+  participant.forEach(name => hash.set(name, (hash.get(name) || 0) + 1))
+  completion.forEach(name => hash.set(name, (hash.get(name) || 0) - 1))
 
   // hash변수에 담겨있는 Map을 순회하면서 value가 0보다 큰 key(참가자)를 걸러내면 해당 key(참가자)가 완주하지 못한 선수로 판별
   for (const [name, value] of hash) {
-    if (value) return name;
+    if (value) return name
   }
 }
-console.log(solution(['leo', 'kiki', 'eden'], ['eden', 'kiki'])); // "leo"
-console.log(solution(['marina', 'josipa', 'nikola', 'vinko', 'filipa'], ['josipa', 'filipa', 'marina', 'nikola'])); // "vinko"
-console.log(solution(['mislav', 'stanko', 'mislav', 'ana'], ['stanko', 'ana', 'mislav'])); // "mislav"
+console.log(solution(['leo', 'kiki', 'eden'], ['eden', 'kiki'])) // "leo"
+console.log(solution(['marina', 'josipa', 'nikola', 'vinko', 'filipa'], ['josipa', 'filipa', 'marina', 'nikola'])) // "vinko"
+console.log(solution(['mislav', 'stanko', 'mislav', 'ana'], ['stanko', 'ana', 'mislav'])) // "mislav"

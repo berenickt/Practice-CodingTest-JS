@@ -9,9 +9,9 @@
  * - arr.length가 참이라면 = arr.length에 값이 있다면
  */
 function solution(arr) {
-  const min = Math.min(...arr);
-  const r = arr.filter((v) => v !== min);
-  return r.length ? r : [-1];
+  const min = Math.min(...arr)
+  const r = arr.filter(v => v !== min)
+  return r.length ? r : [-1]
 }
 
-console.log(solution([4, 3, 2, 1])); // [ 4, 3, 2 ]
+console.log(solution([4, 3, 2, 1])) // [ 4, 3, 2 ]

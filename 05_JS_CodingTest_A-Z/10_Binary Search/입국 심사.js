@@ -11,20 +11,20 @@
 // 시간 / 심사시간 = 심사관 당 처리 가능한 입국자 수
 function solution(n, times) {
   // 오름차순
-  const sortedTimes = times.sort((a, b) => a - b); // O(n log n)
-  let left = 1;
-  let right = sortedTimes[sortedTimes.length - 1] * n;
+  const sortedTimes = times.sort((a, b) => a - b) // O(n log n)
+  let left = 1
+  let right = sortedTimes[sortedTimes.length - 1] * n
 
   while (left <= right) {
-    const mid = Math.floor((left + right) / 2);
+    const mid = Math.floor((left + right) / 2)
     // sum([시간 / 심사시간])
-    const sum = times.reduce((acc, time) => acc + Math.floor(mid / time), 0);
+    const sum = times.reduce((acc, time) => acc + Math.floor(mid / time), 0)
 
     if (sum < n) {
-      left = mid + 1;
+      left = mid + 1
     } else {
-      right = mid - 1;
+      right = mid - 1
     }
   }
-  return left;
+  return left
 }

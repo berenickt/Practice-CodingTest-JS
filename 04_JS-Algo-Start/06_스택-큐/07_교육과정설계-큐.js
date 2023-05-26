@@ -23,8 +23,8 @@
  * @returns 수업설계가 잘된 것이면 "YES", 잘못된 것이면 "NO"
  */
 function solution(needSubject, plan) {
-  let answer = 'YES';
-  let queue = needSubject.split('');
+  let answer = 'YES'
+  let queue = needSubject.split('')
   // console.log(queue); // [ 'C', 'B', 'A' ]
 
   // 수강계획을 처음부터 끝까지 순회
@@ -34,14 +34,14 @@ function solution(needSubject, plan) {
     // queue에 있는 과목이 수강계획에 들어있으면
     if (queue.includes(subject)) {
       // 수강계획의 앞에부터 과목과 필수 과목에 맨 앞에 꺼낸 과목이 다르면 'NO'
-      if (subject !== queue.shift()) return 'NO';
+      if (subject !== queue.shift()) return 'NO'
     }
   }
   // console.log(queue); // 다 빠져나감, []
 
   // 필수과목을 안들어서, 필수과목이 남아있으면 'NO'
-  if (queue.length > 0) return 'NO';
-  return answer;
+  if (queue.length > 0) return 'NO'
+  return answer
 }
 
-console.log(solution('CBA', 'CBDAGE'));
+console.log(solution('CBA', 'CBDAGE'))

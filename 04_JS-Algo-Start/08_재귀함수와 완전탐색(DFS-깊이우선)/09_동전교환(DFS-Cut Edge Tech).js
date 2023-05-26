@@ -9,30 +9,30 @@
  * @returns 거슬러줄 동전의 최소 개수
  */
 function solution(changeMoney, coinType) {
-  let answer = Number.MAX_SAFE_INTEGER;
+  let answer = Number.MAX_SAFE_INTEGER
 
   function DFS(level, sum) {
     // 동전누적합이 거스름돈을 넘으면, 종료
-    if (sum > changeMoney) return;
+    if (sum > changeMoney) return
     // ** 15원을 만들기 위해 다른 가지로 올라가서 더 안만들게, 효율성을 위해
     // 동전개수가 기존답(가지)보다 크면, 종료
-    if (level >= answer) return;
+    if (level >= answer) return
 
     // 동전누적합이 거스름돈이 되면, 최소한의 동전개수를 정답으로 넣기
     if (sum === changeMoney) {
-      console.log(level, sum);
-      answer = Math.min(answer, level);
+      console.log(level, sum)
+      answer = Math.min(answer, level)
     }
     // 동전종류만큼 순회
     else {
       for (let index = 0; index < coinType.length; index++) {
-        DFS(level + 1, sum + coinType[index]);
+        DFS(level + 1, sum + coinType[index])
       }
     }
   }
-  DFS(0, 0);
-  return answer;
+  DFS(0, 0)
+  return answer
 }
 
-console.log(solution(15, [1, 2, 5])); // 3
+console.log(solution(15, [1, 2, 5])) // 3
 // 5원짜리 동전 3개로 15원을 거슬러줄 수 있음

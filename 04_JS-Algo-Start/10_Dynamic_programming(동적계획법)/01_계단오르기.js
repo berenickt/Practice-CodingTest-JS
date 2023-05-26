@@ -10,15 +10,15 @@
  */
 function solution(n) {
   // 계단 크기만큼 0으로 초기화된 배열
-  let stairs = Array.from({ length: n + 1 }, () => 0);
+  let stairs = Array.from({ length: n + 1 }, () => 0)
 
   // 계단을 올라가는 방법
-  stairs[1] = 1; // 첫 번쨰 계단을 가는 경우의 수 1개
-  stairs[2] = 2; // 두 번쨰 계단을 가는 경우의 수 2개
+  stairs[1] = 1 // 첫 번쨰 계단을 가는 경우의 수 1개
+  stairs[2] = 2 // 두 번쨰 계단을 가는 경우의 수 2개
 
   // 3 번쨰 계단부터 시작, 각 계단을 가는 경우의 수
   for (let i = 3; i <= n; i++) {
-    stairs[i] = stairs[i - 2] + stairs[i - 1];
+    stairs[i] = stairs[i - 2] + stairs[i - 1]
     // s[3] = s[1] + s[2]
     // s[4] = s[2] + s[3]
     // s[5] = s[3] + s[4]
@@ -26,10 +26,10 @@ function solution(n) {
     // s[7] = s[5] + s[6]
   }
 
-  return stairs[n];
+  return stairs[n]
 }
 
-console.log(solution(7)); // 21
+console.log(solution(7)) // 21
 
 /** 동적계획법(Dynamic programming)
  * 문제가 어려워서 한번에 푸는 것이 불가능할 때,

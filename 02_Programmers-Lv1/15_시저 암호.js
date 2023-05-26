@@ -15,37 +15,37 @@
 function solution(s, n) {
   return s
     .split('') // 배열을 문자 단위로 쪼개서
-    .map((el) => {
-      if (el == ' ') return el; // 문자열이 비어있으면 return
-      let tmp = el.charCodeAt(); // 아스키코드로 변환
+    .map(el => {
+      if (el == ' ') return el // 문자열이 비어있으면 return
+      let tmp = el.charCodeAt() // 아스키코드로 변환
 
       // 소문자 아스키코드 값 + n > 122 ? 문자열로(tmp + n - 26) : 문자열로(tmp + n)
       return el.toLowerCase().charCodeAt() + n > 122
         ? String.fromCharCode(tmp + n - 26) //
-        : String.fromCharCode(tmp + n);
+        : String.fromCharCode(tmp + n)
     })
-    .join(''); // 문자 단위 배열을 다시 문자열로
+    .join('') // 문자 단위 배열을 다시 문자열로
 }
 
 // **** 아스키코드 없이 푸는 법
 function solution(s, n) {
-  var upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-  var lower = 'abcdefghijklmnopqrstuvwxyz';
-  var answer = '';
+  var upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+  var lower = 'abcdefghijklmnopqrstuvwxyz'
+  var answer = ''
 
   for (var i = 0; i < s.length; i++) {
-    var text = s[i];
+    var text = s[i]
     if (text == ' ') {
-      answer += ' ';
-      continue;
+      answer += ' '
+      continue
     }
-    var textArr = upper.includes(text) ? upper : lower;
-    var index = textArr.indexOf(text) + n;
-    if (index >= textArr.length) index -= textArr.length;
-    answer += textArr[index];
+    var textArr = upper.includes(text) ? upper : lower
+    var index = textArr.indexOf(text) + n
+    if (index >= textArr.length) index -= textArr.length
+    answer += textArr[index]
   }
-  return answer;
+  return answer
 }
 // console.log(solution('AB', 1));
 
-console.log(solution('AB', 1));
+console.log(solution('AB', 1))

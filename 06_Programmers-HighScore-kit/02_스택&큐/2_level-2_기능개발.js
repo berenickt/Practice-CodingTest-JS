@@ -13,32 +13,32 @@
  * e.g. 진도율이 95%인 작업의 개발 속도가 하루에 4%라면 배포는 2일 뒤에 이루어집니다.
  */
 function solution(progresses, speeds) {
-  const answer = [];
+  const answer = []
 
   // **** 작업이 며칠에 걸쳐 완료되는지 알려면, 100% 완료 기준으로 '(100 - 진도) / 속도'를 이용
   // e.g. 개발 진도(progresses) 30의 개발속도(speeds) 30을 예시로 하면 ((100-30)/30)의 값은 2.3333...
   // 개발 기간이 2.3일이면 최소 3일이 필요하므로 올림(ceil)
-  const days = progresses.map((progress, index) => Math.ceil((100 - progress) / speeds[index]));
+  const days = progresses.map((progress, index) => Math.ceil((100 - progress) / speeds[index]))
   // console.log(days); // [ 7일, 3일, 9일 ]
-  let day = 1; // 최소한 작업에 필요한 일수 1일이라서 1로 초기화
-  let maxDay = days[0]; // 최대 많이 걸리는 일 수는 비교하면서 counting해야되서 첫번째 값으로 초기화
+  let day = 1 // 최소한 작업에 필요한 일수 1일이라서 1로 초기화
+  let maxDay = days[0] // 최대 많이 걸리는 일 수는 비교하면서 counting해야되서 첫번째 값으로 초기화
 
   // days를 순회, 1부터 순회하는 이유는 0은 위에서 초기값으로 줬기 때문
   for (let i = 1; i < days.length; i++) {
     // 순회한 날 <= 최대 일수이면, 날짜++
-    if (days[i] <= maxDay) day++;
+    if (days[i] <= maxDay) day++
     // 순회한 날 > 최대일수면,
     else {
-      maxDay = days[i]; // 그 순회한 날을 최대일수로 할당
-      answer.push(day);
-      day = 1; // 다시 counting하게끔 1로 초기화
+      maxDay = days[i] // 그 순회한 날을 최대일수로 할당
+      answer.push(day)
+      day = 1 // 다시 counting하게끔 1로 초기화
     }
   }
 
-  answer.push(day);
+  answer.push(day)
 
-  return answer;
+  return answer
 }
 
-console.log(solution2([93, 30, 55], [1, 30, 5])); // [ 2, 1 ] | 7일쨰 2개의 기능, 9일째 1개의 기능
+console.log(solution2([93, 30, 55], [1, 30, 5])) // [ 2, 1 ] | 7일쨰 2개의 기능, 9일째 1개의 기능
 // console.log(solution([95, 90, 99, 99, 80, 99], [1, 1, 1, 1, 1, 1])); // [ 1, 3, 2 ]

@@ -4,19 +4,19 @@
  * 원소를 차례대로 하나씩 확인한다는 점에서 시간복잡도𝑂(𝑁)로 해결할 수 있다.
  */
 // readline 모듈보다는 fs를 이용해 파일 전체를 읽어 들여 처리하기
-let fs = require('fs');
-let input = fs.readFileSync('/dev/stdin').toString().split('\n');
+let fs = require('fs')
+let input = fs.readFileSync('/dev/stdin').toString().split('\n')
 
-let maxIndex = 0;
-let maxValue = 0;
+let maxIndex = 0
+let maxValue = 0
 
 // 모든 데이터를 하나씩 확인하며
 for (let i = 0; i < 9; i++) {
-  let data = Number(input[i]);
+  let data = Number(input[i])
   if (maxValue < data) {
-    maxValue = data;
-    maxIndex = i;
+    maxValue = data
+    maxIndex = i
   }
 }
-console.log(maxValue);
-console.log(maxIndex + 1);
+console.log(maxValue)
+console.log(maxIndex + 1)

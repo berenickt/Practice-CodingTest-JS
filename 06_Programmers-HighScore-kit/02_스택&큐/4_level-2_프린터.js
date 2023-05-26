@@ -1,32 +1,32 @@
 class Node {
   constructor(value) {
-    this.value = value;
-    this.next = null;
+    this.value = value
+    this.next = null
   }
 }
 class Queue {
   constructor() {
-    this.head = null;
-    this.tail = null;
+    this.head = null
+    this.tail = null
   }
   // 넣기
   enqueue(newValue) {
-    const newNode = new Node(newValue);
+    const newNode = new Node(newValue)
     if (this.head === null) {
-      this.head = this.tail = newNode;
+      this.head = this.tail = newNode
     } else {
-      this.tail.next = newNode;
-      this.tail = newNode;
+      this.tail.next = newNode
+      this.tail = newNode
     }
   }
   // 빼기
   dequeue() {
-    const value = this.head.value;
-    this.head = this.head.next;
-    return value;
+    const value = this.head.value
+    this.head = this.head.next
+    return value
   }
   peek() {
-    return this.head.value;
+    return this.head.value
   }
 }
 
@@ -50,64 +50,64 @@ class Queue {
  * @returns 내가 인쇄를 요청한 문서가 몇 번째로 인쇄되는지
  */
 function solution(priorities, location) {
-  const queue = new Queue(); // 큐 생성
+  const queue = new Queue() // 큐 생성
 
   // 대기목록만큼 순회
   for (let i = 0; i < priorities.length; i += 1) {
     // 각각의 우선순위와 인덱스
-    queue.enqueue([priorities[i], i]);
+    queue.enqueue([priorities[i], i])
   }
 
   // 내림차순 정렬
-  priorities.sort((a, b) => b - a); // 첫번쨰 예제의 경우 [ 3, 2, 2, 1 ]
+  priorities.sort((a, b) => b - a) // 첫번쨰 예제의 경우 [ 3, 2, 2, 1 ]
 
-  let count = 0; // 내가 인쇄를 요청한 문서가 몇 번째로 인쇄되는지
+  let count = 0 // 내가 인쇄를 요청한 문서가 몇 번째로 인쇄되는지
 
   // 큐가 비어있을 떄까지 반복
   while (true) {
-    const currentValue = queue.peek(); // 가장 앞에 노드 반환
+    const currentValue = queue.peek() // 가장 앞에 노드 반환
 
     // 지금까지 수행한 우선순위보다 작은 경우, 그 값을 맨 뒤에 넣기
-    if (currentValue[0] < priorities[count]) queue.enqueue(queue.dequeue());
+    if (currentValue[0] < priorities[count]) queue.enqueue(queue.dequeue())
     // 지금까지 수행한 우선순위가 더 큰 경우, 바로 dequeue
     else {
-      const value = queue.dequeue();
-      count += 1;
+      const value = queue.dequeue()
+      count += 1
 
       // 뽑은 문서가 내가 찾은 문서라면
-      if (location === value[1]) return count;
+      if (location === value[1]) return count
     }
   }
 }
 
 function solution2(priorities, location) {
-  let answer = 0;
-  let queue = [];
-  let maxDocument = Math.max(...priorities);
+  let answer = 0
+  let queue = []
+  let maxDocument = Math.max(...priorities)
 
-  for (const index in priorities) queue.push(index);
+  for (const index in priorities) queue.push(index)
 
   while (priorities.length) {
     // 우선순위가 높은 문서보다 작다면, 뒤로 보내기
     if (priorities[0] < maxDocument) {
-      priorities.push(priorities.shift());
-      queue.push(queue.shift());
+      priorities.push(priorities.shift())
+      queue.push(queue.shift())
     }
     // 우선순위가 같다면, 맨 앞의 문서를 빼서
     else {
-      answer += 1;
-      priorities.shift();
+      answer += 1
+      priorities.shift()
 
       // (맨 앞의 위치 === 요청문서위치)면, 정답
-      if (queue.shift() == location) return answer;
-      maxDocument = Math.max(...priorities);
+      if (queue.shift() == location) return answer
+      maxDocument = Math.max(...priorities)
     }
   }
 }
 
 // 인쇄 작업의 중요도는 1~9로 표현하며 숫자가 클수록 중요
-console.log(solution2([2, 1, 3, 2], 2)); // 1
+console.log(solution2([2, 1, 3, 2], 2)) // 1
 // 2번 위치, 즉 [2, 1, 3, 2]에서 3번이 언제 끝나는지, 2번 위치의 3이 우선순위가 가장 높으니 1
 
-console.log(solution2([1, 1, 9, 1, 1, 1], 0)); // 5
+console.log(solution2([1, 1, 9, 1, 1, 1], 0)) // 5
 // 0번 위치, 맨 앞의 1이 언제 끝나는지, 9, 1, 1, 1, 1으로 5번째

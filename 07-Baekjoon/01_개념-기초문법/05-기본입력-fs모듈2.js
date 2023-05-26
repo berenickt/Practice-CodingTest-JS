@@ -10,6 +10,6 @@
  * ['123', '456', '789 1000']
  */
 // readline 모듈보다는 fs를 이용해 파일 전체를 읽어 들여 처리하기
-let fs = require('fs');
-let input = fs.readFileSync('input.txt').toString().split('\n');
-console.log(input);
+let fs = require('fs')
+let input = fs.readFileSync('input.txt').toString().split('\n')
+console.log(input)

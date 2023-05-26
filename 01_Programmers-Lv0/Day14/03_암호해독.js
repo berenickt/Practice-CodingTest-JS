@@ -11,8 +11,8 @@ function solution(cipher, code) {
   return cipher
     .split('')
     .filter((_, index) => (index + 1) % code === 0)
-    .join('');
+    .join('')
 }
 
-console.log(solution('dfjardstddetckdaccccdegk', 4)); // attack
-console.log(solution('pfqallllabwaoclk', 2)); // fallback
+console.log(solution('dfjardstddetckdaccccdegk', 4)) // attack
+console.log(solution('pfqallllabwaoclk', 2)) // fallback

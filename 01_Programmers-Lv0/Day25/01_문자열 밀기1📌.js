@@ -6,16 +6,16 @@
  * -- 밀어서 `B`가 될 수 없으면 -1
  */
 function solution(A, B) {
-  if (A === B) return 0;
+  if (A === B) return 0
 
   // arr.slice(인덱스 포함, 인덱스 미포함)
   for (let i = 0; i < A.length; i++) {
     // 뒤에서 첫 번쨰 + 첫 번쨰부터 마지막 전까지
-    A = A.slice(-1) + A.slice(0, -1);
-    if (A === B) return i + 1;
+    A = A.slice(-1) + A.slice(0, -1)
+    if (A === B) return i + 1
   }
-  return -1;
+  return -1
 }
 
-console.log(solution('hello', 'ohell')); // 1
-console.log(solution('apple', 'elppa')); // -1
+console.log(solution('hello', 'ohell')) // 1
+console.log(solution('apple', 'elppa')) // -1

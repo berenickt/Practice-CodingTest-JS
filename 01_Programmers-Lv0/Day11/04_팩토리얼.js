@@ -6,16 +6,16 @@
  * @returns 조건을 만족하는 가장 큰 정수 i
  */
 function solution(n) {
-  let i = 1;
-  let factorial = 1;
+  let i = 1
+  let factorial = 1
 
   while (factorial * i < n) {
-    i++;
-    factorial *= i;
+    i++
+    factorial *= i
   }
 
-  return i;
+  return i
 }
 
-console.log(solution(3628800)); // 10! = 3,628,800
-console.log(solution(3628800)); // 10! = 3,628,800
+console.log(solution(3628800)) // 10! = 3,628,800
+console.log(solution(3628800)) // 10! = 3,628,800

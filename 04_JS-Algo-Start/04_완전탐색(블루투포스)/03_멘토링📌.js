@@ -24,44 +24,44 @@
  * e.g. 출력 : 3
  */
 function solution(test) {
-  let answer = 0;
-  let temp = []; // **** 뭐가 들어있는지 확인용
-  const testCount = test.length;
-  const studentNum = test[0].length;
+  let answer = 0
+  let temp = [] // **** 뭐가 들어있는지 확인용
+  const testCount = test.length
+  const studentNum = test[0].length
 
   // **** 1번 학생부터 학생 수만큼 2중 순회
   for (let i = 1; i <= studentNum; i++) {
     for (let j = 1; j <= studentNum; j++) {
       // console.log(i, j); // 16가지 경우의 수
-      let count = 0;
+      let count = 0
 
       // **** 1행부터 테스트 횟수만큼 순회
       for (let row = 0; row < testCount; row++) {
-        let rankingI = 0;
-        let rankingJ = 0;
+        let rankingI = 0
+        let rankingJ = 0
 
         // **** 1등부터 학생수만큼
         for (let ranking = 0; ranking < studentNum; ranking++) {
-          if (test[row][ranking] === i) rankingI = ranking;
-          if (test[row][ranking] === j) rankingJ = ranking;
+          if (test[row][ranking] === i) rankingI = ranking
+          if (test[row][ranking] === j) rankingJ = ranking
         }
         if (rankingI < rankingJ) {
-          count++;
+          count++
         }
       }
       if (count === testCount) {
-        temp.push([i, j]); // **** 뭐가 들어있는지 확인용
-        answer++; // 멘토가 모든 테스트에 통과했을 경우
+        temp.push([i, j]) // **** 뭐가 들어있는지 확인용
+        answer++ // 멘토가 모든 테스트에 통과했을 경우
       }
     }
   }
-  console.log(temp); // **** 뭐가 들어있는지 확인용
-  return answer;
+  console.log(temp) // **** 뭐가 들어있는지 확인용
+  return answer
 }
 
 let arr = [
   [3, 4, 1, 2],
   [4, 3, 2, 1],
   [3, 1, 4, 2],
-];
-console.log(solution(arr));
+]
+console.log(solution(arr))

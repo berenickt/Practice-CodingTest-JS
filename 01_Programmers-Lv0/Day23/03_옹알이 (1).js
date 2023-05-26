@@ -7,19 +7,19 @@
  * @returns 머쓱이의 조카가 발음할 수 있는 단어의 개수
  */
 function solution(babbling) {
-  const convertPWordsToNum = (word) => {
-    const pWords = ['aya', 'ye', 'woo', 'ma'];
-    return pWords.reduce((result, pWord, i) => result.replaceAll(pWord, i), word);
-  };
+  const convertPWordsToNum = word => {
+    const pWords = ['aya', 'ye', 'woo', 'ma']
+    return pWords.reduce((result, pWord, i) => result.replaceAll(pWord, i), word)
+  }
 
-  const canPronounce = (word) => {
-    const result = convertPWordsToNum(word);
-    return !/[^\d]/.test(result) && [...result].every((num, i) => i + 1 > result.length || num !== result[i + 1]);
-  };
+  const canPronounce = word => {
+    const result = convertPWordsToNum(word)
+    return !/[^\d]/.test(result) && [...result].every((num, i) => i + 1 > result.length || num !== result[i + 1])
+  }
 
-  return babbling.filter((b) => canPronounce(b)).length;
+  return babbling.filter(b => canPronounce(b)).length
 }
 
 // ["aya", "yee", "u", "maa", "wyeoo"]에서 발음할 수 있는 것은 "aya"뿐입니다. 따라서 1을 return
-console.log(solution(['aya', 'yee', 'u', 'maa', 'wyeoo'])); // 1
-console.log(solution(['ayaye', 'uuuma', 'ye', 'yemawoo', 'ayaa'])); // 3
+console.log(solution(['aya', 'yee', 'u', 'maa', 'wyeoo'])) // 1
+console.log(solution(['ayaye', 'uuuma', 'ye', 'yemawoo', 'ayaa'])) // 3

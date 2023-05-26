@@ -1,11 +1,11 @@
-const isPrime = (n) => {
+const isPrime = n => {
   for (let i = 2; i <= Math.sqrt(n); i++) {
     if (n % i === 0) {
-      return false;
+      return false
     }
   }
-  return true;
-};
+  return true
+}
 
 /** https://school.programmers.co.kr/learn/courses/30/lessons/12977
  *
@@ -16,16 +16,16 @@ const isPrime = (n) => {
  */
 function solution(nums) {
   let len = nums.length,
-    answer = 0;
+    answer = 0
 
   for (let i = 0; i < len - 2; i++) {
     for (let j = i + 1; j < len - 1; j++) {
       for (let k = j + 1; k < len; k++) {
         if (isPrime(nums[i] + nums[j] + nums[k])) {
-          answer++;
+          answer++
         }
       }
     }
   }
-  return answer;
+  return answer
 }

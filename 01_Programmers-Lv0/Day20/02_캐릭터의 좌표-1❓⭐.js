@@ -9,13 +9,16 @@ function solution(keyinput, board) {
     down: [0, -1],
     left: [-1, 0],
     right: [1, 0],
-  };
-  const [rangeX, rangeY] = [Math.floor(board[0] / 2), Math.floor(board[1] / 2)];
+  }
+  const [rangeX, rangeY] = [Math.floor(board[0] / 2), Math.floor(board[1] / 2)]
 
   return keyinput
-    .map((key) => moves[key])
-    .reduce(([x, y], [mX, mY]) => (Math.abs(x + mX) > rangeX || Math.abs(y + mY) > rangeY ? [x, y] : [x + mX, y + mY]), [0, 0]);
+    .map(key => moves[key])
+    .reduce(
+      ([x, y], [mX, mY]) => (Math.abs(x + mX) > rangeX || Math.abs(y + mY) > rangeY ? [x, y] : [x + mX, y + mY]),
+      [0, 0],
+    )
 }
 
-console.log(solution(['left', 'right', 'up', 'right', 'right'], [11, 11])); // [2, 1]
-console.log(solution(['down', 'down', 'down', 'down', 'down'], [7, 9])); // [0, -4]
+console.log(solution(['left', 'right', 'up', 'right', 'right'], [11, 11])) // [2, 1]
+console.log(solution(['down', 'down', 'down', 'down', 'down'], [7, 9])) // [0, -4]

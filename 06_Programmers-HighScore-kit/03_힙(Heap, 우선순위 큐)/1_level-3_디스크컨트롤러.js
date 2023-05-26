@@ -42,33 +42,33 @@
  * 또한 점유 시간이 짧은 프로세스 먼저 실행되기 때문에 점유 시간이 긴 프로세스는 실행되지 못할 수도 있다.
  */
 function solution(jobs) {
-  jobs.sort((a, b) => a[0] - b[0]); // 요청 시간 기준 오름차순
-  const numOfJobs = jobs.length;
-  let queue = []; // 작업이 진행되는 동안 요청으로 들어온 작업들은 대기 queue
-  let endTimeOfJob = 0;
-  let sumOfRequestToEndOfJob = 0;
+  jobs.sort((a, b) => a[0] - b[0]) // 요청 시간 기준 오름차순
+  const numOfJobs = jobs.length
+  let queue = [] // 작업이 진행되는 동안 요청으로 들어온 작업들은 대기 queue
+  let endTimeOfJob = 0
+  let sumOfRequestToEndOfJob = 0
 
   // **** 모든 작업들을 queue에 올리고 순회
   // 작업이 종료된 후에 요청이 들어오면, queue가 비어있기 때문에 jobs길이도 순회
   while (queue.length || jobs.length) {
     // 진행중인 작업의 종료시간 전에 들어온 모든 요청을 queue에 적재
     while (jobs[0] && jobs[0][0] <= endTimeOfJob) {
-      queue.push(jobs.shift());
+      queue.push(jobs.shift())
     }
     // 작업 요청이 늦어 queue가 비어있을 경우 시간만 증가.
     if (!queue.length) {
-      endTimeOfJob++;
-      continue;
+      endTimeOfJob++
+      continue
     }
 
-    queue.sort((a, b) => a[1] - b[1]); // 작업 시간 기준 오름차순
-    const [from, to] = queue.shift(); // 작업 종료 후 queue에서 제거
-    endTimeOfJob += to; // 종료시간 업데이트
-    sumOfRequestToEndOfJob += endTimeOfJob - from; // 작업 완료시간 - 최초 요청시간
+    queue.sort((a, b) => a[1] - b[1]) // 작업 시간 기준 오름차순
+    const [from, to] = queue.shift() // 작업 종료 후 queue에서 제거
+    endTimeOfJob += to // 종료시간 업데이트
+    sumOfRequestToEndOfJob += endTimeOfJob - from // 작업 완료시간 - 최초 요청시간
   }
 
   // *** 평균시간 정수로 반환, (3 + 7 + 17) / 3,  27 / 3 = 9
-  return parseInt(sumOfRequestToEndOfJob / numOfJobs);
+  return parseInt(sumOfRequestToEndOfJob / numOfJobs)
 }
 
 // prettier-ignore

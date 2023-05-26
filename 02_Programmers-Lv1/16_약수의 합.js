@@ -6,13 +6,13 @@
  * 2. 나머지가 0으로 나누어 떨어지면 약수
  */
 function solution(num) {
-  let sum = 0;
+  let sum = 0
   for (let i = 1; i <= num; i++) {
     if (num % i === 0) {
-      sum += i;
+      sum += i
     }
   }
-  return sum;
+  return sum
 }
 
-console.log(solution(5));
+console.log(solution(5))

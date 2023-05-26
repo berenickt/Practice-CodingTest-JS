@@ -12,25 +12,25 @@
  * @returns 제한시간 내 얻을 수 있는 최대점수
  */
 function solution(timeLimit, point, timeTaken) {
-  let answer = Number.MIN_SAFE_INTEGER;
-  let problemNum = point.length;
+  let answer = Number.MIN_SAFE_INTEGER
+  let problemNum = point.length
 
   function DFS(level, sum, time) {
-    if (time > timeLimit) return; // 제한시간을 넘기면, 종료
+    if (time > timeLimit) return // 제한시간을 넘기면, 종료
 
     if (level === problemNum) {
       // console.log(sum); // 32가지 경우의 수
-      answer = Math.max(answer, sum); // 기존 sum보다 크면, 새 sum으로 바꿔주기
+      answer = Math.max(answer, sum) // 기존 sum보다 크면, 새 sum으로 바꿔주기
     }
     // 문제를 풀지, 말지 결정
     else {
-      DFS(level + 1, sum + point[level], time + timeTaken[level]);
-      DFS(level + 1, sum, time); // 다음 Level로만 이동 (문제를 안푸는 경우)
+      DFS(level + 1, sum + point[level], time + timeTaken[level])
+      DFS(level + 1, sum, time) // 다음 Level로만 이동 (문제를 안푸는 경우)
     }
   }
 
-  DFS(0, 0, 0);
-  return answer;
+  DFS(0, 0, 0)
+  return answer
 }
 
-console.log(solution(20, [10, 25, 15, 6, 7], [5, 12, 8, 3, 4])); // 41
+console.log(solution(20, [10, 25, 15, 6, 7], [5, 12, 8, 3, 4])) // 41

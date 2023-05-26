@@ -6,16 +6,16 @@
  */
 function solution(num) {
   function DFS(level) {
-    if (level === 0) return;
+    if (level === 0) return
     else {
-      DFS(level - 1);
-      console.log(level);
+      DFS(level - 1)
+      console.log(level)
     }
   }
-  DFS(num);
+  DFS(num)
 }
 
-solution(3); // 1 2 3
+solution(3) // 1 2 3
 
 // DFS(3)
 //   ↓

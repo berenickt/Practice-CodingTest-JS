@@ -6,13 +6,13 @@
  * e.g. 5의 약수는 1, 5입니다. 이를 모두 더하면 6
  */
 function solution(n) {
-  let answer = 0;
+  let answer = 0
 
   for (let i = 1; i <= n; i++) {
     if (n % i === 0) {
-      answer += i;
+      answer += i
     }
   }
 
-  return answer;
+  return answer
 }

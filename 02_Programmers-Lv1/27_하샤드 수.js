@@ -15,12 +15,12 @@ function solution(x) {
   const sum = x
     .toString() // 문자열로 변환
     .split('') // 문자 단위로 쪼개기
-    .map((x) => parseInt(x)) // 각 배열 요소를 숫자로
-    .reduce((acc, curr) => acc + curr); // 각 배열 요소 더하기
-  return x % sum === 0;
+    .map(x => parseInt(x)) // 각 배열 요소를 숫자로
+    .reduce((acc, curr) => acc + curr) // 각 배열 요소 더하기
+  return x % sum === 0
 }
 
-console.log(solution(10));
-console.log(solution(12));
-console.log(solution(11));
-console.log(solution(13));
+console.log(solution(10))
+console.log(solution(12))
+console.log(solution(11))
+console.log(solution(13))

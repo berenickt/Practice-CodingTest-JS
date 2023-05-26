@@ -15,13 +15,13 @@
  * @returns 결혼 피로연에 동시에 존재하는 최대 인원수
  */
 function solution(times) {
-  let answer = Number.MIN_SAFE_INTEGER; // 첫 번쨰 수는 무조건 들어가도록
-  let timeLine = [];
+  let answer = Number.MIN_SAFE_INTEGER // 첫 번쨰 수는 무조건 들어가도록
+  let timeLine = []
 
   // 1. 각 인원의 도착시간, 퇴장시간을 분리해서 배열에 넣기
   for (let person of times) {
-    timeLine.push([person[0], 'start']);
-    timeLine.push([person[1], 'end']);
+    timeLine.push([person[0], 'start'])
+    timeLine.push([person[1], 'end'])
   }
   // console.log(timeLine);
 
@@ -29,21 +29,21 @@ function solution(times) {
   timeLine.sort((a, b) => {
     // 도착시간이 같으면, 퇴장시간 기준으로 오름차순 (아스키코드순으로 s보다 e가 먼저임)
     // 즉, 퇴장시간이 먼저 도착시간보다 앞에 옴
-    if (a[0] === b[0]) return a[1].charCodeAt() - b[1].charCodeAt();
+    if (a[0] === b[0]) return a[1].charCodeAt() - b[1].charCodeAt()
     // 아니면 도착시간 기준으로 오름차순
-    else return a[0] - b[0];
-  });
+    else return a[0] - b[0]
+  })
   // console.log(timeLine);
 
-  let count = 0;
+  let count = 0
 
   // 도착한 사람을 count++, 퇴장한 사람을 count--
   for (let person of timeLine) {
-    if (person[1] === 'start') count++;
-    else count--;
-    answer = Math.max(answer, count); // 최대 입장한 인원수
+    if (person[1] === 'start') count++
+    else count--
+    answer = Math.max(answer, count) // 최대 입장한 인원수
   }
-  return answer;
+  return answer
 }
 
 console.log(
@@ -54,5 +54,5 @@ console.log(
     [15, 20],
     [20, 30],
     [5, 14],
-  ])
-); // 2
+  ]),
+) // 2

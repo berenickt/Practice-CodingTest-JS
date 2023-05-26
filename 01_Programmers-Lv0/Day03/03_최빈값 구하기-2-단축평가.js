@@ -7,20 +7,20 @@ function solution(array) {
   // 1. 출연 빈도 구하기
   const counts = array.reduce((acc, cur) => {
     // key에는 배열 요소, value에는 배열 요소의 갯수
-    acc[cur] = (acc[cur] || 0) + 1;
-    return acc; // {'요소': 개수, '요소', 개수, ... }
-  }, {});
+    acc[cur] = (acc[cur] || 0) + 1
+    return acc // {'요소': 개수, '요소', 개수, ... }
+  }, {})
 
   // 2. count의 value 중 개수가 가장 큰 값
-  const max = Math.max(...Object.values(counts));
+  const max = Math.max(...Object.values(counts))
 
   // 3. count의 key 중 max와 일치하는 key값을 새 배열로 반환 (최빈값 = mode)
-  const modes = Object.keys(counts).filter((key) => counts[key] === max);
+  const modes = Object.keys(counts).filter(key => counts[key] === max)
 
-  return modes.length === 1 ? +modes[0] : -1;
+  return modes.length === 1 ? +modes[0] : -1
 }
 
-console.log(solution([1, 2, 3, 3, 3, 4]));
+console.log(solution([1, 2, 3, 3, 3, 4]))
 
 /** 단축 평가(Short-circuit Evaluation)
  * ||(논리합), &&(논리곱) 연산자는 왼쪽부터 오른쪽으로 평가를 진행하는데,

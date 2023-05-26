@@ -11,14 +11,14 @@
  * 3. 주어진 예산보다 많아질 시 break
  */
 function solution(d, budget) {
-  let answer = 0; // 최대 물품 지원할 수 있는 부서 수
-  d.sort((a, b) => a - b); // 오름차순
+  let answer = 0 // 최대 물품 지원할 수 있는 부서 수
+  d.sort((a, b) => a - b) // 오름차순
 
   for (const department of d) {
     // 주어진 예산보다 많아질 시 break
-    if (budget < department) break;
-    answer += 1;
-    budget -= department;
+    if (budget < department) break
+    answer += 1
+    budget -= department
   }
-  return answer;
+  return answer
 }

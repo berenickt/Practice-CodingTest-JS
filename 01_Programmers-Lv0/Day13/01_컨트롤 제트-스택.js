@@ -7,19 +7,19 @@
  * @returns 머쓱이가 구한 값
  */
 function solution(s) {
-  const stack = [];
+  const stack = []
 
   // 공백 기준으로 값을 배열로 받아온 것을 순회
   for (const num of s.split(' ')) {
     if (num === 'Z') {
-      stack.pop();
+      stack.pop()
     } else {
-      stack.push(+num);
+      stack.push(+num)
     }
   }
-  return stack.reduce((acc, cur) => acc + cur, 0);
+  return stack.reduce((acc, cur) => acc + cur, 0)
 }
 
-console.log(solution('1 2 Z 3')); // 4
-console.log(solution('10 20 30 40')); // 100
-console.log(solution('10 Z 20 Z 1')); // 1
+console.log(solution('1 2 Z 3')) // 4
+console.log(solution('10 20 30 40')) // 100
+console.log(solution('10 Z 20 Z 1')) // 1

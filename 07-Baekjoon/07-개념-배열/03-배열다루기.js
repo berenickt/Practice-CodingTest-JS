@@ -4,14 +4,14 @@
  * push() 메서드를 통해 배열의 가장 뒤쪽에 새로운 원소를 추가할 수 있다
  */
 
-let arr = [5, 6, 7, 8, 9];
+let arr = [5, 6, 7, 8, 9]
 
-arr.length = 8;
-arr[7] = 3;
-arr.push(1);
+arr.length = 8
+arr[7] = 3
+arr.push(1)
 
 for (let x of arr) {
-  console.log(x);
+  console.log(x)
 }
 
 // 5

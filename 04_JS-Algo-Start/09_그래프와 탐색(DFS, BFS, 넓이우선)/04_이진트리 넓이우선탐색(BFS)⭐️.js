@@ -4,30 +4,30 @@
  * @returns
  */
 function solution() {
-  let answer = "";
-  let queue = [];
-  queue.push(1); // 루트 노드
+  let answer = ''
+  let queue = []
+  queue.push(1) // 루트 노드
 
   // 큐의 길이만큼 순회
   while (queue.length) {
-    console.log(queue);
+    console.log(queue)
 
     // 큐의 맨 앞에서 노드를 꺼내오기
-    let node = queue.shift();
+    let node = queue.shift()
 
-    answer += node + " ";
+    answer += node + ' '
 
     // (왼쪽, 오른쪽)
     for (let nextNode of [node * 2, node * 2 + 1]) {
-      if (nextNode > 7) continue; // 7 이상이면, 넘어가기
-      queue.push(nextNode); // 왼쪽, 오른쪽 이동
+      if (nextNode > 7) continue // 7 이상이면, 넘어가기
+      queue.push(nextNode) // 왼쪽, 오른쪽 이동
     }
   }
 
-  return answer;
+  return answer
 }
 
-console.log(solution()); // 1 2 3 4 5 6 7
+console.log(solution()) // 1 2 3 4 5 6 7
 // [ 1 ] - 루트 노트 넣기
 // [ 2, 3 ] - 1과 연결된 노드를 다 넣기
 // [ 3, 4, 5 ] - 2를 방문해서 빼고, 2와 연결된 노드(4, 5) 넣기

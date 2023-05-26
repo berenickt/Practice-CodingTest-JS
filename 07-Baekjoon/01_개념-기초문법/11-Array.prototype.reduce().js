@@ -6,15 +6,15 @@
  * - 배열의 각 원소를 하나씩 확인하며, 각 원소는 currentValue에 해당합니다.
  * - 반환값은 그 이후의 원소에 대하여 accumulator에 저장됩니다.
  */
-let data = [5, 2, 9, 8, 4];
+let data = [5, 2, 9, 8, 4]
 
 // minValue 구하기 예제
-let minValue = data.reduce((a, b) => Math.min(a, b));
-console.log(minValue); // 2
+let minValue = data.reduce((a, b) => Math.min(a, b))
+console.log(minValue) // 2
 
 // 원소의 합계 구하기 예제
-let summary = data.reduce((a, b) => a + b);
-console.log(summary); // 28
+let summary = data.reduce((a, b) => a + b)
+console.log(summary) // 28
 // a = 5 + 2
 // 7 = 7 + 9
 // 16 = 16 + 8

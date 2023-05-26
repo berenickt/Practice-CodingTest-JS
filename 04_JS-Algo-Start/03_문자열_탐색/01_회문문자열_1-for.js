@@ -20,19 +20,19 @@
  * -> 반만 돌면 됨
  */
 function solution(s) {
-  let answer = 'YES';
-  s = s.toLowerCase(); // 모든 문자를 소문자로 바꾸고
-  let len = s.length;
+  let answer = 'YES'
+  s = s.toLowerCase() // 모든 문자를 소문자로 바꾸고
+  let len = s.length
 
   // 반만 순회하면서,
   for (let i = 0; i < Math.floor(len / 2); i++) {
-    if (s[i] !== s[len - i - 1]) return 'NO'; // 맨 앞과 맨 뒤부터 다른지 비교
+    if (s[i] !== s[len - i - 1]) return 'NO' // 맨 앞과 맨 뒤부터 다른지 비교
   }
-  return answer;
+  return answer
 }
 
 // s[0] !== s[5 - 0 - 1] = s[0] !== s[4]
 // s[1] !== s[5 - 1 - 1] = s[1] !== s[3]
 
-console.log(solution('goooG'));
-console.log(solution('goGS'));
+console.log(solution('goooG'))
+console.log(solution('goGS'))

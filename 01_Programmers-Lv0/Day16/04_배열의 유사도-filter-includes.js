@@ -5,8 +5,8 @@
  * @returns 같은 원소의 개수
  */
 function solution(s1, s2) {
-  return s1.filter((s) => s2.includes(s)).length;
+  return s1.filter(s => s2.includes(s)).length
 }
 
-console.log(solution(['a', 'b', 'c'], ['com', 'b', 'd', 'p', 'c'])); // 2
-console.log(solution(['n', 'omg'], ['m', 'dot'])); // 0
+console.log(solution(['a', 'b', 'c'], ['com', 'b', 'd', 'p', 'c'])) // 2
+console.log(solution(['n', 'omg'], ['m', 'dot'])) // 0

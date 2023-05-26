@@ -9,14 +9,14 @@
  * @returns
  */
 function solution(s) {
-  let answer = 'YES';
+  let answer = 'YES'
 
   //  **** 알파벳만 놔두기
-  s = s.toLowerCase().replace(/[^a-z]/g, ''); // 소문자가 아닌것들은 빈문자로
+  s = s.toLowerCase().replace(/[^a-z]/g, '') // 소문자가 아닌것들은 빈문자로
 
-  if (s.split('').reverse().join('') !== s) return 'NO';
-  return answer;
+  if (s.split('').reverse().join('') !== s) return 'NO'
+  return answer
 }
 
-console.log(solution('found7, time: study; Yduts; emit, 7Dnuof'));
-console.log(solution('found7, time: study; Yduts; emiUUUU, 7Dnuof'));
+console.log(solution('found7, time: study; Yduts; emit, 7Dnuof'))
+console.log(solution('found7, time: study; Yduts; emiUUUU, 7Dnuof'))

@@ -15,31 +15,31 @@
  *
  */
 function solution(arr) {
-  let answer = 'NO';
-  let total = arr.reduce((a, b) => a + b, 0);
+  let answer = 'NO'
+  let total = arr.reduce((a, b) => a + b, 0)
 
   // ** 답을 이미 찾았을 경우 불필요한 순회를 멈추기 위한 변수
   // 초기값은 0이고, 답을 찾으면 1, 0일때만 순회
-  let flag = 0;
+  let flag = 0
 
   function DFS(level, sum) {
-    if (flag) return; // 답을 찾으면, 종료
+    if (flag) return // 답을 찾으면, 종료
 
     if (level === arr.length) {
       // [전체 집합의] - [집합의 합] === [집합의 합]이 true면, YES
       if (total - sum === sum) {
-        answer = 'YES';
-        flag = 1;
+        answer = 'YES'
+        flag = 1
       }
     }
     // 다음 Level로 이동하면서
     else {
-      DFS(level + 1, sum + arr[level]); // 원소값 더하면서 다음 Level로 이동 (왼쪽)
-      DFS(level + 1, sum); // 다음 Level로만 이동 (오른쪽)
+      DFS(level + 1, sum + arr[level]) // 원소값 더하면서 다음 Level로 이동 (왼쪽)
+      DFS(level + 1, sum) // 다음 Level로만 이동 (오른쪽)
     }
   }
-  DFS(0, 0);
-  return answer;
+  DFS(0, 0)
+  return answer
 }
 
-console.log(solution([1, 3, 5, 6, 7, 10])); // YES
+console.log(solution([1, 3, 5, 6, 7, 10])) // YES

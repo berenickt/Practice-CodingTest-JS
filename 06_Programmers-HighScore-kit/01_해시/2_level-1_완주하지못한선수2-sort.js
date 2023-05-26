@@ -16,16 +16,16 @@
  * 2. 순회하면서 다른 1명을 찾기
  */
 function solution(participant, completion) {
-  participant.sort();
-  completion.sort();
+  participant.sort()
+  completion.sort()
 
-  let i = 0;
+  let i = 0
   while (1) {
-    if (participant[i] !== completion[i]) return participant[i];
-    i++;
+    if (participant[i] !== completion[i]) return participant[i]
+    i++
   }
 }
 
-console.log(solution(['leo', 'kiki', 'eden'], ['eden', 'kiki'])); // "leo"
-console.log(solution(['marina', 'josipa', 'nikola', 'vinko', 'filipa'], ['josipa', 'filipa', 'marina', 'nikola'])); // "vinko"
-console.log(solution(['mislav', 'stanko', 'mislav', 'ana'], ['stanko', 'ana', 'mislav'])); // "mislav"
+console.log(solution(['leo', 'kiki', 'eden'], ['eden', 'kiki'])) // "leo"
+console.log(solution(['marina', 'josipa', 'nikola', 'vinko', 'filipa'], ['josipa', 'filipa', 'marina', 'nikola'])) // "vinko"
+console.log(solution(['mislav', 'stanko', 'mislav', 'ana'], ['stanko', 'ana', 'mislav'])) // "mislav"

@@ -11,17 +11,17 @@
  * 동등한 경우에는 0을 반환
  */
 function solution(strings, n) {
-  return strings.sort((s1, s2) => (s1[n] === s2[n] ? s1.localeCompare(s2) : s1[n].localeCompare(s2[n])));
+  return strings.sort((s1, s2) => (s1[n] === s2[n] ? s1.localeCompare(s2) : s1[n].localeCompare(s2[n])))
 }
 
 // sort로 직접 사전순으로 정렬 구현
 function solution2(strings, n) {
   return strings.sort((a, b) => {
-    if (a[n] < b[n]) return -1;
-    if (a[n] > b[n]) return 1;
-    if (a[n] === b[n]) return a < b ? -1 : 1;
-    return 0;
-  });
+    if (a[n] < b[n]) return -1
+    if (a[n] > b[n]) return 1
+    if (a[n] === b[n]) return a < b ? -1 : 1
+    return 0
+  })
 }
 
-console.log(solution(['sun', 'bed', 'car'], 1));
+console.log(solution(['sun', 'bed', 'car'], 1))

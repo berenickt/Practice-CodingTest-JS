@@ -11,16 +11,16 @@
  * 4. map을 순회하면서 value가 1인 값의 key(이름)를 출력
  */
 function solution(participant, completion) {
-  const map = new Map();
+  const map = new Map()
 
-  participant.forEach((name) => map.set(name, (map.get(name) || 0) + 1));
-  completion.forEach((name) => map.set(name, (map.get(name) || 0) - 1));
+  participant.forEach(name => map.set(name, (map.get(name) || 0) + 1))
+  completion.forEach(name => map.set(name, (map.get(name) || 0) - 1))
 
   for (const [name, value] of map) {
     if (value) {
-      return name;
+      return name
     }
   }
 }
 
-console.log(solution(['leo', 'kiki', 'eden'], ['eden', 'kiki']));
+console.log(solution(['leo', 'kiki', 'eden'], ['eden', 'kiki']))

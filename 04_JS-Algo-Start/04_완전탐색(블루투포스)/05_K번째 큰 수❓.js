@@ -12,24 +12,24 @@
  * @returns
  */
 function solution(n, k, card) {
-  let answer;
-  let temp = new Set(); // 중복제거
+  let answer
+  let temp = new Set() // 중복제거
 
   for (let i = 0; i < n; i++) {
     for (let j = i + 1; j < n; j++) {
       for (let k = j + 1; k < n; k++) {
-        temp.add(card[i] + card[j] + card[k]);
+        temp.add(card[i] + card[j] + card[k])
       }
     }
   }
 
   // Set 객체를 배열로 바꾸려면 Array.from()
   // 내림차순
-  let a = Array.from(temp).sort((a, b) => b - a);
-  answer = a[k - 1];
-  return answer;
+  let a = Array.from(temp).sort((a, b) => b - a)
+  answer = a[k - 1]
+  return answer
 }
 
-console.log(solution(10, 3, [13, 15, 34, 23, 45, 65, 33, 11, 26, 42]));
+console.log(solution(10, 3, [13, 15, 34, 23, 45, 65, 33, 11, 26, 42]))
 
 // Set 객체 추가는 push 대신 add를 사용

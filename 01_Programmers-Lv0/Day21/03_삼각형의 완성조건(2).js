@@ -5,9 +5,9 @@
  * @returns 나머지 한 변이 될 수 있는 정수의 개수
  */
 function solution(sides) {
-  return Math.min(...sides) * 2 - 1;
+  return Math.min(...sides) * 2 - 1
 }
 
-console.log(solution([1, 2])); // 1
-console.log(solution([3, 6])); // 5
-console.log(solution([11, 7])); // 13
+console.log(solution([1, 2])) // 1
+console.log(solution([3, 6])) // 5
+console.log(solution([11, 7])) // 13

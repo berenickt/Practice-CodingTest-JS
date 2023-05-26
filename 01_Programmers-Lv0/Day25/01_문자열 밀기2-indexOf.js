@@ -7,10 +7,10 @@
  */
 function solution(a, b) {
   // console.log(b + b); // ohellohell
-  return (b + b).indexOf(a);
+  return (b + b).indexOf(a)
 }
 // let solution1 = (a, b) => (b + b).indexOf(a);
 // console.log(solution('hello', 'ohell'));
 
-console.log(solution('hello', 'ohell')); // 1
-console.log(solution('apple', 'elppa')); // -1
+console.log(solution('hello', 'ohell')) // 1
+console.log(solution('apple', 'elppa')) // -1

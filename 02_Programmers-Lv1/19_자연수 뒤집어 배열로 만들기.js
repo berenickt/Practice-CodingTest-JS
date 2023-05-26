@@ -10,19 +10,19 @@ function solution(n) {
   return String(n)
     .split('') // 문자 단위로 쪼개기
     .reverse()
-    .map((item) => parseInt(item)); // 모든 원소에 대해 자연수로 형 변환
+    .map(item => parseInt(item)) // 모든 원소에 대해 자연수로 형 변환
 }
 
 // **** 숫자 방법
 function solution(n) {
-  let arr = [];
+  let arr = []
 
   do {
-    arr.push(n % 10);
-    n = Math.floor(n / 10);
-  } while (n > 0);
+    arr.push(n % 10)
+    n = Math.floor(n / 10)
+  } while (n > 0)
 
-  return arr;
+  return arr
 }
 
-console.log(solution(12345));
+console.log(solution(12345))

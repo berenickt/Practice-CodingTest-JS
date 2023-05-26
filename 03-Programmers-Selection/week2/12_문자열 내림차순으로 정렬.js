@@ -5,28 +5,28 @@
  * e.g. "Zbcdefg" => "gfedcbZ"
  */
 function solution(s) {
-  const answer = [];
+  const answer = []
 
   for (let i = 0; i < s.length; i++) {
-    answer.push(s[i]);
+    answer.push(s[i])
   }
   answer.sort((a, b) => {
-    return a > b ? -1 : 1;
-  });
+    return a > b ? -1 : 1
+  })
 
-  return answer.join('');
+  return answer.join('')
 }
 
 function solution2(s) {
   const answer = s
     .split('')
     .sort((a, b) => {
-      return a > b ? -1 : 1;
+      return a > b ? -1 : 1
     })
-    .join('');
-  return answer;
+    .join('')
+  return answer
 }
 
 function solution3(s) {
-  return s.split('').sort().reverse().join('');
+  return s.split('').sort().reverse().join('')
 }

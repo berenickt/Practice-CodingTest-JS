@@ -5,8 +5,8 @@
  * @returns divisor로 나누어 떨어지는 element가 하나도 없다면 배열에 -1
  */
 function solution(arr, divisor) {
-  const answer = arr.filter((el) => el % divisor === 0);
-  return answer.length === 0 ? [-1] : answer.sort((a, b) => a - b);
+  const answer = arr.filter(el => el % divisor === 0)
+  return answer.length === 0 ? [-1] : answer.sort((a, b) => a - b)
 }
 
-console.log(solution([5, 9, 7, 10], 5));
+console.log(solution([5, 9, 7, 10], 5))

@@ -6,14 +6,14 @@
  * 본문제는 시간복잡도 𝑂(𝑁^2)의 정렬 알고리즘으로는 시간초과를 받는다.
  */
 // fs 모듈을 이용해 파일 전체를 읽어와 문자열로 저장하기
-let fs = require('fs');
-let input = fs.readFileSync('/dev/stdin').toString().split('\n');
+let fs = require('fs')
+let input = fs.readFileSync('/dev/stdin').toString().split('\n')
 
-let [n, k] = input[0].split(' ').map(Number);
-let arr = input[1].split(' ').map(Number);
+let [n, k] = input[0].split(' ').map(Number)
+let arr = input[1].split(' ').map(Number)
 
 // 오름차순 정렬 수행
-arr.sort((a, b) => a - b);
+arr.sort((a, b) => a - b)
 
 // 앞에서부터 K번째 수를 출력
-console.log(arr[k - 1]);
+console.log(arr[k - 1])

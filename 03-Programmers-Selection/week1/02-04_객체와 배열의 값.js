@@ -19,11 +19,11 @@ const classmates = [
     age: 8,
     school: '다람쥐초등학교',
   },
-];
+]
 
-classmates[1].school = '다람쥐초등학교';
+classmates[1].school = '다람쥐초등학교'
 
-console.log(classmates);
+console.log(classmates)
 // const classmates = [
 // 	{
 // 		name: "철수",

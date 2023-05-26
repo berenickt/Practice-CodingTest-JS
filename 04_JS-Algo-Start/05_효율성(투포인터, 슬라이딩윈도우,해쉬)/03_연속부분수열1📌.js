@@ -18,24 +18,24 @@
  * 5. 2 ~ 4 과정 반복하면서 target인 경우의 수를 count
  */
 function solution(target, arr) {
-  let answer = 0;
-  let left = 0;
-  let sum = 0;
+  let answer = 0
+  let left = 0
+  let sum = 0
 
   // left와 right 두 개의 포인터가 돌며, right 값을 sum에 누적
   for (let right = 0; right < arr.length; right++) {
-    sum += arr[right];
+    sum += arr[right]
 
     // 누적된 sum 값이 target과 일치하면 경우의 수 증가
-    if (sum === target) answer++;
+    if (sum === target) answer++
 
     // 누적시킨 값이 target보다 크거나 같다면, left값을 빼면서 증감
     while (sum >= target) {
-      sum -= arr[left++];
-      if (sum === target) answer++; // target과 일치하면 경우의 수 증가
+      sum -= arr[left++]
+      if (sum === target) answer++ // target과 일치하면 경우의 수 증가
     }
   }
-  return answer;
+  return answer
 }
 
-console.log(solution(6, [1, 2, 1, 3, 1, 1, 1, 2]));
+console.log(solution(6, [1, 2, 1, 3, 1, 1, 1, 2]))

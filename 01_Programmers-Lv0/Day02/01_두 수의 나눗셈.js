@@ -9,6 +9,6 @@
  * 3. 그 값에 정수부분을 구한다.
  */
 function solution(num1, num2) {
-  return Math.floor((num1 / num2) * 1000);
+  return Math.floor((num1 / num2) * 1000)
 }
-console.log(solution(3, 2));
+console.log(solution(3, 2))

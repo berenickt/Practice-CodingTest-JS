@@ -14,9 +14,9 @@ function bubbleSort(arr) {
     for (let j = 0; j < i; j++) {
       if (arr[j] < arr[j + 1]) {
         // 내림차순 예시
-        let temp = arr[j];
-        arr[j] = arr[j + 1];
-        arr[j + 1] = temp;
+        let temp = arr[j]
+        arr[j] = arr[j + 1]
+        arr[j + 1] = temp
       }
     }
   }

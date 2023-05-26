@@ -4,6 +4,6 @@
  * @returns
  */
 function solution(slice, n) {
-  const pizza = parseInt(n / slice);
-  return n % slice === 0 ? pizza : pizza + 1;
+  const pizza = parseInt(n / slice)
+  return n % slice === 0 ? pizza : pizza + 1
 }

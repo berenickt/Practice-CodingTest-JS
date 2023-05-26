@@ -5,31 +5,31 @@
  * e.g. "01033334444"이면,	"*******4444"리턴
  */
 function solution(phone_number) {
-  let answer = '';
+  let answer = ''
 
   for (let i = 0; i < phone_number.length; i++) {
     if (i < phone_number.length - 4) {
-      answer += '*'; // answer = answer + '*'
+      answer += '*' // answer = answer + '*'
     } else {
-      answer += phone_number[i];
+      answer += phone_number[i]
       // answer = answer + phone_number[i]
     }
   }
-  return answer;
+  return answer
 }
 
 // padStart, slice
 function solution2(phone_number) {
-  let answer = '';
+  let answer = ''
 
-  answer = answer.padStart(phone_number.length - 4, '*');
-  answer += phone_number.slice(phone_number.length - 4);
+  answer = answer.padStart(phone_number.length - 4, '*')
+  answer += phone_number.slice(phone_number.length - 4)
 
-  return answer;
+  return answer
 }
 
 function solution3(phone_number) {
-  return '*'.repeat(phone_number.length - 4) + phone_number.slice(-4);
+  return '*'.repeat(phone_number.length - 4) + phone_number.slice(-4)
 }
 
 /***

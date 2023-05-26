@@ -10,16 +10,16 @@
  */
 
 function solution(arr) {
-  let answer = arr;
+  let answer = arr
 
   // 1. x좌표 기준 오름차순
   arr.sort((a, b) => {
     // 2. x좌표가 같다면, y좌표를 기준으로 오름차순
-    if (a[0] === b[0]) return a[1] - b[1];
-    else return a[0] - b[0];
-  });
+    if (a[0] === b[0]) return a[1] - b[1]
+    else return a[0] - b[0]
+  })
 
-  return answer;
+  return answer
 }
 
 let arr = [
@@ -28,5 +28,5 @@ let arr = [
   [1, 2], // 1
   [2, 5], // 3
   [3, 6], // 5
-];
-console.log(solution(arr)); // [ [ 1, 2 ], [ 1, 3 ], [ 2, 5 ], [ 2, 7 ], [ 3, 6 ] ]
+]
+console.log(solution(arr)) // [ [ 1, 2 ], [ 1, 3 ], [ 2, 5 ], [ 2, 7 ], [ 3, 6 ] ]

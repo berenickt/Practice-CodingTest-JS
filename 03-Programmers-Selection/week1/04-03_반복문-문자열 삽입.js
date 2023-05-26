@@ -3,15 +3,15 @@
  * num에 3일 경우에는 "1-2-3"입니다.
  */
 function makeNumber(num) {
-  let str = '';
+  let str = ''
   for (let i = 1; i <= num; i++) {
-    str += i; // str = str + i;
+    str += i // str = str + i;
 
     if (i !== num) {
-      str += '-'; // str = str + "-"
+      str += '-' // str = str + "-"
     }
   }
 }
 
-makeNumber(5); // 1-2-3-4-5
-makeNumber(7); // 1-2-3-4-5-6-7
+makeNumber(5) // 1-2-3-4-5
+makeNumber(7) // 1-2-3-4-5-6-7

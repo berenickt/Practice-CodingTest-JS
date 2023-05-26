@@ -7,17 +7,17 @@
  * @returns n!
  */
 function solution(n) {
-  let answer;
+  let answer
 
   function DFS(n) {
-    if (n === 1) return 1;
-    else return n * DFS(n - 1);
+    if (n === 1) return 1
+    else return n * DFS(n - 1)
   }
-  answer = DFS(n);
-  return answer;
+  answer = DFS(n)
+  return answer
 }
 
-console.log(solution(5)); // 120
+console.log(solution(5)) // 120
 // DFS(5) = 5 * DFS(4) = 120
 // DFS(4) = 4 * DFS(3) = 24
 // DFS(3) = 3 * DFS(2) = 6

@@ -6,8 +6,8 @@
  * @returns 세 변으로 삼각형을 만들 수 있다면 1, 만들 수 없다면 2
  */
 function solution(sides) {
-  sides.sort((a, b) => a - b);
-  return sides[0] + sides[1] > sides[2] ? 1 : 2;
+  sides.sort((a, b) => a - b)
+  return sides[0] + sides[1] > sides[2] ? 1 : 2
 }
 
-console.log(solution([1, 2, 3])); // 2
+console.log(solution([1, 2, 3])) // 2

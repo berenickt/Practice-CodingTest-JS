@@ -9,12 +9,12 @@
  * 2. 몫 2와 나머지 1을 더하면 필요한 다스(3)을 얻을 수 있음
  */
 function solution(n) {
-  let answer;
+  let answer
 
   // ** ceil() : 2.xx면 3으로 올림
   // 1. 입력된 인원수를 1다스(12)로 나누고, 나머지를 올림
-  answer = Math.ceil(n / 12);
-  return answer;
+  answer = Math.ceil(n / 12)
+  return answer
 }
 
-console.log(solution(178));
+console.log(solution(178))

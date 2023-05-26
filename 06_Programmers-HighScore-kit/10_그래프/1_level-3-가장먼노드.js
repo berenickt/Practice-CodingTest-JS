@@ -7,10 +7,10 @@
  * - 최대한 다양한 종류의 폰켓몬을 가져야 함
  */
 function solution(nums) {
-  const max = nums.length / 2; // 내가 최대로 가질 수 있는 폰켓몬 수
-  const arr = [...new Set(nums)]; // 중복 요소가 없는 폰켓몬
+  const max = nums.length / 2 // 내가 최대로 가질 수 있는 폰켓몬 수
+  const arr = [...new Set(nums)] // 중복 요소가 없는 폰켓몬
 
-  return arr.length > max ? max : arr.length;
+  return arr.length > max ? max : arr.length
 }
 
-console.log(solution([3, 1, 2, 3]));
+console.log(solution([3, 1, 2, 3]))

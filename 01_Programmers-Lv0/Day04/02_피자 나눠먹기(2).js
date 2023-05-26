@@ -7,8 +7,8 @@ function solution(n) {
   for (let pizza = 1; pizza <= n; pizza++) {
     // (한 판의 6조각) % (사람수)
     if ((pizza * 6) % n === 0) {
-      return pizza;
+      return pizza
     }
   }
 }
-console.log(solution(10));
+console.log(solution(10))

@@ -9,23 +9,23 @@
  * 주어진 연결 노드만을 가지고 있기 때문에 메모리에서 큰 장점
  */
 function solution(goalVertex, arr) {
-  let answer = 0;
+  let answer = 0
 
   // 목표정점 수만큼 초기화된 빈 2차원배열 초기화
-  let graph = Array.from(Array(goalVertex + 1), () => Array());
+  let graph = Array.from(Array(goalVertex + 1), () => Array())
 
   // 정점 방문 여부 체크 배열
-  let check = Array.from({ length: goalVertex + 1 }, () => 0);
+  let check = Array.from({ length: goalVertex + 1 }, () => 0)
 
   // let path = []; // ** 경로 확인용
 
   // 2차원 배열 탐색하면서, 정점번호(a) 행에다가 이동가능한정점(b)값 넣기
-  for (let [a, b] of arr) graph[a].push(b);
+  for (let [a, b] of arr) graph[a].push(b)
 
   function DFS(vertex) {
     // 정점이 목표정점에 도착하면, 경우의 수++
     if (vertex === goalVertex) {
-      answer++;
+      answer++
       // console.log(path); // ** 경로 확인용
     } else {
       // 각 행의 길이만큼 순회
@@ -33,18 +33,18 @@ function solution(goalVertex, arr) {
         // 체크가 되어있지 않으면,
         if (check[nv] === 0) {
           // path.push(nv); // ** 경로 확인용
-          check[nv] = 1; // 방문했으니 체크(1)
-          DFS(nv);
-          check[nv] = 0; // 다시 위로 올라갈 떄, 체크 풀어주기
+          check[nv] = 1 // 방문했으니 체크(1)
+          DFS(nv)
+          check[nv] = 0 // 다시 위로 올라갈 떄, 체크 풀어주기
           // path.pop(); // ** 경로 확인용
         }
       }
     }
   }
-  check[1] = 1;
+  check[1] = 1
   // path.push(1); // ** 경로 확인용, 출발점
-  DFS(1);
-  return answer;
+  DFS(1)
+  return answer
 }
 
 let arr = [
@@ -57,5 +57,5 @@ let arr = [
   [3, 4],
   [4, 2],
   [4, 5],
-];
-console.log(solution(5, arr));
+]
+console.log(solution(5, arr))

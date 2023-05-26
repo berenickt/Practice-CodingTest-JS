@@ -6,8 +6,8 @@ function solution(n) {
   return n
     .toString()
     .split('')
-    .reduce((acc, cur) => acc + Number(cur), 0);
+    .reduce((acc, cur) => acc + Number(cur), 0)
 }
 
-console.log(solution(1234)); // 10
-console.log(solution(930211)); // 16
+console.log(solution(1234)) // 10
+console.log(solution(930211)) // 16

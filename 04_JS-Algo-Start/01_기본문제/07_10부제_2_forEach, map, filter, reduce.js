@@ -8,13 +8,13 @@
 // }
 
 // forEach함수의 내부 콜백함수 안에서 무언가를 작성
-a = [10, 11, 12, 13, 14, 15];
+a = [10, 11, 12, 13, 14, 15]
 a.forEach(
   (element, index) => {
-    console.log(element, index, this); // 이떄 this는 [1, 2]를 초기값으로 가짐
+    console.log(element, index, this) // 이떄 this는 [1, 2]를 초기값으로 가짐
   },
-  [1, 2]
-);
+  [1, 2],
+)
 
 // ------------------------------------------------------------------------------
 // **** (2) map : 요소를 탐색하면서 새로운 배열 반환
@@ -26,14 +26,14 @@ a.forEach(
 //   return list;
 // }
 
-b = [1, 2, 3, 4, 5, 6];
+b = [1, 2, 3, 4, 5, 6]
 let answer = b.map(
   (v, i) => {
-    return v * v;
+    return v * v
   },
-  [1, 2]
-);
-console.log(answer); // [ 1, 4, 9, 16, 25, 36 ]
+  [1, 2],
+)
+console.log(answer) // [ 1, 4, 9, 16, 25, 36 ]
 
 // ------------------------------------------------------------------------------
 // **** (3) filter : 원하는 원소만 선택해 새로운 배열 반환
@@ -45,14 +45,14 @@ console.log(answer); // [ 1, 4, 9, 16, 25, 36 ]
 //   return list;
 // }
 
-c = [1, 2, 3, 4, 5, 6];
+c = [1, 2, 3, 4, 5, 6]
 let answer2 = c.filter(
   (v, i) => {
-    return v % 2 === 0;
+    return v % 2 === 0
   },
-  [1, 2]
-);
-console.log(answer2); // [ 2, 4, 6 ]
+  [1, 2],
+)
+console.log(answer2) // [ 2, 4, 6 ]
 
 // ------------------------------------------------------------------------------
 // **** (4) reduice : 원소를 누적되어 새로운 값을 반환
@@ -64,8 +64,8 @@ console.log(answer2); // [ 2, 4, 6 ]
 //   return result;
 // }
 
-d = [1, 2, 3, 4, 5, 6];
+d = [1, 2, 3, 4, 5, 6]
 let answer3 = d.reduce((acc, v) => {
-  return acc + v;
-}, 0);
-console.log(answer3); // 21
+  return acc + v
+}, 0)
+console.log(answer3) // 21

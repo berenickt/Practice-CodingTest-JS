@@ -16,8 +16,8 @@
  * - 어떤 기능들이 원본을 바꾸는지 파악해야 합니다.
  */
 
-let email = 'coDecAmp@gamil.com '; // codecamp@gmail.com
+let email = 'coDecAmp@gamil.com ' // codecamp@gmail.com
 
-email.includes('@');
-email = email.trim();
-email = email.toLowerCase();
+email.includes('@')
+email = email.trim()
+email = email.toLowerCase()

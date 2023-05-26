@@ -14,24 +14,24 @@
  * @returns
  */
 function solution(DaySale, arr) {
-  let answer = 0;
-  let sum = 0;
+  let answer = 0
+  let sum = 0
 
   // 연속된 최대매출날짜만큼 sum에 증감
-  for (let i = 0; i < DaySale; i++) sum += arr[i];
-  answer = sum;
+  for (let i = 0; i < DaySale; i++) sum += arr[i]
+  answer = sum
   // console.log(answer); // 38 56
 
   // 앞에꺼는 빼고, 뒤에꺼는 더하면서 순회
   for (let i = DaySale; i < arr.length; i++) {
-    sum += arr[i] - arr[i - DaySale];
+    sum += arr[i] - arr[i - DaySale]
     // console.log(arr[i]); // 20 25 10 20 19 13 15 56
     // console.log(arr[i - DaySale]); // 12 15 11 20 25 10 20 56
     // console.log(sum); // 46 56 55 55 49 52 47 56
     // console.log(answer); // 38 46 56 56 56 56 56 56
-    answer = Math.max(answer, sum);
+    answer = Math.max(answer, sum)
   }
-  return answer;
+  return answer
 }
 
-console.log(solution(3, [12, 15, 11, 20, 25, 10, 20, 19, 13, 15]));
+console.log(solution(3, [12, 15, 11, 20, 25, 10, 20, 19, 13, 15]))

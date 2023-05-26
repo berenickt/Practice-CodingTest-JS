@@ -16,32 +16,32 @@
  * 한정된 예산으로 최대한 많은 수의 선물을 주는 것
  */
 function solution(budget, product) {
-  let answer = 0; // 주어진 예산으로 선물할 수 있는 최대 학생 수
-  let studentNum = product.length;
+  let answer = 0 // 주어진 예산으로 선물할 수 있는 최대 학생 수
+  let studentNum = product.length
 
   // **** 2차원 배열 오름차순 정렬
-  product.sort((a, b) => a[0] + a[1] - (b[0] + b[1]));
+  product.sort((a, b) => a[0] + a[1] - (b[0] + b[1]))
   // console.log(product);
 
   for (let i = 0; i < studentNum; i++) {
     // **** 남은 예산 = 예산 - (가격/2 + 배송비)
     // 가격/2는 할인받은 것
-    let remainBudget = budget - (product[i][0] / 2 + product[i][1]);
-    let count = 1;
+    let remainBudget = budget - (product[i][0] / 2 + product[i][1])
+    let count = 1
 
     for (let j = 0; j < studentNum; j++) {
       // **** 남은 예산보다 크면 상품 구매 불가능
-      if (j !== i && product[j][0] + product[j][1] > remainBudget) break;
+      if (j !== i && product[j][0] + product[j][1] > remainBudget) break
 
       // **** 남은 예산보다 작거나 같아야 상품 구매 가능
       if (j !== i && product[j][0] + product[j][1] <= remainBudget) {
-        remainBudget -= product[j][0] + product[j][1];
-        count++;
+        remainBudget -= product[j][0] + product[j][1]
+        count++
       }
     }
-    answer = Math.max(answer, count); // 상품구매한 횟수
+    answer = Math.max(answer, count) // 상품구매한 횟수
   }
-  return answer;
+  return answer
 }
 
 let arr = [
@@ -51,8 +51,8 @@ let arr = [
   [4, 3],
   [4, 5],
   [10, 3],
-];
-console.log(solution(28, arr));
+]
+console.log(solution(28, arr))
 
 // **** 공부
 // for i : 인덱스로 순회

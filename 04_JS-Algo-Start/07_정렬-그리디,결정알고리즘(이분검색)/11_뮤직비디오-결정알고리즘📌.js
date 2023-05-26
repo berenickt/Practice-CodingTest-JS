@@ -21,22 +21,22 @@
  * @returns DVD의 최소 크기(녹화가능한 길이)
  */
 function solution(dvdNum, songs) {
-  let answer;
+  let answer
 
-  let left = Math.max(...songs);
-  let right = songs.reduce((a, b) => a + b, 0); // 부른 곡의 총 길이(모든 요소를 더한 값)
+  let left = Math.max(...songs)
+  let right = songs.reduce((a, b) => a + b, 0) // 부른 곡의 총 길이(모든 요소를 더한 값)
 
   while (left <= right) {
-    let mid = parseInt((left + right) / 2);
+    let mid = parseInt((left + right) / 2)
 
     if (count(songs, mid) <= dvdNum) {
-      answer = mid;
-      right = mid - 1;
+      answer = mid
+      right = mid - 1
     } else {
-      left = mid + 1;
+      left = mid + 1
     }
   }
-  return answer;
+  return answer
 }
 
 /**
@@ -46,18 +46,18 @@ function solution(dvdNum, songs) {
  * @returns 필요한 DVD 수
  */
 function count(songs, capacity) {
-  let cnt = 1; // DVD 수
-  let sum = 0;
+  let cnt = 1 // DVD 수
+  let sum = 0
 
   for (let song of songs) {
     if (sum + song > capacity) {
-      cnt++;
-      sum = song;
-    } else sum += song;
+      cnt++
+      sum = song
+    } else sum += song
   }
-  return cnt;
+  return cnt
 }
 
-console.log(solution(3, [1, 2, 3, 4, 5, 6, 7, 8, 9])); // 17
+console.log(solution(3, [1, 2, 3, 4, 5, 6, 7, 8, 9])) // 17
 // e.g. 3개의 DVD 용량이 17분짜리면 (1, 2, 3, 4, 5), (6, 7), (8, 9) 이렇게 3개의 DVD로 녹음할 수 있다.
 // 17분 용량보다 작은 용량으로는 3개의 DVD에 모든 영상을 녹화할 수 없다.

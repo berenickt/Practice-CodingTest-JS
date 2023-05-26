@@ -3,6 +3,6 @@
  * @returns 가장 큰 수와 그 수의 인덱스를 담은 배열
  */
 function solution(array) {
-  const max = Math.max(...array);
-  return [max, array.indexOf(max)];
+  const max = Math.max(...array)
+  return [max, array.indexOf(max)]
 }

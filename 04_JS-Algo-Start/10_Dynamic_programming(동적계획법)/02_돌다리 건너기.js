@@ -12,15 +12,15 @@
  * 4. 철수가 땅에 도착해야 하기 때문에 이를 고려 (돌다리+땅(도착지))
  */
 function solution(n) {
-  let rock = Array.from({ length: n + 2 }, () => 0);
+  let rock = Array.from({ length: n + 2 }, () => 0)
 
   // 돌 다리를 건너는 방법
-  rock[1] = 1; // 첫 번쟤 돌을 넘어가는 경우의 수 1개
-  rock[2] = 2; // 두 번쟤 돌을 넘어가는 경우의 수 2개
+  rock[1] = 1 // 첫 번쟤 돌을 넘어가는 경우의 수 1개
+  rock[2] = 2 // 두 번쟤 돌을 넘어가는 경우의 수 2개
 
   // 3 번째 돌부터 시작, 돌을 건너는 경우의 수
   for (let i = 3; i <= n + 1; i++) {
-    rock[i] = rock[i - 2] + rock[i - 1];
+    rock[i] = rock[i - 2] + rock[i - 1]
     // s[3] = s[1] + s[2]
     // s[4] = s[2] + s[3]
     // s[5] = s[3] + s[4]
@@ -28,10 +28,10 @@ function solution(n) {
     // s[7] = s[5] + s[6]
   }
 
-  return rock[n + 1];
+  return rock[n + 1]
 }
 
-console.log(solution(7)); // 34
+console.log(solution(7)) // 34
 
 // ** 심화 : 만약 한번에 3칸도 뛸 수 있다면?
 // rock[0] = 1;

@@ -13,22 +13,22 @@
  * @returns target이 되는 경우의 수
  */
 function solution(target, arr) {
-  let answer = 0;
-  let sum = 0;
-  let left = 0;
+  let answer = 0
+  let sum = 0
+  let left = 0
 
   // left와 right 두 개의 포인터가 돌며, right 값을 sum에 누적
   for (let right = 0; right < arr.length; right++) {
-    sum += arr[right];
+    sum += arr[right]
 
     // 누적시킨 값이 target보다 크면, left값을 빼면서 증감
     while (sum > target) {
-      sum -= arr[left++];
+      sum -= arr[left++]
     }
-    answer += right - left + 1;
+    answer += right - left + 1
     // console.log(answer); // 1 3 6 8 10 10
   }
-  return answer;
+  return answer
 }
 
-console.log(solution(5, [1, 3, 1, 2, 3]));
+console.log(solution(5, [1, 3, 1, 2, 3]))

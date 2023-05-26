@@ -4,13 +4,13 @@
  * @returns
  */
 function solution(n) {
-  let answer = 0;
+  let answer = 0
 
   for (let i = 1; i <= n; i++) {
-    answer = answer + i;
+    answer = answer + i
   }
 
-  return answer;
+  return answer
 }
 
-console.log(solution(10));
+console.log(solution(10))

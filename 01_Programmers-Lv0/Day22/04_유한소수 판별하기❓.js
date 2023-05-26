@@ -9,12 +9,12 @@
  * @returns a/b가 유한소수이면 1을, 무한소수라면 2
  */
 function solution(a, b) {
-  return (a / b).toString().length > 10 ? 2 : 1;
+  return (a / b).toString().length > 10 ? 2 : 1
   // return Number((a / b).toFixed(10)) == a / b ? 1 : 2;
 }
-console.log(solution(7, 20)); // 1
-console.log(solution(11, 22)); // 1
-console.log(solution(12, 21)); // 2
+console.log(solution(7, 20)) // 1
+console.log(solution(11, 22)) // 1
+console.log(solution(12, 21)) // 2
 
 // **** toFixed()
 // 숫자를 고정 소수점 표기법(fixed-point notation)으로 표시

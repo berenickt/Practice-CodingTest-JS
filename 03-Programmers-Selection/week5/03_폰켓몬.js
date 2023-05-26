@@ -1,56 +1,56 @@
 function solution(nums) {
-  const answer = [];
+  const answer = []
 
   for (let i = 0; i < nums.length; i++) {
     if (nums.length / 2 !== answer.length && answer.includes(nums[i]) === false) {
-      answer.push(nums[i]);
+      answer.push(nums[i])
     }
   }
-  return answer.length;
+  return answer.length
 }
 
 // **** for : new Set
 function solution2(nums) {
-  const answer = new Set([]);
+  const answer = new Set([])
 
   for (let i = 0; i < nums.length; i++) {
     if (nums.length / 2 !== answer.size) {
-      answer.add(nums[i]);
+      answer.add(nums[i])
     }
   }
-  return answer.size;
+  return answer.size
 }
 
 // **** forEach
 function solution3(nums) {
-  const pocket = [];
+  const pocket = []
 
   nums.forEach(monster => {
     if (pocket.includes(monster) === false && pocket.length < nums.length / 2) {
-      pocket.push(monster);
+      pocket.push(monster)
     }
-  });
-  return pocket.length;
+  })
+  return pocket.length
 }
 
 // **** forEach : new Set
 function solution4(nums) {
-  const pocket = new Set([]);
+  const pocket = new Set([])
 
   nums.forEach(monster => {
     if (pocket.size < nums.length / 2) {
-      pocket.add(monster);
+      pocket.add(monster)
     }
-  });
-  return pocket.size;
+  })
+  return pocket.size
 }
 
 // **** new Set
 function solution5(nums) {
-  const answer = new Set(nums).size;
-  const limit = nums.length / 2;
+  const answer = new Set(nums).size
+  const limit = nums.length / 2
 
-  if (limit >= answer) return answer;
+  if (limit >= answer) return answer
 
-  return limit;
+  return limit
 }

@@ -12,26 +12,26 @@
  * @returns 겹치지 않게 회의실을 사용하는 최대 수
  */
 function solution(meeting) {
-  let answer = 0;
+  let answer = 0
 
   // 끝나는시간 기준으로 오름차순
   meeting.sort((a, b) => {
     // 끝나는 시간이 같으면, 시작 시간을 기준으로 오름차순
-    if (a[1] === b[1]) return a[0] - b[0];
+    if (a[1] === b[1]) return a[0] - b[0]
     // 아니면 끝나는 시간으로 오름차순
-    else return a[1] - b[1];
-  });
+    else return a[1] - b[1]
+  })
 
-  let entTime = 0; // 첫 번쨰 회의는 무조건 시작할 수 있도록
+  let entTime = 0 // 첫 번쨰 회의는 무조건 시작할 수 있도록
 
   for (let meetingTime of meeting) {
     // 시작시간이 끝나는 시간보다 크면,
     if (meetingTime[0] >= entTime) {
-      answer++;
-      entTime = meetingTime[1]; // endTime이 끝나는 시간 넣기
+      answer++
+      entTime = meetingTime[1] // endTime이 끝나는 시간 넣기
     }
   }
-  return answer;
+  return answer
 }
 
 console.log(
@@ -42,13 +42,13 @@ console.log(
     [3, 5],
     [4, 6],
     [5, 7],
-  ])
-); // 3 | (2, 3), (3, 5), (5, 7)이 회의실 이용 가능
+  ]),
+) // 3 | (2, 3), (3, 5), (5, 7)이 회의실 이용 가능
 
 console.log(
   solution([
     [3, 3],
     [1, 3],
     [2, 3],
-  ])
-); // 2 | 끝나는 타임이 다 같으면, 시작시간으로 오름차순 (시작시간과 끝나는 시간이 다 같은 경우)
+  ]),
+) // 2 | 끝나는 타임이 다 같으면, 시작시간으로 오름차순 (시작시간과 끝나는 시간이 다 같은 경우)

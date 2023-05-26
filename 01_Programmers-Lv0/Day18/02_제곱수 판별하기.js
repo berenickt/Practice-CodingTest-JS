@@ -5,8 +5,8 @@
  */
 function solution(n) {
   // n을 제곱한 것이 숫자 ? 1 : 2
-  return Number.isInteger(Math.sqrt(n)) ? 1 : 2;
+  return Number.isInteger(Math.sqrt(n)) ? 1 : 2
 }
 
-console.log(solution(144)); // 1
-console.log(solution(976)); // 2
+console.log(solution(144)) // 1
+console.log(solution(976)) // 2

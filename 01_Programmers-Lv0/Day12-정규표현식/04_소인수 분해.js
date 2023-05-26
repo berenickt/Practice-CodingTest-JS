@@ -7,11 +7,11 @@
  * @returns n의 소인수를 오름차순으로 담은 배열
  */
 function solution(n) {
-  const answer = [];
+  const answer = []
   for (let i = 2; i <= n; i++) {
-    if (n % i === 0 && isPrime(i)) answer.push(i);
+    if (n % i === 0 && isPrime(i)) answer.push(i)
   }
-  return answer;
+  return answer
 }
 // 12 % 2 = 0
 // 12 % 3 = 0
@@ -20,9 +20,9 @@ function solution(n) {
 
 function isPrime(num) {
   for (let i = 2; i <= Math.sqrt(num); i++) {
-    if (num % i === 0) return false; // 해당 수로 나눠떨어지면 소수가 아님
+    if (num % i === 0) return false // 해당 수로 나눠떨어지면 소수가 아님
   }
-  return true;
+  return true
 }
 
-console.log(solution(12));
+console.log(solution(12))

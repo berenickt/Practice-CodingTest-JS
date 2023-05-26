@@ -7,16 +7,16 @@
  * @returns
  */
 function solution(s) {
-  let answer;
+  let answer
   //console.log(s.indexOf("time"));
 
   // ** s.indexOf(v) === i을 만족하는 요소만 따로 배열으로
   answer = s.filter((v, i) => {
     // console.log(s.indexOf(v), i, v);
-    return s.indexOf(v) === i;
-  });
+    return s.indexOf(v) === i
+  })
 
-  return answer;
+  return answer
 }
-let str = ['good', 'time', 'good', 'time', 'student'];
-console.log(solution(str));
+let str = ['good', 'time', 'good', 'time', 'student']
+console.log(solution(str))

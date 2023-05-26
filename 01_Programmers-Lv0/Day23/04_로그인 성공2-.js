@@ -4,13 +4,13 @@
  * @returns  로그인 성공, 실패에 따른 메시지
  */
 function solution(id_pw, db) {
-  db = db.filter((v) => v[0] === id_pw[0]);
+  db = db.filter(v => v[0] === id_pw[0])
 
-  if (!db.length) return 'fail';
+  if (!db.length) return 'fail'
 
-  for (let d of db) if (d[1] === id_pw[1]) return 'login';
+  for (let d of db) if (d[1] === id_pw[1]) return 'login'
 
-  return 'wrong pw';
+  return 'wrong pw'
 }
 
 // `db`에 같은 정보의 계정이 있으므로 "login"을 return
@@ -21,9 +21,9 @@ console.log(
       ['rardss', '123'],
       ['yyoom', '1234'],
       ['meosseugi', '1234'],
-    ]
-  )
-); // "login"
+    ],
+  ),
+) // "login"
 
 console.log(
   solution(
@@ -32,9 +32,9 @@ console.log(
       ['programmer02', '111111'],
       ['programmer00', '134'],
       ['programmer01', '1145'],
-    ]
-  )
-); // "wrong pw"
+    ],
+  ),
+) // "wrong pw"
 
 console.log(
   solution(
@@ -43,6 +43,6 @@ console.log(
       ['jaja11', '98761'],
       ['krong0313', '29440'],
       ['rabbit00', '111333'],
-    ]
-  )
-); // "fail"
+    ],
+  ),
+) // "fail"

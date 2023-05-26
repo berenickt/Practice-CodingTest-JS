@@ -13,18 +13,18 @@
  * @param {*} arr 7대의 자동차 번호의 끝 2자리 숫자
  * @returns
  * 1. (번호판 맨 끝의 일의 자리 숫자)와 (주어진 일의 자리 숫자)가 일치하지 않는지 비교
- * 2. 그 비교하지 않는 값을 세기 
+ * 2. 그 비교하지 않는 값을 세기
  * cf. 어떤 숫자든 10으로 나누면 일의 자리가 남는다.
  */
 function solution(day, arr) {
-  let answer = 0;
+  let answer = 0
 
   for (let x of arr) {
-    if (x % 10 === day) answer++;
+    if (x % 10 === day) answer++
   }
 
-  return answer;
+  return answer
 }
 
-arr = [25, 23, 11, 47, 53, 17, 33];
-console.log(solution(3, arr));
+arr = [25, 23, 11, 47, 53, 17, 33]
+console.log(solution(3, arr))

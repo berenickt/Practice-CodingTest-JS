@@ -6,28 +6,28 @@
  * - 최댓값을 저장할 수 있는 변수가 있어야 합니다.
  */
 function bigNum(str) {
-  let biggest = 0;
+  let biggest = 0
 
   for (let i = 0; i < str.length; i++) {
     if (Number(str[i]) > biggest) {
-      biggest = Number(str[i]);
+      biggest = Number(str[i])
     }
   }
 
-  return biggest;
+  return biggest
 }
 
 function bigNum2(str) {
-  let biggest = Number(str[0]);
+  let biggest = Number(str[0])
 
   for (let i = 1; i < str.length; i++) {
     if (Number(str[i]) > biggest) {
-      biggest = Number(str[i]);
+      biggest = Number(str[i])
     }
   }
 
-  return biggest;
+  return biggest
 }
 
-bigNum(12345); // 5
-bigNum(87135); // 8
+bigNum(12345) // 5
+bigNum(87135) // 8

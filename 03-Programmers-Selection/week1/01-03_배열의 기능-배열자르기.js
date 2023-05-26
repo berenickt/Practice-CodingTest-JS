@@ -5,8 +5,8 @@
  * - 새로운 배열을 선언, 할당해야 합니다.
  * - 배열의 인덱스는 0부터 시작합니다.
  */
-let students = ['철수', '영희', '훈이', '짱구', '유리'];
+let students = ['철수', '영희', '훈이', '짱구', '유리']
 
-let newArr = students.slice(0, 3);
+let newArr = students.slice(0, 3)
 
-console.log(newArr); // ["철수", "영희", "훈이"]
+console.log(newArr) // ["철수", "영희", "훈이"]

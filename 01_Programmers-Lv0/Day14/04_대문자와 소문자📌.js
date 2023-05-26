@@ -4,5 +4,5 @@
  */
 function solution(my_string) {
   // (문자를 받아서).(순회하면서 각 요소가 대문자와 같다면 ? 소문자로 : 대문자로).(문자합치기)
-  return [...my_string].map((char) => (char === char.toUpperCase() ? char.toLowerCase() : char.toUpperCase())).join('');
+  return [...my_string].map(char => (char === char.toUpperCase() ? char.toLowerCase() : char.toUpperCase())).join('')
 }

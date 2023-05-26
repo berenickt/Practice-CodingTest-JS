@@ -8,11 +8,11 @@
  * getDay : 요일을 가져오는 메서드
  */
 function solution(a, b) {
-  const month = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
-  let dateStr = '2016-' + a + '- ' + b;
-  let date = new Date(dateStr);
+  const month = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT']
+  let dateStr = '2016-' + a + '- ' + b
+  let date = new Date(dateStr)
 
-  return month[date.getDay()];
+  return month[date.getDay()]
 }
 
-console.log(solution(5, 24)); // "TUE"
+console.log(solution(5, 24)) // "TUE"

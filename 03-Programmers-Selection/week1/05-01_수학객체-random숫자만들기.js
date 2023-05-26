@@ -6,15 +6,15 @@
  * - random 객체를 이용해서 나오는 수는 1~100 사이 입니다.
  */
 function random() {
-  let number = 50;
-  let random = Math.random() * 100;
+  let number = 50
+  let random = Math.random() * 100
 
   if (random >= number) {
-    console.log('Win');
+    console.log('Win')
   } else {
-    console.log('Lose');
+    console.log('Lose')
   }
 }
 
-random(); // Win
-random(); // Lose
+random() // Win
+random() // Lose

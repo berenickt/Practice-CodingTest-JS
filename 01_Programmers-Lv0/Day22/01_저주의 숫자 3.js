@@ -4,16 +4,16 @@
  * @returns n을 3x 마을에서 사용하는 숫자로 바꿔 return
  */
 function solution(n) {
-  let num = 0;
-  let count = 0;
+  let num = 0
+  let count = 0
 
   while (count < n) {
-    num += 1;
-    if (!('' + num).includes('3') && num % 3 !== 0) count += 1;
+    num += 1
+    if (!('' + num).includes('3') && num % 3 !== 0) count += 1
   }
 
-  return num;
+  return num
 }
 
-console.log(solution(15)); //  25
-console.log(solution(40)); //  76
+console.log(solution(15)) //  25
+console.log(solution(40)) //  76

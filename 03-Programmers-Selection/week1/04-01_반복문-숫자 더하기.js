@@ -5,14 +5,14 @@
  * - for을 이용해서 문제를 풀어야 합니다.
  */
 function sum(num) {
-  let count = 0;
+  let count = 0
   // i = i + 1
   for (let i = 1; i <= num; i++) {
     // count = count + i;
-    count += i;
+    count += i
   }
-  return count;
+  return count
 }
 
-sum(5); // 15
-sum(3); // 6
+sum(5) // 15
+sum(3) // 6

@@ -27,5 +27,6 @@ while (a <= b) {
   else break // 위 경우가 모두 해당되지 않는 경우
   result++
 }
+
 if (flag) console.log(result)
 else console.log(-1)

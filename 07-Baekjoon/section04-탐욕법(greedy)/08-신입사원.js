@@ -1,5 +1,6 @@
 /*** https://www.acmicpc.net/problem/1946
- *
+ * 1) 다른 모든 지원자와 비교했을 때, 다음의 조건을 만족하는 지원자의 총 수를 계산한다.
+ * 2) (1) 서류 성적과 (2) 면접 성적 중 적어도 하나가, 다른 지원자보다 떨어지지 않는 자
  */
 let fs = require('fs')
 let input = fs.readFileSync('/dev/stdin').toString().split('\n')

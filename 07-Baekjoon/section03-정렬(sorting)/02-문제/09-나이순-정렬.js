@@ -1,5 +1,13 @@
 /*** https://www.acmicpc.net/problem/10814
- *
+ * 입력이 들어왔을 때, 일종의 객체로 이를 처리한다.
+ * 다음과 같이 7명의 정보가 (나이, 이름) 형태로 주어진다고 가정하자
+ * (27, Chulsoo)
+ * (30, Gildong)
+ * (25, Soonja)
+ * (25, Zo)
+ * (25, Amy)
+ * (29, Boksoon)
+ * (32, Junghwa)
  */
 let fs = require('fs')
 let input = fs.readFileSync('/dev/stdin').toString().split('\n')

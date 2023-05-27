@@ -1,5 +1,7 @@
 /*** https://www.acmicpc.net/problem/1427
- *
+ * 총 10개의 숫자(digit)이 존재하며, 문제 해결 과정은 다음과 같다.
+ * 1. 0부터 9까지의 모든 숫자에 대하여, 빈도수를 센다.
+ * 2. 각 숫자를 내림차순으로 하나씩 확인하며, [빈도수 만큼] 출력한다
  */
 let fs = require('fs')
 let input = fs.readFileSync('/dev/stdin').toString().split('\n')

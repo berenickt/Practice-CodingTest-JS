@@ -11,6 +11,7 @@ let arr = input[1].split(' ').map(Number) // 모든 처리 시간 입력받기
 
 // 오름차순 정렬
 arr.sort((a, b) => a - b)
+
 let answer = 0
 let summary = 0
 for (let i = 0; i < n; i++) {

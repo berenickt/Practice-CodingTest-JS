@@ -1,5 +1,5 @@
 /*** https://github.com/ndb796/priorityqueuejs
- * index.js 소스 코드를 가져온 뒤에 다음과 같이 사용할 수 있다.
+ * index.js 소스 코드를 붙여넣기 해서 가져온 뒤에 다음과 같이 사용할 수 있다.
  */
 
 // 최대힙(Max Heap)
